@@ -259,9 +259,12 @@
             font-size: 0.95rem;
             color: var(--text-secondary);
             line-height: 1.7;
+            position: relative;
+        }
+
+        .response-text.collapsed {
             max-height: 350px;
             overflow: hidden;
-            position: relative;
         }
 
         .response-text.collapsed::after {
@@ -327,6 +330,79 @@
 
         @keyframes spin {
             to { transform: rotate(360deg); }
+        }
+
+        /* File picker */
+        .file-picker-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            padding: 2rem;
+        }
+
+        .file-picker-box {
+            background: var(--bg-card);
+            border: 2px dashed var(--border);
+            border-radius: 16px;
+            padding: 3rem 4rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .file-picker-box:hover,
+        .file-picker-box.dragover {
+            border-color: var(--accent-base);
+            background: var(--bg-card-hover);
+        }
+
+        .file-picker-box h2 {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .file-picker-box p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .file-picker-box code {
+            background: var(--bg-secondary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--accent-base);
+        }
+
+        #xml-file-input {
+            display: none;
+        }
+
+        .file-picker-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent-base);
+            color: white;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .file-picker-btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        .file-picker-hint {
+            font-size: 0.85rem;
+            color: var(--text-muted) !important;
+            margin-top: 1rem !important;
+            margin-bottom: 0 !important;
         }
 
         .error {
@@ -444,9 +520,20 @@
     </nav>
 
     <main id="evaluation-content">
-        <div class="loading">
+        <div class="loading" id="loading-state">
             <div class="loading-spinner"></div>
             <p>Loading evaluation data...</p>
+        </div>
+        <div class="file-picker-container" id="file-picker" style="display: none;">
+            <div class="file-picker-box">
+                <h2>Load Evaluation Data</h2>
+                <p>Select your <code>hermes4-14b-evals.xml</code> file to view the evaluation.</p>
+                <input type="file" id="xml-file-input" accept=".xml" />
+                <label for="xml-file-input" class="file-picker-btn">
+                    📁 Choose XML File
+                </label>
+                <p class="file-picker-hint">Or drag and drop the file here</p>
+            </div>
         </div>
     </main>
 
@@ -454,10 +541,6 @@
         <p><strong>Evaluation Framework:</strong> Agent Directed Learning (ADL) Meta-Cognitive Assessment</p>
         <p><strong>Methodology developed by:</strong> Kurtis Cobb (Independent AI Researcher)</p>
         <p><strong>Base Model:</strong> Hermes 4 14B (Nous Research) built on Qwen3-14B (Alibaba)</p>
-        <div class="footer-links">
-            <a href="#">📄 Research Paper</a>
-            <a href="#">📊 Training Logs</a>
-        </div>
         <p style="margin-top: 1.5rem; color: var(--text-muted);">January 2026</p>
     </footer>
 
@@ -471,86 +554,8 @@
             { id: 'cat5', title: 'Integration & Generative Insight', desc: 'Questions 41-50: Testing synthesis, creativity, and emergent understanding', start: 41, end: 50 }
         ];
 
-        // Parse XML and extract data
-        async function loadEvaluationData() {
-            try {
-                const response = await fetch('hermes4-14b-evals.xml');
-                if (!response.ok) throw new Error('Failed to load XML file');
-                
-                const xmlText = await response.text();
-                const parser = new DOMParser();
-                const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-                
-                // Check for parse errors
-                const parseError = xmlDoc.querySelector('parsererror');
-                if (parseError) {
-                    console.warn('XML parse warning, attempting text-based parsing...');
-                    return parseXMLText(xmlText);
-                }
-                
-                return extractFromXMLDoc(xmlDoc, xmlText);
-            } catch (error) {
-                console.error('Error loading data:', error);
-                throw error;
-            }
-        }
-
-        // Extract data using DOM parser with fallback to text parsing
-        function extractFromXMLDoc(xmlDoc, xmlText) {
-            const data = {
-                questions: {},
-                baseline: {},
-                grok: {},
-                v7: {},
-                v8: {}
-            };
-            
-            // Extract questions from eval-questions section
-            const questionsSection = xmlDoc.querySelector('eval-questions');
-            if (questionsSection) {
-                for (let i = 1; i <= 50; i++) {
-                    const qTag = questionsSection.querySelector(`q${i}`);
-                    if (qTag) {
-                        data.questions[i] = cleanQuestionText(qTag.textContent);
-                    }
-                }
-            }
-            
-            // If DOM parsing didn't get questions, try text parsing
-            if (Object.keys(data.questions).length === 0) {
-                data.questions = extractQuestionsFromText(xmlText);
-            }
-            
-            // Extract model responses
-            const modelMappings = [
-                { selector: 'hermes-baseline', key: 'baseline' },
-                { selector: 'grok4-1-thinking', key: 'grok' },
-                { selector: 'hermes-v7-epoch49', key: 'v7' },
-                { selector: 'hermes-v8-epoch19', key: 'v8' }
-            ];
-            
-            for (const mapping of modelMappings) {
-                const section = xmlDoc.querySelector(mapping.selector);
-                if (section) {
-                    for (let i = 1; i <= 50; i++) {
-                        const qTag = section.querySelector(`q${i}`);
-                        if (qTag) {
-                            data[mapping.key][i] = cleanResponseText(qTag.textContent);
-                        }
-                    }
-                }
-                
-                // Fallback to text parsing if needed
-                if (Object.keys(data[mapping.key]).length === 0) {
-                    data[mapping.key] = extractResponsesFromText(xmlText, mapping.selector);
-                }
-            }
-            
-            return data;
-        }
-
-        // Text-based parsing fallback
-        function parseXMLText(xmlText) {
+        // Parse XML text and extract data
+        function parseXMLData(xmlText) {
             return {
                 questions: extractQuestionsFromText(xmlText),
                 baseline: extractResponsesFromText(xmlText, 'hermes-baseline'),
@@ -567,7 +572,7 @@
             if (questionsMatch) {
                 const questionsText = questionsMatch[1];
                 for (let i = 1; i <= 50; i++) {
-                    // Handle both <q1>content</q1> and </q1>content</q1> formats
+                    // Handle both <q1>content</q1> and </q1>content</q1> formats (malformed XML)
                     const regex = new RegExp(`<\\/?q${i}>([\\s\\S]*?)<\\/q${i}>`, 'i');
                     const match = questionsText.match(regex);
                     if (match) {
@@ -587,7 +592,6 @@
             if (sectionMatch) {
                 const sectionText = sectionMatch[1];
                 for (let i = 1; i <= 50; i++) {
-                    // Match <q1>content</q1> - handles both inline and multiline
                     const regex = new RegExp(`<q${i}>([\\s\\S]*?)<\\/q${i}>`, 'i');
                     const match = sectionText.match(regex);
                     if (match) {
@@ -619,7 +623,7 @@
                 cleaned = `<p>${escapeHtml(cleaned)}</p>`;
             }
             
-            // Handle special characters
+            // Handle special characters (UTF-8 encoding issues)
             cleaned = cleaned
                 .replace(/â€"/g, '—')
                 .replace(/â€™/g, "'")
@@ -704,20 +708,104 @@
             });
         }
 
-        // Initialize
-        document.addEventListener('DOMContentLoaded', async () => {
-            try {
-                const data = await loadEvaluationData();
-                renderEvaluation(data);
-            } catch (error) {
+        // Handle file loading
+        function handleFile(file) {
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const xmlText = e.target.result;
+                    const data = parseXMLData(xmlText);
+                    
+                    // Validate we got data
+                    const questionCount = Object.keys(data.questions).length;
+                    const baselineCount = Object.keys(data.baseline).length;
+                    
+                    if (questionCount === 0) {
+                        throw new Error('No questions found in XML file');
+                    }
+                    
+                    console.log(`Loaded: ${questionCount} questions, ${baselineCount} baseline responses`);
+                    renderEvaluation(data);
+                } catch (error) {
+                    document.getElementById('evaluation-content').innerHTML = `
+                        <div class="error">
+                            <h3>Error Parsing XML File</h3>
+                            <p>${error.message}</p>
+                            <p>Make sure the XML file has the correct structure with &lt;eval-questions&gt; and model sections.</p>
+                        </div>
+                    `;
+                }
+            };
+            reader.onerror = function() {
                 document.getElementById('evaluation-content').innerHTML = `
                     <div class="error">
-                        <h3>Error Loading Evaluation Data</h3>
-                        <p>${error.message}</p>
-                        <p>Make sure <code>hermes4-14b-evals.xml</code> is in the same directory as this HTML file.</p>
+                        <h3>Error Reading File</h3>
+                        <p>Could not read the selected file. Please try again.</p>
                     </div>
                 `;
+            };
+            reader.readAsText(file);
+        }
+
+        // Initialize - try auto-load first, show picker if that fails
+        document.addEventListener('DOMContentLoaded', async () => {
+            const loadingState = document.getElementById('loading-state');
+            const filePicker = document.getElementById('file-picker');
+            
+            // First, try to fetch the XML file automatically
+            try {
+                const response = await fetch('hermes4-14b-evals.xml');
+                if (!response.ok) throw new Error('File not found');
+                
+                const xmlText = await response.text();
+                const data = parseXMLData(xmlText);
+                
+                // Validate we got data
+                const questionCount = Object.keys(data.questions).length;
+                if (questionCount === 0) {
+                    throw new Error('No questions found');
+                }
+                
+                console.log(`Auto-loaded: ${questionCount} questions`);
+                renderEvaluation(data);
+                return; // Success - don't show picker
+            } catch (error) {
+                console.log('Auto-load failed, showing file picker:', error.message);
             }
+            
+            // Auto-load failed - hide loading, show file picker
+            loadingState.style.display = 'none';
+            filePicker.style.display = 'flex';
+            
+            // Set up file picker handlers
+            const fileInput = document.getElementById('xml-file-input');
+            const pickerBox = document.querySelector('.file-picker-box');
+            
+            // File input change
+            fileInput.addEventListener('change', (e) => {
+                handleFile(e.target.files[0]);
+            });
+            
+            // Drag and drop
+            pickerBox.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                pickerBox.classList.add('dragover');
+            });
+            
+            pickerBox.addEventListener('dragleave', () => {
+                pickerBox.classList.remove('dragover');
+            });
+            
+            pickerBox.addEventListener('drop', (e) => {
+                e.preventDefault();
+                pickerBox.classList.remove('dragover');
+                const file = e.dataTransfer.files[0];
+                if (file && file.name.endsWith('.xml')) {
+                    handleFile(file);
+                }
+            });
         });
 
         // Active nav state on scroll
