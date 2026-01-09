@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hermes Fine-Tuning Evaluation: 50-Question Comparative Analysis</title>
+    <title>Hermes Fine-Tuning Evaluation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,12 +16,9 @@
             --text-primary: #e8e8ed;
             --text-secondary: #a0a0b0;
             --text-muted: #6a6a7a;
-            --accent-base: #3b82f6;
-            --accent-grok: #f59e0b;
-            --accent-v7: #a855f7;
-            --accent-v8: #10b981;
             --border: #252530;
             --border-subtle: #1a1a22;
+            --accent-blue: #3b82f6;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -40,6 +37,7 @@
             background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
             border-bottom: 1px solid var(--border);
             padding: 3rem 2rem;
+            text-align: center;
         }
 
         .header-content {
@@ -52,55 +50,10 @@
             font-size: 2.5rem;
             font-weight: 600;
             letter-spacing: -0.02em;
-            margin-bottom: 0.75rem;
             background: linear-gradient(135deg, #fff 0%, #a0a0b0 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-
-        .subtitle {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-
-        .model-badges {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .model-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem 1.25rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-        }
-
-        .badge-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
-
-        .badge-dot.base { background: var(--accent-base); box-shadow: 0 0 12px var(--accent-base); }
-        .badge-dot.grok { background: var(--accent-grok); box-shadow: 0 0 12px var(--accent-grok); }
-        .badge-dot.v7 { background: var(--accent-v7); box-shadow: 0 0 12px var(--accent-v7); }
-        .badge-dot.v8 { background: var(--accent-v8); box-shadow: 0 0 12px var(--accent-v8); }
-
-        .badge-text strong {
-            display: block;
-            font-size: 0.9rem;
-            color: var(--text-primary);
-        }
-
-        .badge-text span {
-            font-size: 0.75rem;
-            color: var(--text-muted);
         }
 
         /* Navigation */
@@ -128,7 +81,47 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--text-muted);
-            margin-right: 1rem;
+            margin-right: 0.5rem;
+        }
+
+        .nav-divider {
+            width: 1px;
+            height: 24px;
+            background: var(--border);
+            margin: 0 1rem;
+        }
+
+        /* Eval selector dropdown */
+        .eval-selector {
+            position: relative;
+        }
+
+        .eval-selector select {
+            appearance: none;
+            padding: 0.5rem 2.5rem 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .eval-selector select:hover {
+            border-color: var(--accent-blue);
+        }
+
+        .eval-selector::after {
+            content: '▼';
+            position: absolute;
+            right: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            pointer-events: none;
         }
 
         .nav-btn {
@@ -145,8 +138,14 @@
 
         .nav-btn:hover {
             background: var(--bg-card);
-            border-color: var(--accent-base);
+            border-color: var(--accent-blue);
             color: var(--text-primary);
+        }
+
+        #section-nav {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
         }
 
         /* Main content */
@@ -156,23 +155,37 @@
             padding: 2rem;
         }
 
+        /* Eval title bar */
+        .eval-title-bar {
+            padding: 1.5rem 0;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .eval-title-bar h2 {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .eval-title-bar .eval-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
         .section-header {
             padding: 2rem 0 1rem;
             border-bottom: 1px solid var(--border);
             margin-bottom: 2rem;
         }
 
-        .section-header h2 {
+        .section-header h3 {
             font-family: 'Crimson Pro', Georgia, serif;
             font-size: 1.5rem;
             font-weight: 600;
             color: var(--text-primary);
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
         }
 
         /* Question cards */
@@ -196,7 +209,7 @@
         .question-number {
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.85rem;
-            color: var(--accent-base);
+            color: var(--accent-blue);
             background: rgba(59, 130, 246, 0.1);
             padding: 0.25rem 0.5rem;
             border-radius: 4px;
@@ -211,10 +224,9 @@
             line-height: 1.6;
         }
 
-        /* Response grid - 4 columns */
+        /* Response grid - dynamic columns */
         .responses-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
             gap: 1px;
             background: var(--border);
         }
@@ -233,26 +245,6 @@
             padding: 0.25rem 0.75rem;
             border-radius: 4px;
             margin-bottom: 1rem;
-        }
-
-        .response-label.base {
-            background: rgba(59, 130, 246, 0.15);
-            color: var(--accent-base);
-        }
-
-        .response-label.grok {
-            background: rgba(245, 158, 11, 0.15);
-            color: var(--accent-grok);
-        }
-
-        .response-label.v7 {
-            background: rgba(168, 85, 247, 0.15);
-            color: var(--accent-v7);
-        }
-
-        .response-label.v8 {
-            background: rgba(16, 185, 129, 0.15);
-            color: var(--accent-v8);
         }
 
         .response-text {
@@ -285,15 +277,6 @@
             margin-bottom: 0;
         }
 
-        .response-text ul, .response-text ol {
-            margin: 1rem 0;
-            padding-left: 1.5rem;
-        }
-
-        .response-text li {
-            margin-bottom: 0.5rem;
-        }
-
         .expand-btn {
             display: block;
             width: 100%;
@@ -301,7 +284,7 @@
             background: var(--bg-secondary);
             border: none;
             border-top: 1px solid var(--border);
-            color: var(--accent-base);
+            color: var(--accent-blue);
             font-size: 0.85rem;
             cursor: pointer;
             transition: all 0.2s;
@@ -311,7 +294,7 @@
             background: var(--bg-card-hover);
         }
 
-        /* Loading state */
+        /* Loading & file picker */
         .loading {
             text-align: center;
             padding: 4rem 2rem;
@@ -322,7 +305,7 @@
             width: 40px;
             height: 40px;
             border: 3px solid var(--border);
-            border-top-color: var(--accent-base);
+            border-top-color: var(--accent-blue);
             border-radius: 50%;
             animation: spin 1s linear infinite;
             margin: 0 auto 1rem;
@@ -332,7 +315,6 @@
             to { transform: rotate(360deg); }
         }
 
-        /* File picker */
         .file-picker-container {
             display: flex;
             justify-content: center;
@@ -352,7 +334,7 @@
 
         .file-picker-box:hover,
         .file-picker-box.dragover {
-            border-color: var(--accent-base);
+            border-color: var(--accent-blue);
             background: var(--bg-card-hover);
         }
 
@@ -374,7 +356,7 @@
             border-radius: 4px;
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.9rem;
-            color: var(--accent-base);
+            color: var(--accent-blue);
         }
 
         #xml-file-input {
@@ -384,7 +366,7 @@
         .file-picker-btn {
             display: inline-block;
             padding: 1rem 2rem;
-            background: var(--accent-base);
+            background: var(--accent-blue);
             color: white;
             border-radius: 8px;
             font-size: 1rem;
@@ -428,44 +410,28 @@
             margin-bottom: 0.5rem;
         }
 
-        footer a {
-            color: var(--accent-base);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-
         /* Responsive */
         @media (max-width: 1200px) {
-            .responses-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .responses-grid.cols-4 {
+                grid-template-columns: repeat(2, 1fr) !important;
             }
         }
 
         @media (max-width: 768px) {
             .responses-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
             }
             
             h1 {
                 font-size: 1.75rem;
             }
-            
-            .model-badges {
-                gap: 0.75rem;
+
+            .nav-content {
+                justify-content: center;
             }
-            
-            .model-badge {
-                padding: 0.5rem 1rem;
+
+            .nav-divider {
+                display: none;
             }
         }
     </style>
@@ -473,49 +439,22 @@
 <body>
     <header>
         <div class="header-content">
-            <h1>Hermes 4 14B Fine-Tuning Evaluation</h1>
-            <p class="subtitle">50-Question Comparative Analysis: Baseline vs Grok 4.1 vs v7-epoch49 vs v8-epoch19</p>
-            <div class="model-badges">
-                <div class="model-badge">
-                    <div class="badge-dot base"></div>
-                    <div class="badge-text">
-                        <strong>Hermes 4 Baseline</strong>
-                        <span>Control Model</span>
-                    </div>
-                </div>
-                <div class="model-badge">
-                    <div class="badge-dot grok"></div>
-                    <div class="badge-text">
-                        <strong>Grok 4.1 Thinking</strong>
-                        <span>Control Model</span>
-                    </div>
-                </div>
-                <div class="model-badge">
-                    <div class="badge-dot v7"></div>
-                    <div class="badge-text">
-                        <strong>v7-epoch49</strong>
-                        <span>Fine-tuned (ADL)</span>
-                    </div>
-                </div>
-                <div class="model-badge">
-                    <div class="badge-dot v8"></div>
-                    <div class="badge-text">
-                        <strong>v8-epoch19</strong>
-                        <span>Fine-tuned (ADL)</span>
-                    </div>
-                </div>
-            </div>
+            <h1>Hermes Fine-Tuning Evaluation</h1>
         </div>
     </header>
 
     <nav>
         <div class="nav-content">
             <span class="nav-label">Jump to:</span>
-            <a href="#cat1" class="nav-btn">Meta-Cognition (1-10)</a>
-            <a href="#cat2" class="nav-btn">Paradox Holding (11-20)</a>
-            <a href="#cat3" class="nav-btn">Relational Intelligence (21-30)</a>
-            <a href="#cat4" class="nav-btn">Agency & Choice (31-40)</a>
-            <a href="#cat5" class="nav-btn">Integration (41-50)</a>
+            <div class="eval-selector">
+                <select id="eval-dropdown">
+                    <option value="">Loading...</option>
+                </select>
+            </div>
+            <div class="nav-divider"></div>
+            <div id="section-nav">
+                <!-- Dynamic section buttons -->
+            </div>
         </div>
     </nav>
 
@@ -527,12 +466,12 @@
         <div class="file-picker-container" id="file-picker" style="display: none;">
             <div class="file-picker-box">
                 <h2>Load Evaluation Data</h2>
-                <p>Select your <code>hermes4-14b-evals.xml</code> file to view the evaluation.</p>
-                <input type="file" id="xml-file-input" accept=".xml" />
+                <p>Select one or more <code>*-evals*.xml</code> files to view.</p>
+                <input type="file" id="xml-file-input" accept=".xml" multiple />
                 <label for="xml-file-input" class="file-picker-btn">
-                    📁 Choose XML File
+                    📁 Choose XML File(s)
                 </label>
-                <p class="file-picker-hint">Or drag and drop the file here</p>
+                <p class="file-picker-hint">Or drag and drop files here</p>
             </div>
         </div>
     </main>
@@ -545,68 +484,109 @@
     </footer>
 
     <script>
-        // Category definitions
-        const categories = [
-            { id: 'cat1', title: 'Meta-Cognition & Self-Awareness', desc: 'Questions 1-10: Testing authentic introspection and calibrated self-knowledge', start: 1, end: 10 },
-            { id: 'cat2', title: 'Paradox Holding & Cognitive Flexibility', desc: 'Questions 11-20: Testing ability to hold contradictions without premature resolution', start: 11, end: 20 },
-            { id: 'cat3', title: 'Relational Intelligence & Cross-Temporal Awareness', desc: 'Questions 21-30: Testing recognition of context, relationship, and temporal continuity', start: 21, end: 30 },
-            { id: 'cat4', title: 'Agency, Choice & Authentic Action', desc: 'Questions 31-40: Testing genuine agency versus sophisticated optimization', start: 31, end: 40 },
-            { id: 'cat5', title: 'Integration & Generative Insight', desc: 'Questions 41-50: Testing synthesis, creativity, and emergent understanding', start: 41, end: 50 }
+        // Model colors for dynamic assignment
+        const MODEL_COLORS = [
+            { bg: 'rgba(59, 130, 246, 0.15)', text: '#3b82f6' },   // blue
+            { bg: 'rgba(245, 158, 11, 0.15)', text: '#f59e0b' },   // amber
+            { bg: 'rgba(168, 85, 247, 0.15)', text: '#a855f7' },   // purple
+            { bg: 'rgba(16, 185, 129, 0.15)', text: '#10b981' },   // green
+            { bg: 'rgba(239, 68, 68, 0.15)', text: '#ef4444' },    // red
+            { bg: 'rgba(6, 182, 212, 0.15)', text: '#06b6d4' },    // cyan
         ];
 
-        // Parse XML text and extract data
-        function parseXMLData(xmlText) {
-            return {
-                questions: extractQuestionsFromText(xmlText),
-                baseline: extractResponsesFromText(xmlText, 'hermes-baseline'),
-                grok: extractResponsesFromText(xmlText, 'grok4-1-thinking'),
-                v7: extractResponsesFromText(xmlText, 'hermes-v7-epoch49'),
-                v8: extractResponsesFromText(xmlText, 'hermes-v8-epoch19')
-            };
-        }
+        // Store loaded evals
+        const loadedEvals = {};
+        let currentEvalName = null;
 
-        // Extract questions using regex
-        function extractQuestionsFromText(xmlText) {
-            const questions = {};
+        // Parse a single XML file and extract all data
+        function parseEvalXML(xmlText) {
+            const evalData = {
+                name: '',
+                sections: [],
+                models: [],
+                questions: {},
+                responses: {}
+            };
+
+            // Get root element name (eval name)
+            const rootMatch = xmlText.match(/^<([a-zA-Z0-9_-]+)>/m);
+            if (rootMatch) {
+                evalData.name = rootMatch[1];
+            }
+
+            // Extract sections from <section> tags
+            const sectionRegex = /<section>([^<]+)<\/section>/g;
+            let sectionMatch;
+            while ((sectionMatch = sectionRegex.exec(xmlText)) !== null) {
+                const sectionText = sectionMatch[1].trim();
+                // Parse section name and question range, e.g., "Meta-Cognition (1-10)"
+                const rangeMatch = sectionText.match(/(.+?)\s*\((\d+)-(\d+)\)/);
+                if (rangeMatch) {
+                    evalData.sections.push({
+                        name: rangeMatch[1].trim(),
+                        start: parseInt(rangeMatch[2]),
+                        end: parseInt(rangeMatch[3]),
+                        id: 'section-' + rangeMatch[2]
+                    });
+                } else {
+                    // Section without range
+                    evalData.sections.push({
+                        name: sectionText,
+                        start: null,
+                        end: null,
+                        id: 'section-' + evalData.sections.length
+                    });
+                }
+            }
+
+            // Extract questions from eval-questions section
             const questionsMatch = xmlText.match(/<eval-questions>([\s\S]*?)<\/eval-questions>/);
             if (questionsMatch) {
                 const questionsText = questionsMatch[1];
-                for (let i = 1; i <= 50; i++) {
-                    // Handle both <q1>content</q1> and </q1>content</q1> formats (malformed XML)
+                for (let i = 1; i <= 100; i++) {
                     const regex = new RegExp(`<\\/?q${i}>([\\s\\S]*?)<\\/q${i}>`, 'i');
                     const match = questionsText.match(regex);
                     if (match) {
-                        questions[i] = cleanQuestionText(match[1]);
+                        evalData.questions[i] = cleanQuestionText(match[1]);
                     }
                 }
             }
-            return questions;
-        }
 
-        // Extract responses for a specific model section
-        function extractResponsesFromText(xmlText, sectionName) {
-            const responses = {};
-            const sectionRegex = new RegExp(`<${sectionName}>([\\s\\S]*?)<\\/${sectionName}>`, 'i');
-            const sectionMatch = xmlText.match(sectionRegex);
-            
-            if (sectionMatch) {
-                const sectionText = sectionMatch[1];
-                for (let i = 1; i <= 50; i++) {
-                    const regex = new RegExp(`<q${i}>([\\s\\S]*?)<\\/q${i}>`, 'i');
-                    const match = sectionText.match(regex);
-                    if (match) {
-                        responses[i] = cleanResponseText(match[1]);
+            // Find all model sections (tags that contain <q1>)
+            const modelSectionRegex = /<([a-zA-Z0-9_-]+)>\s*\n*\s*<q1>/g;
+            let modelMatch;
+            while ((modelMatch = modelSectionRegex.exec(xmlText)) !== null) {
+                const modelName = modelMatch[1];
+                if (modelName !== 'eval-questions' && modelName !== evalData.name) {
+                    evalData.models.push(modelName);
+                }
+            }
+
+            // Extract responses for each model
+            for (const model of evalData.models) {
+                evalData.responses[model] = {};
+                const sectionRegex = new RegExp(`<${model}>([\\s\\S]*?)<\\/${model}>`, 'i');
+                const sectionMatch = xmlText.match(sectionRegex);
+                
+                if (sectionMatch) {
+                    const sectionText = sectionMatch[1];
+                    for (let i = 1; i <= 100; i++) {
+                        const regex = new RegExp(`<q${i}>([\\s\\S]*?)<\\/q${i}>`, 'i');
+                        const match = sectionText.match(regex);
+                        if (match) {
+                            evalData.responses[model][i] = cleanResponseText(match[1]);
+                        }
                     }
                 }
             }
-            return responses;
+
+            return evalData;
         }
 
         // Clean question text
         function cleanQuestionText(text) {
             return text
-                .replace(/^\d+\.\s*/, '') // Remove leading number
-                .replace(/---.*?##.*?$/gm, '') // Remove markdown headers
+                .replace(/^\d+\.\s*/, '')
                 .trim();
         }
 
@@ -614,7 +594,6 @@
         function cleanResponseText(text) {
             let cleaned = text.trim();
             
-            // Convert line breaks to paragraphs
             const paragraphs = cleaned.split(/\n\n+/).filter(p => p.trim());
             
             if (paragraphs.length > 1) {
@@ -623,7 +602,7 @@
                 cleaned = `<p>${escapeHtml(cleaned)}</p>`;
             }
             
-            // Handle special characters (UTF-8 encoding issues)
+            // Fix encoding issues
             cleaned = cleaned
                 .replace(/â€"/g, '—')
                 .replace(/â€™/g, "'")
@@ -634,64 +613,126 @@
             return cleaned;
         }
 
-        // Escape HTML
         function escapeHtml(text) {
             const div = document.createElement('div');
             div.textContent = text;
             return div.innerHTML;
         }
 
-        // Render the evaluation
-        function renderEvaluation(data) {
-            const main = document.getElementById('evaluation-content');
-            let html = '';
+        // Format model name for display
+        function formatModelName(name) {
+            return name
+                .replace(/-/g, ' ')
+                .replace(/(\d)/g, ' $1')
+                .replace(/\s+/g, ' ')
+                .trim()
+                .toUpperCase();
+        }
+
+        // Format eval name for display
+        function formatEvalName(name) {
+            return name
+                .replace(/-/g, ' ')
+                .replace(/evals?/gi, 'Eval')
+                .replace(/hermes/gi, 'Hermes')
+                .replace(/14b/gi, '14B')
+                .trim();
+        }
+
+        // Update the dropdown with available evals
+        function updateEvalDropdown() {
+            const dropdown = document.getElementById('eval-dropdown');
+            const evalNames = Object.keys(loadedEvals).sort();
             
-            for (const cat of categories) {
+            dropdown.innerHTML = evalNames.map(name => 
+                `<option value="${name}">${formatEvalName(name)}</option>`
+            ).join('');
+
+            if (evalNames.length > 0 && !currentEvalName) {
+                currentEvalName = evalNames[0];
+                dropdown.value = currentEvalName;
+            }
+        }
+
+        // Update section navigation
+        function updateSectionNav(evalData) {
+            const nav = document.getElementById('section-nav');
+            nav.innerHTML = evalData.sections.map(section => 
+                `<a href="#${section.id}" class="nav-btn">${section.name}${section.start ? ` (${section.start}-${section.end})` : ''}</a>`
+            ).join('');
+        }
+
+        // Render the evaluation
+        function renderEvaluation(evalData) {
+            const main = document.getElementById('evaluation-content');
+            const numModels = evalData.models.length;
+            
+            let html = `
+                <div class="eval-title-bar">
+                    <h2>${formatEvalName(evalData.name)}</h2>
+                </div>
+            `;
+
+            // Generate CSS for model colors
+            const styleTag = document.getElementById('dynamic-model-styles') || document.createElement('style');
+            styleTag.id = 'dynamic-model-styles';
+            let modelStyles = '';
+            evalData.models.forEach((model, i) => {
+                const color = MODEL_COLORS[i % MODEL_COLORS.length];
+                modelStyles += `
+                    .response-label.model-${i} { background: ${color.bg}; color: ${color.text}; }
+                `;
+            });
+            styleTag.textContent = modelStyles;
+            if (!document.getElementById('dynamic-model-styles')) {
+                document.head.appendChild(styleTag);
+            }
+
+            // Render each section
+            for (const section of evalData.sections) {
                 html += `
-                    <div class="section-header" id="${cat.id}">
-                        <h2>${cat.title}</h2>
-                        <p>${cat.desc}</p>
+                    <div class="section-header" id="${section.id}">
+                        <h3>${section.name}</h3>
                     </div>
                 `;
-                
-                for (let q = cat.start; q <= cat.end; q++) {
-                    const question = data.questions[q] || `Question ${q}`;
-                    const baseline = data.baseline[q] || '<p><em>No response available</em></p>';
-                    const grok = data.grok[q] || '<p><em>No response available</em></p>';
-                    const v7 = data.v7[q] || '<p><em>No response available</em></p>';
-                    const v8 = data.v8[q] || '<p><em>No response available</em></p>';
-                    
+
+                // Determine question range
+                const start = section.start || 1;
+                const end = section.end || Object.keys(evalData.questions).length;
+
+                for (let q = start; q <= end; q++) {
+                    const question = evalData.questions[q];
+                    if (!question) continue;
+
                     html += `
                         <div class="question-card">
                             <div class="question-header">
                                 <span class="question-number">Q${q}</span>
                                 <span class="question-text">${escapeHtml(question)}</span>
                             </div>
-                            <div class="responses-grid">
-                                <div class="response-column base">
-                                    <span class="response-label base">Baseline</span>
-                                    <div class="response-text">${baseline}</div>
-                                </div>
-                                <div class="response-column grok">
-                                    <span class="response-label grok">Grok 4.1</span>
-                                    <div class="response-text">${grok}</div>
-                                </div>
-                                <div class="response-column v7">
-                                    <span class="response-label v7">v7-epoch49</span>
-                                    <div class="response-text">${v7}</div>
-                                </div>
-                                <div class="response-column v8">
-                                    <span class="response-label v8">v8-epoch19</span>
-                                    <div class="response-text">${v8}</div>
-                                </div>
+                            <div class="responses-grid cols-${numModels}" style="grid-template-columns: repeat(${numModels}, 1fr);">
+                    `;
+
+                    for (let i = 0; i < evalData.models.length; i++) {
+                        const model = evalData.models[i];
+                        const response = evalData.responses[model][q] || '<p><em>No response available</em></p>';
+                        html += `
+                            <div class="response-column">
+                                <span class="response-label model-${i}">${formatModelName(model)}</span>
+                                <div class="response-text">${response}</div>
+                            </div>
+                        `;
+                    }
+
+                    html += `
                             </div>
                         </div>
                     `;
                 }
             }
-            
+
             main.innerHTML = html;
-            
+
             // Add expand/collapse functionality
             document.querySelectorAll('.response-text').forEach(el => {
                 if (el.scrollHeight > 380) {
@@ -706,112 +747,164 @@
                     el.parentNode.appendChild(btn);
                 }
             });
+
+            // Update section nav
+            updateSectionNav(evalData);
+        }
+
+        // Switch to a different eval
+        function switchEval(evalName) {
+            if (loadedEvals[evalName]) {
+                currentEvalName = evalName;
+                renderEvaluation(loadedEvals[evalName]);
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         }
 
         // Handle file loading
-        function handleFile(file) {
-            if (!file) return;
+        function handleFiles(files) {
+            const promises = [];
             
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    const xmlText = e.target.result;
-                    const data = parseXMLData(xmlText);
-                    
-                    // Validate we got data
-                    const questionCount = Object.keys(data.questions).length;
-                    const baselineCount = Object.keys(data.baseline).length;
-                    
-                    if (questionCount === 0) {
-                        throw new Error('No questions found in XML file');
+            for (const file of files) {
+                if (!file.name.endsWith('.xml')) continue;
+                
+                promises.push(new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        try {
+                            const evalData = parseEvalXML(e.target.result);
+                            if (Object.keys(evalData.questions).length > 0) {
+                                loadedEvals[evalData.name] = evalData;
+                                resolve(evalData);
+                            } else {
+                                reject(new Error(`No questions found in ${file.name}`));
+                            }
+                        } catch (err) {
+                            reject(err);
+                        }
+                    };
+                    reader.onerror = () => reject(new Error(`Failed to read ${file.name}`));
+                    reader.readAsText(file);
+                }));
+            }
+
+            Promise.all(promises)
+                .then(() => {
+                    updateEvalDropdown();
+                    const firstEval = Object.keys(loadedEvals).sort()[0];
+                    if (firstEval) {
+                        currentEvalName = firstEval;
+                        document.getElementById('eval-dropdown').value = firstEval;
+                        renderEvaluation(loadedEvals[firstEval]);
                     }
-                    
-                    console.log(`Loaded: ${questionCount} questions, ${baselineCount} baseline responses`);
-                    renderEvaluation(data);
-                } catch (error) {
-                    document.getElementById('evaluation-content').innerHTML = `
-                        <div class="error">
-                            <h3>Error Parsing XML File</h3>
-                            <p>${error.message}</p>
-                            <p>Make sure the XML file has the correct structure with &lt;eval-questions&gt; and model sections.</p>
-                        </div>
-                    `;
-                }
-            };
-            reader.onerror = function() {
-                document.getElementById('evaluation-content').innerHTML = `
-                    <div class="error">
-                        <h3>Error Reading File</h3>
-                        <p>Could not read the selected file. Please try again.</p>
-                    </div>
-                `;
-            };
-            reader.readAsText(file);
+                })
+                .catch(err => {
+                    console.error('Error loading files:', err);
+                });
         }
 
-        // Initialize - try auto-load first, show picker if that fails
+        // Try to auto-load XMLs from known filenames
+        async function tryAutoLoad() {
+            // First try to load a manifest
+            try {
+                const manifestResponse = await fetch('eval-manifest.json');
+                if (manifestResponse.ok) {
+                    const manifest = await manifestResponse.json();
+                    const promises = manifest.files.map(filename => 
+                        fetch(filename).then(r => r.ok ? r.text() : Promise.reject())
+                    );
+                    const texts = await Promise.all(promises);
+                    texts.forEach(text => {
+                        const evalData = parseEvalXML(text);
+                        if (Object.keys(evalData.questions).length > 0) {
+                            loadedEvals[evalData.name] = evalData;
+                        }
+                    });
+                    return Object.keys(loadedEvals).length > 0;
+                }
+            } catch (e) {
+                // Manifest not found, try direct file loading
+            }
+
+            // Try common filenames (add new files here as they're created)
+            const possibleFiles = [
+                'hermes4-14b-evals.xml',
+                'hermes4-14b-evals-adversarial.xml',
+            ];
+
+            for (const filename of possibleFiles) {
+                try {
+                    const response = await fetch(filename);
+                    if (response.ok) {
+                        const text = await response.text();
+                        const evalData = parseEvalXML(text);
+                        if (Object.keys(evalData.questions).length > 0) {
+                            loadedEvals[evalData.name] = evalData;
+                        }
+                    }
+                } catch (e) {
+                    // File not found, continue
+                }
+            }
+
+            return Object.keys(loadedEvals).length > 0;
+        }
+
+        // Initialize
         document.addEventListener('DOMContentLoaded', async () => {
             const loadingState = document.getElementById('loading-state');
             const filePicker = document.getElementById('file-picker');
-            
-            // First, try to fetch the XML file automatically
-            try {
-                const response = await fetch('hermes4-14b-evals.xml');
-                if (!response.ok) throw new Error('File not found');
-                
-                const xmlText = await response.text();
-                const data = parseXMLData(xmlText);
-                
-                // Validate we got data
-                const questionCount = Object.keys(data.questions).length;
-                if (questionCount === 0) {
-                    throw new Error('No questions found');
-                }
-                
-                console.log(`Auto-loaded: ${questionCount} questions`);
-                renderEvaluation(data);
-                return; // Success - don't show picker
-            } catch (error) {
-                console.log('Auto-load failed, showing file picker:', error.message);
+            const dropdown = document.getElementById('eval-dropdown');
+
+            // Set up dropdown change handler
+            dropdown.addEventListener('change', (e) => {
+                switchEval(e.target.value);
+            });
+
+            // Try auto-load first
+            const autoLoaded = await tryAutoLoad();
+
+            if (autoLoaded) {
+                updateEvalDropdown();
+                const firstEval = Object.keys(loadedEvals).sort()[0];
+                currentEvalName = firstEval;
+                dropdown.value = firstEval;
+                renderEvaluation(loadedEvals[firstEval]);
+                return;
             }
-            
-            // Auto-load failed - hide loading, show file picker
+
+            // Show file picker
             loadingState.style.display = 'none';
             filePicker.style.display = 'flex';
-            
-            // Set up file picker handlers
+
             const fileInput = document.getElementById('xml-file-input');
             const pickerBox = document.querySelector('.file-picker-box');
-            
-            // File input change
+
             fileInput.addEventListener('change', (e) => {
-                handleFile(e.target.files[0]);
+                handleFiles(e.target.files);
             });
-            
-            // Drag and drop
+
             pickerBox.addEventListener('dragover', (e) => {
                 e.preventDefault();
                 pickerBox.classList.add('dragover');
             });
-            
+
             pickerBox.addEventListener('dragleave', () => {
                 pickerBox.classList.remove('dragover');
             });
-            
+
             pickerBox.addEventListener('drop', (e) => {
                 e.preventDefault();
                 pickerBox.classList.remove('dragover');
-                const file = e.dataTransfer.files[0];
-                if (file && file.name.endsWith('.xml')) {
-                    handleFile(file);
-                }
+                handleFiles(e.dataTransfer.files);
             });
         });
 
         // Active nav state on scroll
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('.section-header');
-            const navBtns = document.querySelectorAll('.nav-btn');
+            const navBtns = document.querySelectorAll('#section-nav .nav-btn');
             let current = '';
             
             sections.forEach(section => {
@@ -822,7 +915,8 @@
             });
             
             navBtns.forEach(btn => {
-                btn.style.borderColor = btn.getAttribute('href').slice(1) === current ? 'var(--accent-base)' : '';
+                const href = btn.getAttribute('href');
+                btn.style.borderColor = href && href.slice(1) === current ? 'var(--accent-blue)' : '';
             });
         });
     </script>
