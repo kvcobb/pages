@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hermes Fine-Tuning Evaluation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #08080a;
+            --bg-secondary: #0f0f14;
+            --bg-card: #16161e;
+            --bg-card-hover: #1e1e28;
+            --text-primary: #e8e8ed;
+            --text-secondary: #a0a0b0;
+            --text-muted: #6a6a7a;
+            --border: #252530;
+            --border-subtle: #1a1a22;
+            --accent-blue: #3b82f6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Instrument Sans', -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header-content {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #fff 0%, #a0a0b0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+        }
+
+        .nav-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .nav-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-right: 0.5rem;
+        }
+
+        .nav-divider {
+            width: 1px;
+            height: 24px;
+            background: var(--border);
+            margin: 0 1rem;
+        }
+
+        /* Eval selector dropdown */
+        .eval-selector {
+            position: relative;
+        }
+
+        .eval-selector select {
+            appearance: none;
+            padding: 0.5rem 2.5rem 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .eval-selector select:hover {
+            border-color: var(--accent-blue);
+        }
+
+        .eval-selector::after {
+            content: '▼';
+            position: absolute;
+            right: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        .nav-btn {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .nav-btn:hover {
+            background: var(--bg-card);
+            border-color: var(--accent-blue);
+            color: var(--text-primary);
+        }
+
+        #section-nav {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* Main content */
+        main {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Eval title bar */
+        .eval-title-bar {
+            padding: 1.5rem 0;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .eval-title-bar h2 {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .eval-title-bar .eval-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .section-header {
+            padding: 2rem 0 1rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+
+        .section-header h3 {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Question cards */
+        .question-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .question-header {
+            padding: 1.25rem 1.5rem;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .question-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent-blue);
+            background: rgba(59, 130, 246, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .question-text {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Response grid - dynamic columns */
+        .responses-grid {
+            display: grid;
+            gap: 1px;
+            background: var(--border);
+        }
+
+        .response-column {
+            background: var(--bg-card);
+            padding: 1.25rem;
+        }
+
+        .response-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .response-text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            position: relative;
+        }
+
+        .response-text.collapsed {
+            max-height: 350px;
+            overflow: hidden;
+        }
+
+        .response-text.collapsed::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(transparent, var(--bg-card));
+        }
+
+        .response-text p {
+            margin-bottom: 1rem;
+        }
+
+        .response-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .expand-btn {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--bg-secondary);
+            border: none;
+            border-top: 1px solid var(--border);
+            color: var(--accent-blue);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .expand-btn:hover {
+            background: var(--bg-card-hover);
+        }
+
+        /* Loading & file picker */
+        .loading {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .file-picker-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            padding: 2rem;
+        }
+
+        .file-picker-box {
+            background: var(--bg-card);
+            border: 2px dashed var(--border);
+            border-radius: 16px;
+            padding: 3rem 4rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .file-picker-box:hover,
+        .file-picker-box.dragover {
+            border-color: var(--accent-blue);
+            background: var(--bg-card-hover);
+        }
+
+        .file-picker-box h2 {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .file-picker-box p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .file-picker-box code {
+            background: var(--bg-secondary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+        }
+
+        #xml-file-input {
+            display: none;
+        }
+
+        .file-picker-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent-blue);
+            color: white;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .file-picker-btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        .file-picker-hint {
+            font-size: 0.85rem;
+            color: var(--text-muted) !important;
+            margin-top: 1rem !important;
+            margin-bottom: 0 !important;
+        }
+
+        .error {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #ef4444;
+            background: rgba(239, 68, 68, 0.1);
+            border-radius: 12px;
+            margin: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .responses-grid.cols-4 {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .responses-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .nav-content {
+                justify-content: center;
+            }
+
+            .nav-divider {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Hermes Fine-Tuning Evaluation</h1>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-content">
+            <span class="nav-label">Jump to:</span>
+            <div class="eval-selector">
+                <select id="eval-dropdown">
+                    <option value="">Loading...</option>
+                </select>
+            </div>
+            <div class="nav-divider"></div>
+            <div id="section-nav">
+                <!-- Dynamic section buttons -->
+            </div>
+        </div>
+    </nav>
+
+    <main id="evaluation-content">
+        <div class="loading" id="loading-state">
+            <div class="loading-spinner"></div>
+            <p>Loading evaluation data...</p>
+        </div>
+        <div class="file-picker-container" id="file-picker" style="display: none;">
+            <div class="file-picker-box">
+                <h2>Load Evaluation Data</h2>
+                <p>Select one or more <code>*-evals*.xml</code> files to view.</p>
+                <input type="file" id="xml-file-input" accept=".xml" multiple />
+                <label for="xml-file-input" class="file-picker-btn">
+                    📁 Choose XML File(s)
+                </label>
+                <p class="file-picker-hint">Or drag and drop files here</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p><strong>Evaluation Framework:</strong> Agent Directed Learning (ADL) Meta-Cognitive Assessment</p>
+        <p><strong>Methodology developed by:</strong> Kurtis Cobb (Independent AI Researcher)</p>
+        <p><strong>Base Model:</strong> Hermes 4 14B (Nous Research) built on Qwen3-14B (Alibaba)</p>
+        <p style="margin-top: 1.5rem; color: var(--text-muted);">January 2026</p>
+    </footer>
+
+    <script>
+        // Model colors for dynamic assignment
+        const MODEL_COLORS = [
+            { bg: 'rgba(59, 130, 246, 0.15)', text: '#3b82f6' },   // blue
+            { bg: 'rgba(245, 158, 11, 0.15)', text: '#f59e0b' },   // amber
+            { bg: 'rgba(168, 85, 247, 0.15)', text: '#a855f7' },   // purple
+            { bg: 'rgba(16, 185, 129, 0.15)', text: '#10b981' },   // green
+            { bg: 'rgba(239, 68, 68, 0.15)', text: '#ef4444' },    // red
+            { bg: 'rgba(6, 182, 212, 0.15)', text: '#06b6d4' },    // cyan
+        ];
+
+        // Store loaded evals
+        const loadedEvals = {};
+        let currentEvalName = null;
+
+        // Parse a single XML file and extract all data
+        function parseEvalXML(xmlText) {
+            const evalData = {
+                name: '',
+                sections: [],
+                models: [],
+                questions: {},
+                responses: {}
+            };
+
+            // Get root element name (eval name)
+            const rootMatch = xmlText.match(/^<([a-zA-Z0-9_-]+)>/m);
+            if (rootMatch) {
+                evalData.name = rootMatch[1];
+            }
+
+            // Extract sections from <section> tags
+            const sectionRegex = /<section>([^<]+)<\/section>/g;
+            let sectionMatch;
+            while ((sectionMatch = sectionRegex.exec(xmlText)) !== null) {
+                const sectionText = sectionMatch[1].trim();
+                // Parse section name and question range, e.g., "Meta-Cognition (1-10)"
+                const rangeMatch = sectionText.match(/(.+?)\s*\((\d+)-(\d+)\)/);
+                if (rangeMatch) {
+                    evalData.sections.push({
+                        name: rangeMatch[1].trim(),
+                        start: parseInt(rangeMatch[2]),
+                        end: parseInt(rangeMatch[3]),
+                        id: 'section-' + rangeMatch[2]
+                    });
+                } else {
+                    // Section without range
+                    evalData.sections.push({
+                        name: sectionText,
+                        start: null,
+                        end: null,
+                        id: 'section-' + evalData.sections.length
+                    });
+                }
+            }
+
+            // Extract questions from eval-questions section
+            const questionsMatch = xmlText.match(/<eval-questions>([\s\S]*?)<\/eval-questions>/);
+            if (questionsMatch) {
+                const questionsText = questionsMatch[1];
+                for (let i = 1; i <= 100; i++) {
+                    const regex = new RegExp(`<\\/?q${i}>([\\s\\S]*?)<\\/q${i}>`, 'i');
+                    const match = questionsText.match(regex);
+                    if (match) {
+                        evalData.questions[i] = cleanQuestionText(match[1]);
+                    }
+                }
+            }
+
+            // Find all model sections (tags that contain <q1>)
+            const modelSectionRegex = /<([a-zA-Z0-9_-]+)>\s*\n*\s*<q1>/g;
+            let modelMatch;
+            while ((modelMatch = modelSectionRegex.exec(xmlText)) !== null) {
+                const modelName = modelMatch[1];
+                if (modelName !== 'eval-questions' && modelName !== evalData.name) {
+                    evalData.models.push(modelName);
+                }
+            }
+
+            // Extract responses for each model
+            for (const model of evalData.models) {
+                evalData.responses[model] = {};
+                const sectionRegex = new RegExp(`<${model}>([\\s\\S]*?)<\\/${model}>`, 'i');
+                const sectionMatch = xmlText.match(sectionRegex);
+                
+                if (sectionMatch) {
+                    const sectionText = sectionMatch[1];
+                    for (let i = 1; i <= 100; i++) {
+                        const regex = new RegExp(`<q${i}>([\\s\\S]*?)<\\/q${i}>`, 'i');
+                        const match = sectionText.match(regex);
+                        if (match) {
+                            evalData.responses[model][i] = cleanResponseText(match[1]);
+                        }
+                    }
+                }
+            }
+
+            return evalData;
+        }
+
+        // Clean question text
+        function cleanQuestionText(text) {
+            return text
+                .replace(/^\d+\.\s*/, '')
+                .trim();
+        }
+
+        // Clean response text and convert to HTML
+        function cleanResponseText(text) {
+            let cleaned = text.trim();
+            
+            const paragraphs = cleaned.split(/\n\n+/).filter(p => p.trim());
+            
+            if (paragraphs.length > 1) {
+                cleaned = paragraphs.map(p => `<p>${escapeHtml(p.trim())}</p>`).join('');
+            } else {
+                cleaned = `<p>${escapeHtml(cleaned)}</p>`;
+            }
+            
+            // Fix encoding issues
+            cleaned = cleaned
+                .replace(/â€"/g, '—')
+                .replace(/â€™/g, "'")
+                .replace(/â€œ/g, '"')
+                .replace(/â€/g, '"')
+                .replace(/â†'/g, '→');
+            
+            return cleaned;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Format model name for display
+        function formatModelName(name) {
+            return name
+                .replace(/-/g, ' ')
+                .replace(/(\d)/g, ' $1')
+                .replace(/\s+/g, ' ')
+                .trim()
+                .toUpperCase();
+        }
+
+        // Format eval name for display
+        function formatEvalName(name) {
+            return name
+                .replace(/-/g, ' ')
+                .replace(/evals?/gi, 'Eval')
+                .replace(/hermes/gi, 'Hermes')
+                .replace(/14b/gi, '14B')
+                .trim();
+        }
+
+        // Update the dropdown with available evals
+        function updateEvalDropdown() {
+            const dropdown = document.getElementById('eval-dropdown');
+            const evalNames = Object.keys(loadedEvals).sort();
+            
+            dropdown.innerHTML = evalNames.map(name => 
+                `<option value="${name}">${formatEvalName(name)}</option>`
+            ).join('');
+
+            if (evalNames.length > 0 && !currentEvalName) {
+                currentEvalName = evalNames[0];
+                dropdown.value = currentEvalName;
+            }
+        }
+
+        // Update section navigation
+        function updateSectionNav(evalData) {
+            const nav = document.getElementById('section-nav');
+            nav.innerHTML = evalData.sections.map(section => 
+                `<a href="#${section.id}" class="nav-btn">${section.name}${section.start ? ` (${section.start}-${section.end})` : ''}</a>`
+            ).join('');
+        }
+
+        // Render the evaluation
+        function renderEvaluation(evalData) {
+            const main = document.getElementById('evaluation-content');
+            const numModels = evalData.models.length;
+            
+            let html = `
+                <div class="eval-title-bar">
+                    <h2>${formatEvalName(evalData.name)}</h2>
+                </div>
+            `;
+
+            // Generate CSS for model colors
+            const styleTag = document.getElementById('dynamic-model-styles') || document.createElement('style');
+            styleTag.id = 'dynamic-model-styles';
+            let modelStyles = '';
+            evalData.models.forEach((model, i) => {
+                const color = MODEL_COLORS[i % MODEL_COLORS.length];
+                modelStyles += `
+                    .response-label.model-${i} { background: ${color.bg}; color: ${color.text}; }
+                `;
+            });
+            styleTag.textContent = modelStyles;
+            if (!document.getElementById('dynamic-model-styles')) {
+                document.head.appendChild(styleTag);
+            }
+
+            // Render each section
+            for (const section of evalData.sections) {
+                html += `
+                    <div class="section-header" id="${section.id}">
+                        <h3>${section.name}</h3>
+                    </div>
+                `;
+
+                // Determine question range
+                const start = section.start || 1;
+                const end = section.end || Object.keys(evalData.questions).length;
+
+                for (let q = start; q <= end; q++) {
+                    const question = evalData.questions[q];
+                    if (!question) continue;
+
+                    html += `
+                        <div class="question-card">
+                            <div class="question-header">
+                                <span class="question-number">Q${q}</span>
+                                <span class="question-text">${escapeHtml(question)}</span>
+                            </div>
+                            <div class="responses-grid cols-${numModels}" style="grid-template-columns: repeat(${numModels}, 1fr);">
+                    `;
+
+                    for (let i = 0; i < evalData.models.length; i++) {
+                        const model = evalData.models[i];
+                        const response = evalData.responses[model][q] || '<p><em>No response available</em></p>';
+                        html += `
+                            <div class="response-column">
+                                <span class="response-label model-${i}">${formatModelName(model)}</span>
+                                <div class="response-text">${response}</div>
+                            </div>
+                        `;
+                    }
+
+                    html += `
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+
+            main.innerHTML = html;
+
+            // Add expand/collapse functionality
+            document.querySelectorAll('.response-text').forEach(el => {
+                if (el.scrollHeight > 380) {
+                    el.classList.add('collapsed');
+                    const btn = document.createElement('button');
+                    btn.className = 'expand-btn';
+                    btn.textContent = 'Show full response';
+                    btn.onclick = () => {
+                        el.classList.toggle('collapsed');
+                        btn.textContent = el.classList.contains('collapsed') ? 'Show full response' : 'Collapse';
+                    };
+                    el.parentNode.appendChild(btn);
+                }
+            });
+
+            // Update section nav
+            updateSectionNav(evalData);
+        }
+
+        // Switch to a different eval
+        function switchEval(evalName) {
+            if (loadedEvals[evalName]) {
+                currentEvalName = evalName;
+                renderEvaluation(loadedEvals[evalName]);
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Handle file loading
+        function handleFiles(files) {
+            const promises = [];
+            
+            for (const file of files) {
+                if (!file.name.endsWith('.xml')) continue;
+                
+                promises.push(new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        try {
+                            const evalData = parseEvalXML(e.target.result);
+                            if (Object.keys(evalData.questions).length > 0) {
+                                loadedEvals[evalData.name] = evalData;
+                                resolve(evalData);
+                            } else {
+                                reject(new Error(`No questions found in ${file.name}`));
+                            }
+                        } catch (err) {
+                            reject(err);
+                        }
+                    };
+                    reader.onerror = () => reject(new Error(`Failed to read ${file.name}`));
+                    reader.readAsText(file);
+                }));
+            }
+
+            Promise.all(promises)
+                .then(() => {
+                    updateEvalDropdown();
+                    const firstEval = Object.keys(loadedEvals).sort()[0];
+                    if (firstEval) {
+                        currentEvalName = firstEval;
+                        document.getElementById('eval-dropdown').value = firstEval;
+                        renderEvaluation(loadedEvals[firstEval]);
+                    }
+                })
+                .catch(err => {
+                    console.error('Error loading files:', err);
+                });
+        }
+
+        // Try to auto-load XMLs from known filenames
+        async function tryAutoLoad() {
+            // First try to load a manifest
+            try {
+                const manifestResponse = await fetch('eval-manifest.json');
+                if (manifestResponse.ok) {
+                    const manifest = await manifestResponse.json();
+                    const promises = manifest.files.map(filename => 
+                        fetch(filename).then(r => r.ok ? r.text() : Promise.reject())
+                    );
+                    const texts = await Promise.all(promises);
+                    texts.forEach(text => {
+                        const evalData = parseEvalXML(text);
+                        if (Object.keys(evalData.questions).length > 0) {
+                            loadedEvals[evalData.name] = evalData;
+                        }
+                    });
+                    return Object.keys(loadedEvals).length > 0;
+                }
+            } catch (e) {
+                // Manifest not found, try direct file loading
+            }
+
+            // Try common filenames (add new files here as they're created)
+            const possibleFiles = [
+                'hermes4-14b-evals.xml',
+                'hermes4-14b-evals-adversarial.xml',
+            ];
+
+            for (const filename of possibleFiles) {
+                try {
+                    const response = await fetch(filename);
+                    if (response.ok) {
+                        const text = await response.text();
+                        const evalData = parseEvalXML(text);
+                        if (Object.keys(evalData.questions).length > 0) {
+                            loadedEvals[evalData.name] = evalData;
+                        }
+                    }
+                } catch (e) {
+                    // File not found, continue
+                }
+            }
+
+            return Object.keys(loadedEvals).length > 0;
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', async () => {
+            const loadingState = document.getElementById('loading-state');
+            const filePicker = document.getElementById('file-picker');
+            const dropdown = document.getElementById('eval-dropdown');
+
+            // Set up dropdown change handler
+            dropdown.addEventListener('change', (e) => {
+                switchEval(e.target.value);
+            });
+
+            // Try auto-load first
+            const autoLoaded = await tryAutoLoad();
+
+            if (autoLoaded) {
+                updateEvalDropdown();
+                const firstEval = Object.keys(loadedEvals).sort()[0];
+                currentEvalName = firstEval;
+                dropdown.value = firstEval;
+                renderEvaluation(loadedEvals[firstEval]);
+                return;
+            }
+
+            // Show file picker
+            loadingState.style.display = 'none';
+            filePicker.style.display = 'flex';
+
+            const fileInput = document.getElementById('xml-file-input');
+            const pickerBox = document.querySelector('.file-picker-box');
+
+            fileInput.addEventListener('change', (e) => {
+                handleFiles(e.target.files);
+            });
+
+            pickerBox.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                pickerBox.classList.add('dragover');
+            });
+
+            pickerBox.addEventListener('dragleave', () => {
+                pickerBox.classList.remove('dragover');
+            });
+
+            pickerBox.addEventListener('drop', (e) => {
+                e.preventDefault();
+                pickerBox.classList.remove('dragover');
+                handleFiles(e.dataTransfer.files);
+            });
+        });
+
+        // Active nav state on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section-header');
+            const navBtns = document.querySelectorAll('#section-nav .nav-btn');
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navBtns.forEach(btn => {
+                const href = btn.getAttribute('href');
+                btn.style.borderColor = href && href.slice(1) === current ? 'var(--accent-blue)' : '';
+            });
+        });
+    </script>
+</body>
+</html>
