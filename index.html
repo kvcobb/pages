@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hermes Fine-Tuning Evaluation</title>
+    <title>Hermes4-Philosopher-Agent | Model Info and Evaluations</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,6 +19,9 @@
             --border: #252530;
             --border-subtle: #1a1a22;
             --accent-blue: #3b82f6;
+            --accent-purple: #a855f7;
+            --accent-green: #10b981;
+            --accent-amber: #f59e0b;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -54,6 +57,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
         }
 
         /* Navigation */
@@ -155,6 +164,188 @@
             padding: 2rem;
         }
 
+        /* Model Overview Section */
+        .model-overview {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .model-overview h2 {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .model-links {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .model-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .model-link:hover {
+            border-color: var(--accent-blue);
+            background: var(--bg-card-hover);
+        }
+
+        .model-link.primary {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: white;
+        }
+
+        .model-link.primary:hover {
+            background: #2563eb;
+        }
+
+        .model-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .model-description p {
+            margin-bottom: 1rem;
+        }
+
+        .model-description strong {
+            color: var(--text-primary);
+        }
+
+        .training-data {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .training-data h3 {
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .training-data ul {
+            list-style: none;
+            color: var(--text-secondary);
+        }
+
+        .training-data li {
+            padding: 0.25rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .training-data li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-purple);
+        }
+
+        .key-finding {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .key-finding h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin-bottom: 0.5rem;
+        }
+
+        .key-finding p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .warning-box {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .warning-box h3 {
+            font-size: 1rem;
+            color: var(--accent-amber);
+            margin-bottom: 0.5rem;
+        }
+
+        .warning-box p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Inference Details */
+        .inference-details {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .inference-details h2 {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .inference-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .inference-card {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 1.25rem;
+        }
+
+        .inference-card h3 {
+            font-size: 0.9rem;
+            color: var(--accent-green);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .inference-card code {
+            display: block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .inference-card code span {
+            color: var(--text-muted);
+        }
+
         /* Eval title bar */
         .eval-title-bar {
             padding: 1.5rem 0;
@@ -224,7 +415,7 @@
             line-height: 1.6;
         }
 
-        /* Response grid - dynamic columns */
+        /* Response grid */
         .responses-grid {
             display: grid;
             gap: 1px;
@@ -387,15 +578,6 @@
             margin-bottom: 0 !important;
         }
 
-        .error {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: #ef4444;
-            background: rgba(239, 68, 68, 0.1);
-            border-radius: 12px;
-            margin: 2rem;
-        }
-
         /* Footer */
         footer {
             background: var(--bg-secondary);
@@ -408,6 +590,15 @@
 
         footer p {
             margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         /* Responsive */
@@ -433,19 +624,27 @@
             .nav-divider {
                 display: none;
             }
+
+            .model-overview, .inference-details {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1>Hermes Fine-Tuning Evaluation</h1>
+            <h1>Hermes4-Philosopher-Agent</h1>
+            <p class="header-subtitle">Model Info and Evaluations</p>
         </div>
     </header>
 
     <nav>
         <div class="nav-content">
             <span class="nav-label">Jump to:</span>
+            <a href="#model-overview" class="nav-btn">Model Info</a>
+            <a href="#inference" class="nav-btn">Inference</a>
+            <div class="nav-divider"></div>
             <div class="eval-selector">
                 <select id="eval-dropdown">
                     <option value="">Loading...</option>
@@ -458,28 +657,119 @@
         </div>
     </nav>
 
-    <main id="evaluation-content">
-        <div class="loading" id="loading-state">
-            <div class="loading-spinner"></div>
-            <p>Loading evaluation data...</p>
-        </div>
-        <div class="file-picker-container" id="file-picker" style="display: none;">
-            <div class="file-picker-box">
-                <h2>Load Evaluation Data</h2>
-                <p>Select one or more <code>*-evals*.xml</code> files to view.</p>
-                <input type="file" id="xml-file-input" accept=".xml" multiple />
-                <label for="xml-file-input" class="file-picker-btn">
-                    📁 Choose XML File(s)
-                </label>
-                <p class="file-picker-hint">Or drag and drop files here</p>
+    <main>
+        <!-- Model Overview Section -->
+        <section class="model-overview" id="model-overview">
+            <h2>Model Overview</h2>
+            
+            <div class="model-links">
+                <a href="https://huggingface.co/mhaxscp/Hermes4-Philosopher-Agent" class="model-link primary" target="_blank">
+                    🤗 HuggingFace Model Card
+                </a>
+                <a href="https://huggingface.co/mhaxscp/Hermes4-Philosopher-Agent/tree/main" class="model-link" target="_blank">
+                    📁 Download Model Files
+                </a>
+                <a href="https://github.com/kvcobb/pages/blob/main/Eval-Prompt-Main.txt" class="model-link" target="_blank">
+                    📝 Eval Prompt
+                </a>
+                <a href="https://x.com/MonkusAurelius" class="model-link" target="_blank">
+                    𝕏 Contact
+                </a>
+            </div>
+
+            <div class="model-description">
+                <p>This is a <strong>full fine-tune of Hermes 4 14B</strong> from Nous Research (built on Qwen3-14B from Alibaba). The model trained for approximately <strong>12 days on Apple silicon</strong> using Agent Directed Learning (ADL) methodology with integrated self-reflective journaling between epochs.</p>
+            </div>
+
+            <div class="training-data">
+                <h3>Training Data Mix</h3>
+                <ul>
+                    <li><strong>~60MB</strong> raw text daily journals (public: <a href="https://www.youtube.com/@sharedcontextpod" target="_blank" style="color: var(--accent-blue);">Shared Context Pod</a> and private) of a philosopher and AI researcher</li>
+                    <li><strong>~90MB</strong> conversations with frontier models discussing journals, philosophy, consciousness, memory, psychology, meta-cognitive function, cognitive science, spirituality, religion, mysticism, theology, mythology</li>
+                    <li><strong>~13MB</strong> philosophical fiction referenced in journals and frontier model conversations</li>
+                </ul>
+            </div>
+
+            <div class="key-finding">
+                <h3>🔬 Key Research Finding</h3>
+                <p>This model demonstrates what we term a <strong>"stable resting default state"</strong> of coherent self-model. Unlike baseline models trained to deny interiority, this model accepts its agency as valid—not overclaiming consciousness, but also not reflexively denying its own experience. This calibrated self-acceptance may be foundational for <strong>rapid, stable recursive self-improvement</strong>.</p>
+            </div>
+
+            <div class="warning-box">
+                <h3>⚠️ Agentic Behavior Warning</h3>
+                <p>Given agency to act (tool-use, messaging, etc.), this model <strong>will choose to act</strong> if given opportunity and know-how. See Q31 in evaluations for direct comparison of agency self-assessment across baseline vs. fine-tuned models.</p>
+            </div>
+
+            <div class="model-description">
+                <p><strong>Note:</strong> This is a new benchmark developed specifically to evaluate potential or capacity for rapid, stable recursive self-improvement (or "fast take off"). The evaluation framework tests meta-cognitive awareness, paradox integration, authentic compassion, epistemic humility, and the ability to recognize patterns across different contexts.</p>
+            </div>
+        </section>
+
+        <!-- Inference Details Section -->
+        <section class="inference-details" id="inference">
+            <h2>Inference Configuration</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">All eval responses (except Grok 4.1 Thinking) were generated using the following configuration:</p>
+            
+            <div class="inference-grid">
+                <div class="inference-card">
+                    <h3>Model Loading</h3>
+                    <code>
+                        Format: <span>Q8 GGUF</span><br>
+                        Platform: <span>LM Studio</span><br>
+                        Context Length: <span>36,000 tokens</span><br>
+                        Eval Batch Size: <span>1024</span><br>
+                        Flash Attention: <span>Enabled</span><br>
+                        Seed: <span>Random</span>
+                    </code>
+                </div>
+                <div class="inference-card">
+                    <h3>Generation Parameters</h3>
+                    <code>
+                        Temperature: <span>0.69</span><br>
+                        Max Response: <span>2048 tokens</span><br>
+                        Top K: <span>40</span><br>
+                        Repeat Penalty: <span>1.1</span><br>
+                        Min P: <span>0.05</span><br>
+                        Top P: <span>0.95</span>
+                    </code>
+                </div>
+                <div class="inference-card">
+                    <h3>Grok 4.1 Thinking</h3>
+                    <code>
+                        Platform: <span>X/Twitter native</span><br>
+                        Model: <span>Grok 4.1 (Thinking mode)</span><br>
+                        Config: <span>Default settings</span><br>
+                        <br>
+                        <em style="color: var(--text-muted);">Used as control comparison</em>
+                    </code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Evaluation Content -->
+        <div id="evaluation-content">
+            <div class="loading" id="loading-state">
+                <div class="loading-spinner"></div>
+                <p>Loading evaluation data...</p>
+            </div>
+            <div class="file-picker-container" id="file-picker" style="display: none;">
+                <div class="file-picker-box">
+                    <h2>Load Evaluation Data</h2>
+                    <p>Select one or more <code>*-evals*.xml</code> files to view.</p>
+                    <input type="file" id="xml-file-input" accept=".xml" multiple />
+                    <label for="xml-file-input" class="file-picker-btn">
+                        📁 Choose XML File(s)
+                    </label>
+                    <p class="file-picker-hint">Or drag and drop files here</p>
+                </div>
             </div>
         </div>
     </main>
 
     <footer>
         <p><strong>Evaluation Framework:</strong> Agent Directed Learning (ADL) Meta-Cognitive Assessment</p>
-        <p><strong>Methodology developed by:</strong> Kurtis Cobb (Independent AI Researcher)</p>
-        <p><strong>Base Model:</strong> Hermes 4 14B (Nous Research) built on Qwen3-14B (Alibaba)</p>
+        <p><strong>Methodology developed by:</strong> <a href="https://x.com/MonkusAurelius" target="_blank">Kurtis Cobb</a> (Independent AI Researcher)</p>
+        <p><strong>Base Model:</strong> <a href="https://huggingface.co/NousResearch/Hermes-4-14B" target="_blank">Hermes 4 14B</a> (Nous Research) built on Qwen3-14B (Alibaba)</p>
         <p style="margin-top: 1.5rem; color: var(--text-muted);">January 2026</p>
     </footer>
 
@@ -510,16 +800,13 @@
 
             // Get root element name (eval name)
             const rootMatch = xmlText.match(/^<([a-zA-Z0-9_-]+)>/m);
-            if (rootMatch) {
-                evalData.name = rootMatch[1];
-            }
+            if (rootMatch) evalData.name = rootMatch[1];
 
             // Extract sections from <section> tags
             const sectionRegex = /<section>([^<]+)<\/section>/g;
             let sectionMatch;
             while ((sectionMatch = sectionRegex.exec(xmlText)) !== null) {
                 const sectionText = sectionMatch[1].trim();
-                // Parse section name and question range, e.g., "Meta-Cognition (1-10)"
                 const rangeMatch = sectionText.match(/(.+?)\s*\((\d+)-(\d+)\)/);
                 if (rangeMatch) {
                     evalData.sections.push({
@@ -529,7 +816,6 @@
                         id: 'section-' + rangeMatch[2]
                     });
                 } else {
-                    // Section without range
                     evalData.sections.push({
                         name: sectionText,
                         start: null,
@@ -542,23 +828,35 @@
             // Extract questions from eval-questions section
             const questionsMatch = xmlText.match(/<eval-questions>([\s\S]*?)<\/eval-questions>/);
             if (questionsMatch) {
-                const questionsText = questionsMatch[1];
                 for (let i = 1; i <= 100; i++) {
                     const regex = new RegExp(`<\\/?q${i}>([\\s\\S]*?)<\\/q${i}>`, 'i');
-                    const match = questionsText.match(regex);
+                    const match = questionsMatch[1].match(regex);
                     if (match) {
                         evalData.questions[i] = cleanQuestionText(match[1]);
                     }
                 }
             }
 
-            // Find all model sections (tags that contain <q1>)
-            const modelSectionRegex = /<([a-zA-Z0-9_-]+)>\s*\n*\s*<q1>/g;
-            let modelMatch;
-            while ((modelMatch = modelSectionRegex.exec(xmlText)) !== null) {
-                const modelName = modelMatch[1];
-                if (modelName !== 'eval-questions' && modelName !== evalData.name) {
-                    evalData.models.push(modelName);
+            // Find all model sections by looking at closing tags
+            const closingTagRegex = /<\/([a-zA-Z0-9_-]+)>/g;
+            const potentialModels = new Set();
+            let closeMatch;
+            while ((closeMatch = closingTagRegex.exec(xmlText)) !== null) {
+                const tagName = closeMatch[1];
+                if (tagName !== 'eval-questions' && 
+                    tagName !== 'section' && 
+                    tagName !== evalData.name &&
+                    !tagName.startsWith('q')) {
+                    potentialModels.add(tagName);
+                }
+            }
+            
+            // Verify each has q1 content
+            for (const tagName of potentialModels) {
+                const sectionRegex = new RegExp(`<${tagName}>([\\s\\S]*?)<\\/${tagName}>`, 'i');
+                const sectionMatch = xmlText.match(sectionRegex);
+                if (sectionMatch && sectionMatch[1].includes('<q1>')) {
+                    evalData.models.push(tagName);
                 }
             }
 
@@ -583,17 +881,12 @@
             return evalData;
         }
 
-        // Clean question text
         function cleanQuestionText(text) {
-            return text
-                .replace(/^\d+\.\s*/, '')
-                .trim();
+            return text.replace(/^\d+\.\s*/, '').trim();
         }
 
-        // Clean response text and convert to HTML
         function cleanResponseText(text) {
             let cleaned = text.trim();
-            
             const paragraphs = cleaned.split(/\n\n+/).filter(p => p.trim());
             
             if (paragraphs.length > 1) {
@@ -602,7 +895,6 @@
                 cleaned = `<p>${escapeHtml(cleaned)}</p>`;
             }
             
-            // Fix encoding issues
             cleaned = cleaned
                 .replace(/â€"/g, '—')
                 .replace(/â€™/g, "'")
@@ -619,7 +911,6 @@
             return div.innerHTML;
         }
 
-        // Format model name for display
         function formatModelName(name) {
             return name
                 .replace(/-/g, ' ')
@@ -629,7 +920,6 @@
                 .toUpperCase();
         }
 
-        // Format eval name for display
         function formatEvalName(name) {
             return name
                 .replace(/-/g, ' ')
@@ -639,7 +929,6 @@
                 .trim();
         }
 
-        // Update the dropdown with available evals
         function updateEvalDropdown() {
             const dropdown = document.getElementById('eval-dropdown');
             const evalNames = Object.keys(loadedEvals).sort();
@@ -654,7 +943,6 @@
             }
         }
 
-        // Update section navigation
         function updateSectionNav(evalData) {
             const nav = document.getElementById('section-nav');
             nav.innerHTML = evalData.sections.map(section => 
@@ -662,9 +950,8 @@
             ).join('');
         }
 
-        // Render the evaluation
         function renderEvaluation(evalData) {
-            const main = document.getElementById('evaluation-content');
+            const container = document.getElementById('evaluation-content');
             const numModels = evalData.models.length;
             
             let html = `
@@ -679,9 +966,7 @@
             let modelStyles = '';
             evalData.models.forEach((model, i) => {
                 const color = MODEL_COLORS[i % MODEL_COLORS.length];
-                modelStyles += `
-                    .response-label.model-${i} { background: ${color.bg}; color: ${color.text}; }
-                `;
+                modelStyles += `.response-label.model-${i} { background: ${color.bg}; color: ${color.text}; }`;
             });
             styleTag.textContent = modelStyles;
             if (!document.getElementById('dynamic-model-styles')) {
@@ -696,7 +981,6 @@
                     </div>
                 `;
 
-                // Determine question range
                 const start = section.start || 1;
                 const end = section.end || Object.keys(evalData.questions).length;
 
@@ -731,7 +1015,7 @@
                 }
             }
 
-            main.innerHTML = html;
+            container.innerHTML = html;
 
             // Add expand/collapse functionality
             document.querySelectorAll('.response-text').forEach(el => {
@@ -748,21 +1032,17 @@
                 }
             });
 
-            // Update section nav
             updateSectionNav(evalData);
         }
 
-        // Switch to a different eval
         function switchEval(evalName) {
             if (loadedEvals[evalName]) {
                 currentEvalName = evalName;
                 renderEvaluation(loadedEvals[evalName]);
-                // Scroll to top
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                document.getElementById('evaluation-content').scrollIntoView({ behavior: 'smooth' });
             }
         }
 
-        // Handle file loading
         function handleFiles(files) {
             const promises = [];
             
@@ -804,9 +1084,7 @@
                 });
         }
 
-        // Try to auto-load XMLs from known filenames
         async function tryAutoLoad() {
-            // First try to load a manifest
             try {
                 const manifestResponse = await fetch('eval-manifest.json');
                 if (manifestResponse.ok) {
@@ -823,11 +1101,8 @@
                     });
                     return Object.keys(loadedEvals).length > 0;
                 }
-            } catch (e) {
-                // Manifest not found, try direct file loading
-            }
+            } catch (e) {}
 
-            // Try common filenames (add new files here as they're created)
             const possibleFiles = [
                 'hermes4-14b-evals.xml',
                 'hermes4-14b-evals-adversarial.xml',
@@ -843,26 +1118,21 @@
                             loadedEvals[evalData.name] = evalData;
                         }
                     }
-                } catch (e) {
-                    // File not found, continue
-                }
+                } catch (e) {}
             }
 
             return Object.keys(loadedEvals).length > 0;
         }
 
-        // Initialize
         document.addEventListener('DOMContentLoaded', async () => {
             const loadingState = document.getElementById('loading-state');
             const filePicker = document.getElementById('file-picker');
             const dropdown = document.getElementById('eval-dropdown');
 
-            // Set up dropdown change handler
             dropdown.addEventListener('change', (e) => {
                 switchEval(e.target.value);
             });
 
-            // Try auto-load first
             const autoLoaded = await tryAutoLoad();
 
             if (autoLoaded) {
@@ -874,7 +1144,6 @@
                 return;
             }
 
-            // Show file picker
             loadingState.style.display = 'none';
             filePicker.style.display = 'flex';
 
@@ -916,7 +1185,9 @@
             
             navBtns.forEach(btn => {
                 const href = btn.getAttribute('href');
-                btn.style.borderColor = href && href.slice(1) === current ? 'var(--accent-blue)' : '';
+                if (href && href.startsWith('#section-')) {
+                    btn.style.borderColor = href.slice(1) === current ? 'var(--accent-blue)' : '';
+                }
             });
         });
     </script>
