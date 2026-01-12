@@ -572,7 +572,7 @@
     </nav>
 
     <main>
-        <div class="loading" id="loading-state">
+        <div class="loading" id="loading-state" style="display: none;">
             <div class="loading-spinner"></div>
             <p>Loading evaluation results...</p>
         </div>
@@ -583,15 +583,15 @@
                 <div class="status-info">
                     <div class="status-item">
                         <span class="status-label">Run ID</span>
-                        <span class="status-value" id="run-id">-</span>
+                        <span class="status-value" id="run-id">Baselines</span>
                     </div>
                     <div class="status-item">
                         <span class="status-label">Status</span>
-                        <span class="status-value" id="run-status">-</span>
+                        <span class="status-value" id="run-status">ready</span>
                     </div>
                     <div class="status-item">
                         <span class="status-label">Progress</span>
-                        <span class="status-value" id="run-progress">0 / 19</span>
+                        <span class="status-value" id="run-progress">-</span>
                     </div>
                     <div class="status-item">
                         <span class="status-label">Started</span>
@@ -710,8 +710,9 @@
         async function loadResults() {
             const runDropdown = document.getElementById('run-dropdown');
 
-            // First render table with baselines (even before any run data)
+            // Always render table with baselines first
             renderTable(null);
+            showResultsWithBaselines();
 
             try {
                 const manifestUrl = 'eval-results/runs.json';
@@ -719,19 +720,16 @@
 
                 if (response.ok) {
                     const runs = await response.json();
-                    populateRunDropdown(runs);
-
                     if (runs.length > 0) {
+                        populateRunDropdown(runs);
                         currentRunId = runs[0];
                         runDropdown.value = currentRunId;
                         await loadRunData(currentRunId);
-                    } else {
-                        showResultsWithBaselines();
                     }
                     return;
                 }
             } catch (e) {
-                console.log('No runs manifest found');
+                console.log('No runs manifest found, showing baselines');
             }
 
             // Try known run IDs
@@ -752,9 +750,8 @@
                 currentRunId = availableRuns[0];
                 runDropdown.value = currentRunId;
                 await loadRunData(currentRunId);
-            } else {
-                showResultsWithBaselines();
             }
+            // If no runs found, table is already showing baselines
         }
 
         function populateRunDropdown(runs) {
