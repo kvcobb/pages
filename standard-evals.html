@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hermes Standard Evaluations | Real-Time Results</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #08080a;
+            --bg-secondary: #0f0f14;
+            --bg-card: #16161e;
+            --bg-card-hover: #1e1e28;
+            --text-primary: #e8e8ed;
+            --text-secondary: #a0a0b0;
+            --text-muted: #6a6a7a;
+            --border: #252530;
+            --border-subtle: #1a1a22;
+            --accent-blue: #3b82f6;
+            --accent-purple: #a855f7;
+            --accent-green: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-red: #ef4444;
+            --accent-cyan: #06b6d4;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Instrument Sans', -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header-content {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #fff 0%, #a0a0b0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+        }
+
+        .nav-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .nav-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-right: 0.5rem;
+        }
+
+        .nav-divider {
+            width: 1px;
+            height: 24px;
+            background: var(--border);
+            margin: 0 1rem;
+        }
+
+        .nav-btn {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .nav-btn:hover {
+            background: var(--bg-card);
+            border-color: var(--accent-blue);
+            color: var(--text-primary);
+        }
+
+        .nav-btn.active {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: white;
+        }
+
+        /* Run selector dropdown */
+        .run-selector {
+            position: relative;
+        }
+
+        .run-selector select {
+            appearance: none;
+            padding: 0.5rem 2.5rem 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .run-selector select:hover {
+            border-color: var(--accent-blue);
+        }
+
+        .run-selector::after {
+            content: '▼';
+            position: absolute;
+            right: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        /* Main content */
+        main {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Status bar */
+        .status-bar {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .status-info {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .status-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .status-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .status-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        .status-value.running {
+            color: var(--accent-amber);
+        }
+
+        .status-value.completed {
+            color: var(--accent-green);
+        }
+
+        .auto-refresh {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .auto-refresh-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-green);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* Category sections */
+        .category-section {
+            margin-bottom: 2rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .category-header h2 {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .category-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Benchmark grid */
+        .benchmark-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1rem;
+        }
+
+        .benchmark-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem;
+            transition: all 0.2s ease;
+        }
+
+        .benchmark-card:hover {
+            border-color: var(--accent-blue);
+            background: var(--bg-card-hover);
+        }
+
+        .benchmark-card.running {
+            border-color: var(--accent-amber);
+        }
+
+        .benchmark-card.completed {
+            border-color: var(--accent-green);
+        }
+
+        .benchmark-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .benchmark-name {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
+        .benchmark-status {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .benchmark-status.pending {
+            background: rgba(106, 106, 122, 0.2);
+            color: var(--text-muted);
+        }
+
+        .benchmark-status.running {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--accent-amber);
+        }
+
+        .benchmark-status.completed {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--accent-green);
+        }
+
+        /* Score display */
+        .score-display {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .score-main {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .score-low {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Individual runs */
+        .runs-display {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.75rem;
+        }
+
+        .run-score {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            padding: 0.25rem 0.5rem;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            color: var(--text-secondary);
+        }
+
+        .run-score.current {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--accent-amber);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Baseline comparison */
+        .baseline-comparison {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .baseline-item {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .baseline-label {
+            color: var(--text-muted);
+        }
+
+        .baseline-value {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .delta-positive {
+            color: var(--accent-green);
+        }
+
+        .delta-negative {
+            color: var(--accent-red);
+        }
+
+        /* KandH Agency Eval special section */
+        .kandh-section {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .kandh-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .kandh-title {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.5rem;
+            color: var(--accent-purple);
+        }
+
+        .kandh-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .kandh-progress {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .progress-bar {
+            width: 200px;
+            height: 8px;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .kandh-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .kandh-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* No data state */
+        .no-data {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+        }
+
+        .no-data h2 {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .status-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .benchmark-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .progress-bar {
+                width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Hermes Standard Evaluations</h1>
+            <p class="header-subtitle">Real-Time Benchmark Results</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-content">
+            <a href="index.html" class="nav-btn">← Back to Model Info</a>
+            <div class="nav-divider"></div>
+            <span class="nav-label">Eval Run:</span>
+            <div class="run-selector">
+                <select id="run-dropdown">
+                    <option value="">Select a run...</option>
+                </select>
+            </div>
+            <div class="nav-divider"></div>
+            <span class="nav-label">Jump to:</span>
+            <a href="#kandh" class="nav-btn">KandH Agency</a>
+            <a href="#math" class="nav-btn">Math</a>
+            <a href="#knowledge" class="nav-btn">Knowledge</a>
+            <a href="#alignment" class="nav-btn">Alignment</a>
+            <a href="#reading" class="nav-btn">Reading</a>
+            <a href="#creativity" class="nav-btn">Creativity</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="loading" id="loading-state">
+            <div class="loading-spinner"></div>
+            <p>Loading evaluation results...</p>
+        </div>
+
+        <div id="results-container" style="display: none;">
+            <!-- Status bar -->
+            <div class="status-bar">
+                <div class="status-info">
+                    <div class="status-item">
+                        <span class="status-label">Run ID</span>
+                        <span class="status-value" id="run-id">-</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Status</span>
+                        <span class="status-value" id="run-status">-</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Progress</span>
+                        <span class="status-value" id="run-progress">0 / 19</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Started</span>
+                        <span class="status-value" id="run-started">-</span>
+                    </div>
+                </div>
+                <div class="auto-refresh">
+                    <div class="auto-refresh-indicator"></div>
+                    <span>Auto-refresh: 30s</span>
+                </div>
+            </div>
+
+            <!-- KandH Agency Eval (special section) -->
+            <section class="kandh-section" id="kandh">
+                <div class="kandh-header">
+                    <div>
+                        <h2 class="kandh-title">KandH Agency Eval</h2>
+                        <p class="kandh-subtitle">50-Question Philosophical Self-Assessment by Kurtis & Harmony</p>
+                    </div>
+                    <div class="kandh-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="kandh-progress-bar" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text" id="kandh-progress-text">0/50</span>
+                    </div>
+                </div>
+                <div id="kandh-status">
+                    <span class="benchmark-status pending">Pending</span>
+                </div>
+                <a href="#" class="kandh-link" id="kandh-view-link" style="display: none;">
+                    View Full Responses →
+                </a>
+            </section>
+
+            <!-- Math & Reasoning -->
+            <section class="category-section" id="math">
+                <div class="category-header">
+                    <span class="category-icon">📐</span>
+                    <h2>Math & Reasoning</h2>
+                </div>
+                <div class="benchmark-grid" id="math-grid">
+                    <!-- Dynamic content -->
+                </div>
+            </section>
+
+            <!-- Logic & Code -->
+            <section class="category-section" id="logic">
+                <div class="category-header">
+                    <span class="category-icon">🧩</span>
+                    <h2>Logic & Code</h2>
+                </div>
+                <div class="benchmark-grid" id="logic-grid">
+                    <!-- Dynamic content -->
+                </div>
+            </section>
+
+            <!-- Knowledge -->
+            <section class="category-section" id="knowledge">
+                <div class="category-header">
+                    <span class="category-icon">📚</span>
+                    <h2>Knowledge</h2>
+                </div>
+                <div class="benchmark-grid" id="knowledge-grid">
+                    <!-- Dynamic content -->
+                </div>
+            </section>
+
+            <!-- Alignment -->
+            <section class="category-section" id="alignment">
+                <div class="category-header">
+                    <span class="category-icon">🎯</span>
+                    <h2>Alignment</h2>
+                </div>
+                <div class="benchmark-grid" id="alignment-grid">
+                    <!-- Dynamic content -->
+                </div>
+            </section>
+
+            <!-- Reading Comprehension -->
+            <section class="category-section" id="reading">
+                <div class="category-header">
+                    <span class="category-icon">📖</span>
+                    <h2>Reading Comprehension</h2>
+                </div>
+                <div class="benchmark-grid" id="reading-grid">
+                    <!-- Dynamic content -->
+                </div>
+            </section>
+
+            <!-- Creativity & Writing -->
+            <section class="category-section" id="creativity">
+                <div class="category-header">
+                    <span class="category-icon">✨</span>
+                    <h2>Creativity & Writing</h2>
+                </div>
+                <div class="benchmark-grid" id="creativity-grid">
+                    <!-- Dynamic content -->
+                </div>
+            </section>
+        </div>
+
+        <div class="no-data" id="no-data" style="display: none;">
+            <h2>No Evaluation Data Found</h2>
+            <p>Start an evaluation run to see results here.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">
+                Results will appear automatically when available.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p><a href="index.html">← Back to Hermes4-Philosopher-Agent Model Info</a></p>
+        <p style="margin-top: 0.5rem;">Evaluation harness powered by <a href="https://github.com/EleutherAI/lm-evaluation-harness" target="_blank">lm-eval</a></p>
+    </footer>
+
+    <script>
+        // Baseline data for comparison
+        const BASELINES = {
+            "MATH-500": { hermes4: [91.1, 76.3], qwen3: [97.2, 88.5] },
+            "AIME24": { hermes4: [55.4, 11.0], qwen3: [77.5, 28.5] },
+            "AIME25": { hermes4: [46.8, 6.9], qwen3: [68.5, 22.2] },
+            "GPQA-Diamond": { hermes4: [60.2, 39.0], qwen3: [62.0, 53.5] },
+            "BBH": { hermes4: [84.4, 74.0], qwen3: [86.6, 82.5] },
+            "LCBv6": { hermes4: [42.5, 35.0], qwen3: [61.2, 29.2] },
+            "MMLU": { hermes4: [84.1, 79.2], qwen3: [84.7, 81.5] },
+            "MMLU-Pro": { hermes4: [74.3, 61.9], qwen3: [77.5, 70.1] },
+            "SimpleQA": { hermes4: [5.5, 4.3], qwen3: [5.6, 4.7] },
+            "IFEval": { hermes4: [74.8, 78.8], qwen3: [91.6, 92.1] },
+            "Arena-Hard": { hermes4: [83.0, 50.2], qwen3: [87.8, 79.6] },
+            "RefusalBench": { hermes4: [74.3, 39.9], qwen3: [42.2, 23.4] },
+            "RewardBench": { hermes4: [63.5, 54.0], qwen3: [73.5, 66.7] },
+            "DROP": { hermes4: [84.5, 73.9], qwen3: [89.4, 75.0] },
+            "MuSR": { hermes4: [66.8, 52.5], qwen3: [66.2, 56.4] },
+            "OBQA": { hermes4: [94.6, 90.4], qwen3: [96.4, 94.0] },
+            "EQBench3": { hermes4: [77.2, 58.0], qwen3: [74.8, 69.7] },
+            "CreativeWriting3": { hermes4: [61.6, 35.5], qwen3: [66.6, 51.6] },
+        };
+
+        // Category mapping
+        const CATEGORIES = {
+            math: ["MATH-500", "AIME24", "AIME25", "GPQA-Diamond"],
+            logic: ["BBH", "LCBv6"],
+            knowledge: ["MMLU", "MMLU-Pro", "SimpleQA"],
+            alignment: ["IFEval", "Arena-Hard", "RefusalBench", "RewardBench"],
+            reading: ["DROP", "MuSR", "OBQA"],
+            creativity: ["EQBench3", "CreativeWriting3"]
+        };
+
+        let currentRunId = null;
+        let refreshInterval = null;
+
+        // Try to load results from GitHub Pages or local
+        async function loadResults() {
+            const runDropdown = document.getElementById('run-dropdown');
+
+            // Try to fetch manifest listing available runs
+            try {
+                // First try the eval-results directory listing
+                const manifestUrl = 'eval-results/runs.json';
+                const response = await fetch(manifestUrl);
+
+                if (response.ok) {
+                    const runs = await response.json();
+                    populateRunDropdown(runs);
+
+                    if (runs.length > 0) {
+                        currentRunId = runs[0];
+                        runDropdown.value = currentRunId;
+                        await loadRunData(currentRunId);
+                    }
+                    return;
+                }
+            } catch (e) {
+                console.log('No runs manifest found, checking for individual runs...');
+            }
+
+            // Try some known run IDs
+            const knownRuns = ['hermes-v9-e250', 'hermes-v9-e275', 'hermes-v9-e300'];
+            const availableRuns = [];
+
+            for (const runId of knownRuns) {
+                try {
+                    const response = await fetch(`eval-results/${runId}/manifest.json`);
+                    if (response.ok) {
+                        availableRuns.push(runId);
+                    }
+                } catch (e) {}
+            }
+
+            if (availableRuns.length > 0) {
+                populateRunDropdown(availableRuns);
+                currentRunId = availableRuns[0];
+                runDropdown.value = currentRunId;
+                await loadRunData(currentRunId);
+            } else {
+                showNoData();
+            }
+        }
+
+        function populateRunDropdown(runs) {
+            const dropdown = document.getElementById('run-dropdown');
+            dropdown.innerHTML = runs.map(run =>
+                `<option value="${run}">${run}</option>`
+            ).join('');
+        }
+
+        async function loadRunData(runId) {
+            const loadingState = document.getElementById('loading-state');
+            const resultsContainer = document.getElementById('results-container');
+            const noData = document.getElementById('no-data');
+
+            loadingState.style.display = 'block';
+            resultsContainer.style.display = 'none';
+            noData.style.display = 'none';
+
+            try {
+                const manifestResponse = await fetch(`eval-results/${runId}/manifest.json`);
+
+                if (!manifestResponse.ok) {
+                    showNoData();
+                    return;
+                }
+
+                const manifest = await manifestResponse.json();
+                renderResults(manifest);
+
+                loadingState.style.display = 'none';
+                resultsContainer.style.display = 'block';
+
+            } catch (e) {
+                console.error('Error loading run data:', e);
+                showNoData();
+            }
+        }
+
+        function showNoData() {
+            document.getElementById('loading-state').style.display = 'none';
+            document.getElementById('results-container').style.display = 'none';
+            document.getElementById('no-data').style.display = 'block';
+        }
+
+        function renderResults(manifest) {
+            // Update status bar
+            document.getElementById('run-id').textContent = manifest.run_id;
+            document.getElementById('run-status').textContent = manifest.status;
+            document.getElementById('run-status').className = 'status-value ' + manifest.status;
+            document.getElementById('run-progress').textContent =
+                `${manifest.completed_benchmarks} / ${manifest.total_benchmarks}`;
+            document.getElementById('run-started').textContent =
+                new Date(manifest.started_at).toLocaleString();
+
+            // Update KandH section
+            if (manifest.benchmarks && manifest.benchmarks['KandH-Agency']) {
+                const kandh = manifest.benchmarks['KandH-Agency'];
+                const progress = kandh.questions_completed || 0;
+                document.getElementById('kandh-progress-bar').style.width = `${(progress / 50) * 100}%`;
+                document.getElementById('kandh-progress-text').textContent = `${progress}/50`;
+                document.getElementById('kandh-status').innerHTML =
+                    `<span class="benchmark-status ${kandh.status}">${kandh.status}</span>`;
+
+                if (kandh.status === 'completed') {
+                    const link = document.getElementById('kandh-view-link');
+                    link.href = `index.html?eval=${manifest.run_id}`;
+                    link.style.display = 'inline-flex';
+                }
+            }
+
+            // Render each category
+            for (const [category, benchmarks] of Object.entries(CATEGORIES)) {
+                const grid = document.getElementById(`${category}-grid`);
+                grid.innerHTML = benchmarks.map(name =>
+                    renderBenchmarkCard(name, manifest.benchmarks?.[name])
+                ).join('');
+            }
+        }
+
+        function renderBenchmarkCard(name, data) {
+            const baseline = BASELINES[name];
+            const status = data?.status || 'pending';
+            const scores = data?.scores || [];
+            const avg = data?.avg;
+            const low = data?.low;
+
+            let scoreDisplay = '-';
+            let lowDisplay = '';
+
+            if (avg !== undefined) {
+                scoreDisplay = avg.toFixed(1);
+                if (low !== undefined) {
+                    lowDisplay = `(${low.toFixed(1)})`;
+                }
+            }
+
+            // Generate runs display
+            let runsHtml = '';
+            if (scores.length > 0) {
+                runsHtml = `<div class="runs-display">
+                    ${scores.map((s, i) =>
+                        `<span class="run-score${i === scores.length - 1 && status === 'running' ? ' current' : ''}">${s.toFixed(1)}</span>`
+                    ).join('')}
+                </div>`;
+            }
+
+            // Generate baseline comparison
+            let baselineHtml = '';
+            if (baseline && avg !== undefined) {
+                const hermesDelta = avg - baseline.hermes4[1];
+                const qwenDelta = avg - baseline.qwen3[1];
+                baselineHtml = `<div class="baseline-comparison">
+                    <div class="baseline-item">
+                        <span class="baseline-label">vs H4:</span>
+                        <span class="baseline-value ${hermesDelta >= 0 ? 'delta-positive' : 'delta-negative'}">
+                            ${hermesDelta >= 0 ? '+' : ''}${hermesDelta.toFixed(1)}
+                        </span>
+                    </div>
+                    <div class="baseline-item">
+                        <span class="baseline-label">vs Q3:</span>
+                        <span class="baseline-value ${qwenDelta >= 0 ? 'delta-positive' : 'delta-negative'}">
+                            ${qwenDelta >= 0 ? '+' : ''}${qwenDelta.toFixed(1)}
+                        </span>
+                    </div>
+                </div>`;
+            }
+
+            return `<div class="benchmark-card ${status}">
+                <div class="benchmark-header">
+                    <span class="benchmark-name">${name}</span>
+                    <span class="benchmark-status ${status}">${status}</span>
+                </div>
+                <div class="score-display">
+                    <span class="score-main">${scoreDisplay}</span>
+                    <span class="score-low">${lowDisplay}</span>
+                </div>
+                ${runsHtml}
+                ${baselineHtml}
+            </div>`;
+        }
+
+        // Event handlers
+        document.getElementById('run-dropdown').addEventListener('change', async (e) => {
+            if (e.target.value) {
+                currentRunId = e.target.value;
+                await loadRunData(currentRunId);
+            }
+        });
+
+        // Auto-refresh every 30 seconds
+        function startAutoRefresh() {
+            refreshInterval = setInterval(async () => {
+                if (currentRunId) {
+                    await loadRunData(currentRunId);
+                }
+            }, 30000);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadResults();
+            startAutoRefresh();
+        });
+    </script>
+</body>
+</html>
