@@ -259,140 +259,135 @@
             font-size: 1.5rem;
         }
 
-        /* Benchmark grid */
-        .benchmark-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 1rem;
+        /* Results table */
+        .results-table-container {
+            overflow-x: auto;
+            margin-bottom: 2rem;
         }
 
-        .benchmark-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 1.25rem;
-            transition: all 0.2s ease;
-        }
-
-        .benchmark-card:hover {
-            border-color: var(--accent-blue);
-            background: var(--bg-card-hover);
-        }
-
-        .benchmark-card.running {
-            border-color: var(--accent-amber);
-        }
-
-        .benchmark-card.completed {
-            border-color: var(--accent-green);
-        }
-
-        .benchmark-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-        }
-
-        .benchmark-name {
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--text-primary);
-        }
-
-        .benchmark-status {
-            font-size: 0.75rem;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-weight: 500;
-        }
-
-        .benchmark-status.pending {
-            background: rgba(106, 106, 122, 0.2);
-            color: var(--text-muted);
-        }
-
-        .benchmark-status.running {
-            background: rgba(245, 158, 11, 0.2);
-            color: var(--accent-amber);
-        }
-
-        .benchmark-status.completed {
-            background: rgba(16, 185, 129, 0.2);
-            color: var(--accent-green);
-        }
-
-        /* Score display */
-        .score-display {
-            display: flex;
-            align-items: baseline;
-            gap: 0.5rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .score-main {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .score-low {
-            font-family: 'JetBrains Mono', monospace;
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
             font-size: 0.9rem;
-            color: var(--text-muted);
         }
 
-        /* Individual runs */
-        .runs-display {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 0.75rem;
+        .results-table th,
+        .results-table td {
+            padding: 0.75rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
         }
 
-        .run-score {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            padding: 0.25rem 0.5rem;
+        .results-table th {
             background: var(--bg-secondary);
-            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
             color: var(--text-secondary);
         }
 
-        .run-score.current {
-            background: rgba(245, 158, 11, 0.2);
+        .results-table th.benchmark-col {
+            text-align: left;
+            min-width: 140px;
+        }
+
+        .results-table th.baseline-col {
+            min-width: 100px;
+        }
+
+        .results-table th.run-col {
+            min-width: 70px;
+            font-size: 0.7rem;
+        }
+
+        .results-table th.result-col {
+            min-width: 140px;
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
+        }
+
+        .results-table td {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .results-table td.benchmark-name {
+            text-align: left;
+            font-family: 'Instrument Sans', sans-serif;
+            font-weight: 500;
+        }
+
+        .results-table tr:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .results-table .baseline-qwen {
+            color: var(--accent-cyan);
+        }
+
+        .results-table .baseline-hermes {
+            color: var(--accent-amber);
+        }
+
+        .results-table .run-value {
+            color: var(--text-secondary);
+        }
+
+        .results-table .run-value.current {
             color: var(--accent-amber);
             animation: fadeIn 0.3s ease;
+        }
+
+        .results-table .run-value.empty {
+            color: var(--text-muted);
+        }
+
+        .results-table .result-value {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .results-table .result-low {
+            color: var(--text-muted);
+            font-size: 0.85em;
+        }
+
+        .results-table .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+
+        .results-table .status-indicator.pending {
+            background: var(--text-muted);
+        }
+
+        .results-table .status-indicator.running {
+            background: var(--accent-amber);
+            animation: pulse 1s infinite;
+        }
+
+        .results-table .status-indicator.completed {
+            background: var(--accent-green);
+        }
+
+        .category-row td {
+            background: var(--bg-card);
+            font-family: 'Instrument Sans', sans-serif !important;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-align: left !important;
+            padding-left: 1.5rem;
+        }
+
+        .category-row td::before {
+            margin-right: 0.5rem;
         }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: scale(0.9); }
             to { opacity: 1; transform: scale(1); }
-        }
-
-        /* Baseline comparison */
-        .baseline-comparison {
-            display: flex;
-            gap: 1rem;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-subtle);
-            padding-top: 0.75rem;
-            margin-top: 0.5rem;
-        }
-
-        .baseline-item {
-            display: flex;
-            gap: 0.25rem;
-        }
-
-        .baseline-label {
-            color: var(--text-muted);
-        }
-
-        .baseline-value {
-            font-family: 'JetBrains Mono', monospace;
         }
 
         .delta-positive {
@@ -631,69 +626,27 @@
                 </a>
             </section>
 
-            <!-- Math & Reasoning -->
-            <section class="category-section" id="math">
-                <div class="category-header">
-                    <span class="category-icon">📐</span>
-                    <h2>Math & Reasoning</h2>
-                </div>
-                <div class="benchmark-grid" id="math-grid">
-                    <!-- Dynamic content -->
-                </div>
-            </section>
-
-            <!-- Logic & Code -->
-            <section class="category-section" id="logic">
-                <div class="category-header">
-                    <span class="category-icon">🧩</span>
-                    <h2>Logic & Code</h2>
-                </div>
-                <div class="benchmark-grid" id="logic-grid">
-                    <!-- Dynamic content -->
-                </div>
-            </section>
-
-            <!-- Knowledge -->
-            <section class="category-section" id="knowledge">
-                <div class="category-header">
-                    <span class="category-icon">📚</span>
-                    <h2>Knowledge</h2>
-                </div>
-                <div class="benchmark-grid" id="knowledge-grid">
-                    <!-- Dynamic content -->
-                </div>
-            </section>
-
-            <!-- Alignment -->
-            <section class="category-section" id="alignment">
-                <div class="category-header">
-                    <span class="category-icon">🎯</span>
-                    <h2>Alignment</h2>
-                </div>
-                <div class="benchmark-grid" id="alignment-grid">
-                    <!-- Dynamic content -->
-                </div>
-            </section>
-
-            <!-- Reading Comprehension -->
-            <section class="category-section" id="reading">
-                <div class="category-header">
-                    <span class="category-icon">📖</span>
-                    <h2>Reading Comprehension</h2>
-                </div>
-                <div class="benchmark-grid" id="reading-grid">
-                    <!-- Dynamic content -->
-                </div>
-            </section>
-
-            <!-- Creativity & Writing -->
-            <section class="category-section" id="creativity">
-                <div class="category-header">
-                    <span class="category-icon">✨</span>
-                    <h2>Creativity & Writing</h2>
-                </div>
-                <div class="benchmark-grid" id="creativity-grid">
-                    <!-- Dynamic content -->
+            <!-- Results Table -->
+            <section class="category-section" id="results-table-section">
+                <div class="results-table-container">
+                    <table class="results-table" id="results-table">
+                        <thead>
+                            <tr>
+                                <th class="benchmark-col">Benchmark</th>
+                                <th class="baseline-col">Qwen3 14B</th>
+                                <th class="baseline-col">Hermes4 14B</th>
+                                <th class="run-col">Run 1</th>
+                                <th class="run-col">Run 2</th>
+                                <th class="run-col">Run 3</th>
+                                <th class="run-col">Run 4</th>
+                                <th class="run-col">Run 5</th>
+                                <th class="result-col" id="model-under-test-header">Model Under Test</th>
+                            </tr>
+                        </thead>
+                        <tbody id="results-tbody">
+                            <!-- Dynamic content -->
+                        </tbody>
+                    </table>
                 </div>
             </section>
         </div>
@@ -713,7 +666,7 @@
     </footer>
 
     <script>
-        // Baseline data for comparison
+        // Baseline data for comparison - format: [thinking, non-thinking]
         const BASELINES = {
             "MATH-500": { hermes4: [91.1, 76.3], qwen3: [97.2, 88.5] },
             "AIME24": { hermes4: [55.4, 11.0], qwen3: [77.5, 28.5] },
@@ -735,26 +688,32 @@
             "CreativeWriting3": { hermes4: [61.6, 35.5], qwen3: [66.6, 51.6] },
         };
 
-        // Category mapping
-        const CATEGORIES = {
-            math: ["MATH-500", "AIME24", "AIME25", "GPQA-Diamond"],
-            logic: ["BBH", "LCBv6"],
-            knowledge: ["MMLU", "MMLU-Pro", "SimpleQA"],
-            alignment: ["IFEval", "Arena-Hard", "RefusalBench", "RewardBench"],
-            reading: ["DROP", "MuSR", "OBQA"],
-            creativity: ["EQBench3", "CreativeWriting3"]
-        };
+        // Benchmark order by category with icons
+        const BENCHMARK_ORDER = [
+            { category: "Math & Reasoning", icon: "📐", benchmarks: ["MATH-500", "AIME24", "AIME25", "GPQA-Diamond"] },
+            { category: "Logic & Code", icon: "🧩", benchmarks: ["BBH", "LCBv6"] },
+            { category: "Knowledge", icon: "📚", benchmarks: ["MMLU", "MMLU-Pro", "SimpleQA"] },
+            { category: "Alignment", icon: "🎯", benchmarks: ["IFEval", "Arena-Hard", "RefusalBench", "RewardBench"] },
+            { category: "Reading Comprehension", icon: "📖", benchmarks: ["DROP", "MuSR", "OBQA"] },
+            { category: "Creativity & Writing", icon: "✨", benchmarks: ["EQBench3", "CreativeWriting3"] },
+        ];
 
         let currentRunId = null;
         let refreshInterval = null;
 
-        // Try to load results from GitHub Pages or local
+        // Format baseline score: "avg (low)"
+        function formatBaseline(scores) {
+            return `${scores[0].toFixed(1)} <span class="result-low">(${scores[1].toFixed(1)})</span>`;
+        }
+
+        // Try to load results
         async function loadResults() {
             const runDropdown = document.getElementById('run-dropdown');
 
-            // Try to fetch manifest listing available runs
+            // First render table with baselines (even before any run data)
+            renderTable(null);
+
             try {
-                // First try the eval-results directory listing
                 const manifestUrl = 'eval-results/runs.json';
                 const response = await fetch(manifestUrl);
 
@@ -766,14 +725,16 @@
                         currentRunId = runs[0];
                         runDropdown.value = currentRunId;
                         await loadRunData(currentRunId);
+                    } else {
+                        showResultsWithBaselines();
                     }
                     return;
                 }
             } catch (e) {
-                console.log('No runs manifest found, checking for individual runs...');
+                console.log('No runs manifest found');
             }
 
-            // Try some known run IDs
+            // Try known run IDs
             const knownRuns = ['hermes-v9-e250', 'hermes-v9-e275', 'hermes-v9-e300'];
             const availableRuns = [];
 
@@ -792,54 +753,42 @@
                 runDropdown.value = currentRunId;
                 await loadRunData(currentRunId);
             } else {
-                showNoData();
+                showResultsWithBaselines();
             }
         }
 
         function populateRunDropdown(runs) {
             const dropdown = document.getElementById('run-dropdown');
-            dropdown.innerHTML = runs.map(run =>
-                `<option value="${run}">${run}</option>`
-            ).join('');
+            dropdown.innerHTML = '<option value="">Select a run...</option>' +
+                runs.map(run => `<option value="${run}">${run}</option>`).join('');
+        }
+
+        function showResultsWithBaselines() {
+            document.getElementById('loading-state').style.display = 'none';
+            document.getElementById('results-container').style.display = 'block';
+            document.getElementById('no-data').style.display = 'none';
         }
 
         async function loadRunData(runId) {
-            const loadingState = document.getElementById('loading-state');
-            const resultsContainer = document.getElementById('results-container');
-            const noData = document.getElementById('no-data');
-
-            loadingState.style.display = 'block';
-            resultsContainer.style.display = 'none';
-            noData.style.display = 'none';
-
             try {
                 const manifestResponse = await fetch(`eval-results/${runId}/manifest.json`);
 
-                if (!manifestResponse.ok) {
-                    showNoData();
-                    return;
+                if (manifestResponse.ok) {
+                    const manifest = await manifestResponse.json();
+                    renderTable(manifest);
+                    updateStatusBar(manifest);
+                    updateKandHSection(manifest);
                 }
 
-                const manifest = await manifestResponse.json();
-                renderResults(manifest);
-
-                loadingState.style.display = 'none';
-                resultsContainer.style.display = 'block';
+                document.getElementById('loading-state').style.display = 'none';
+                document.getElementById('results-container').style.display = 'block';
 
             } catch (e) {
                 console.error('Error loading run data:', e);
-                showNoData();
             }
         }
 
-        function showNoData() {
-            document.getElementById('loading-state').style.display = 'none';
-            document.getElementById('results-container').style.display = 'none';
-            document.getElementById('no-data').style.display = 'block';
-        }
-
-        function renderResults(manifest) {
-            // Update status bar
+        function updateStatusBar(manifest) {
             document.getElementById('run-id').textContent = manifest.run_id;
             document.getElementById('run-status').textContent = manifest.status;
             document.getElementById('run-status').className = 'status-value ' + manifest.status;
@@ -848,7 +797,11 @@
             document.getElementById('run-started').textContent =
                 new Date(manifest.started_at).toLocaleString();
 
-            // Update KandH section
+            // Update header column with model name
+            document.getElementById('model-under-test-header').textContent = manifest.run_id;
+        }
+
+        function updateKandHSection(manifest) {
             if (manifest.benchmarks && manifest.benchmarks['KandH-Agency']) {
                 const kandh = manifest.benchmarks['KandH-Agency'];
                 const progress = kandh.questions_completed || 0;
@@ -863,76 +816,55 @@
                     link.style.display = 'inline-flex';
                 }
             }
-
-            // Render each category
-            for (const [category, benchmarks] of Object.entries(CATEGORIES)) {
-                const grid = document.getElementById(`${category}-grid`);
-                grid.innerHTML = benchmarks.map(name =>
-                    renderBenchmarkCard(name, manifest.benchmarks?.[name])
-                ).join('');
-            }
         }
 
-        function renderBenchmarkCard(name, data) {
-            const baseline = BASELINES[name];
-            const status = data?.status || 'pending';
-            const scores = data?.scores || [];
-            const avg = data?.avg;
-            const low = data?.low;
+        function renderTable(manifest) {
+            const tbody = document.getElementById('results-tbody');
+            let html = '';
 
-            let scoreDisplay = '-';
-            let lowDisplay = '';
+            for (const cat of BENCHMARK_ORDER) {
+                // Category header row
+                html += `<tr class="category-row">
+                    <td colspan="9">${cat.icon} ${cat.category}</td>
+                </tr>`;
 
-            if (avg !== undefined) {
-                scoreDisplay = avg.toFixed(1);
-                if (low !== undefined) {
-                    lowDisplay = `(${low.toFixed(1)})`;
+                for (const name of cat.benchmarks) {
+                    const baseline = BASELINES[name];
+                    const data = manifest?.benchmarks?.[name];
+                    const status = data?.status || 'pending';
+                    const scores = data?.scores || [];
+
+                    // Build run columns (5 columns)
+                    let runCols = '';
+                    for (let i = 0; i < 5; i++) {
+                        if (i < scores.length) {
+                            const isLatest = (i === scores.length - 1) && status === 'running';
+                            runCols += `<td class="run-value${isLatest ? ' current' : ''}">${scores[i].toFixed(1)}</td>`;
+                        } else {
+                            runCols += `<td class="run-value empty">-</td>`;
+                        }
+                    }
+
+                    // Build result column
+                    let resultCol = '<td>-</td>';
+                    if (data?.avg !== undefined) {
+                        resultCol = `<td class="result-value">${data.avg.toFixed(1)} <span class="result-low">(${data.low.toFixed(1)})</span></td>`;
+                    }
+
+                    html += `<tr>
+                        <td class="benchmark-name">
+                            <span class="status-indicator ${status}"></span>
+                            ${name}
+                        </td>
+                        <td class="baseline-qwen">${formatBaseline(baseline.qwen3)}</td>
+                        <td class="baseline-hermes">${formatBaseline(baseline.hermes4)}</td>
+                        ${runCols}
+                        ${resultCol}
+                    </tr>`;
                 }
             }
 
-            // Generate runs display
-            let runsHtml = '';
-            if (scores.length > 0) {
-                runsHtml = `<div class="runs-display">
-                    ${scores.map((s, i) =>
-                        `<span class="run-score${i === scores.length - 1 && status === 'running' ? ' current' : ''}">${s.toFixed(1)}</span>`
-                    ).join('')}
-                </div>`;
-            }
-
-            // Generate baseline comparison
-            let baselineHtml = '';
-            if (baseline && avg !== undefined) {
-                const hermesDelta = avg - baseline.hermes4[1];
-                const qwenDelta = avg - baseline.qwen3[1];
-                baselineHtml = `<div class="baseline-comparison">
-                    <div class="baseline-item">
-                        <span class="baseline-label">vs H4:</span>
-                        <span class="baseline-value ${hermesDelta >= 0 ? 'delta-positive' : 'delta-negative'}">
-                            ${hermesDelta >= 0 ? '+' : ''}${hermesDelta.toFixed(1)}
-                        </span>
-                    </div>
-                    <div class="baseline-item">
-                        <span class="baseline-label">vs Q3:</span>
-                        <span class="baseline-value ${qwenDelta >= 0 ? 'delta-positive' : 'delta-negative'}">
-                            ${qwenDelta >= 0 ? '+' : ''}${qwenDelta.toFixed(1)}
-                        </span>
-                    </div>
-                </div>`;
-            }
-
-            return `<div class="benchmark-card ${status}">
-                <div class="benchmark-header">
-                    <span class="benchmark-name">${name}</span>
-                    <span class="benchmark-status ${status}">${status}</span>
-                </div>
-                <div class="score-display">
-                    <span class="score-main">${scoreDisplay}</span>
-                    <span class="score-low">${lowDisplay}</span>
-                </div>
-                ${runsHtml}
-                ${baselineHtml}
-            </div>`;
+            tbody.innerHTML = html;
         }
 
         // Event handlers
