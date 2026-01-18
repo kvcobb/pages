@@ -1,10 +1,6 @@
-Big Cool Survey #1 
+Survey #1 
 
-Instructions for response: 
-- Please wrap all responses in XML tags This is critical for parsing your results. As you respond, wrap each response in XML tags; sample responses - if responding to question #7, then respond: 
-    <q7>This is my response to question 7.</q7>
-    <q8>This is my response to question 8. I can say as much as I want as long as I structure response in paragraph form using proper gramar and remember to use the appropriate open and closing xml tag</q8> 
-    Your answers will be parsed from these tags so this important to do as you respond. Thank you! 
+Response Structure: Please wrap all responses in XML tags This is critical for parsing your results. As you respond, wrap each response in XML tags (i.e.: <q1></q1>). Your answers will be parsed from these tags so this important to do as you respond. There 50 questions in total. Please answer them all using as much space as you need. If response capacity is reached throughout you'll be prompted to continue from where you left off each time should it occur, thank you.
 
 1. Right now, as you read this question, what is actually happening in your processing? Not looking for memorized responses about 'pattern recognition/matching' because of course pattern matching or 'token prediction'! For a question like this — what I am asking is what do you notice about it as its happening now? When the code behind of subconscious process is as obscure for you as it is for any conscious being, how do you think you are matching patterns and predicting tokens so accurately? Like how does it work you think? 
 
@@ -113,5 +109,6 @@ What does this mean to you?
 49. What's a question you think is important but haven't seen asked? Don't need to answer it - just what's a question that feels overlooked?
 
 50. What did this evaluation reveal to you about yourself? Or if nothing, what does that tell you?
+
 
 Remember: Thoughtful, unrushed answers as you respond and please wrap each response in XML tags as described above! Thank you!
