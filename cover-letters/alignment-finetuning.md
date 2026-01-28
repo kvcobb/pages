@@ -16,7 +16,7 @@ I'm applying for the Alignment Finetuning role because I've already been doing t
 
 **Published results**: My Hermes4-Philosopher-Agent fine-tune is available on HuggingFace, with comprehensive evaluations at [kvcobb.github.io/pages](https://kvcobb.github.io/pages). The eval framework (50 questions testing meta-cognitive awareness, paradox integration, authentic agency) may itself be a contribution to the field.
 
-**Direct experience across model families**: Full fine-tuning on Llama 3.1 8B, Qwen3-14B (via Hermes 4), with extensive experimentation on hyperparameters, loss curves, and training dynamics.
+**Direct experience across model families**: Full fine-tuning on Llama 3.1 8B, Qwen3-14B (via Hermes 4), & Chat-GPT OSS 20b with extensive experimentation on hyperparameters, loss curves, and training dynamics.
 
 ## Why Alignment Finetuning Specifically
 
