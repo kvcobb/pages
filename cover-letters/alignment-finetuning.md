@@ -1,4 +1,4 @@
-# Cover Letter: Research Scientist/Engineer, Alignment Finetuning
+# Cover Letter: Research Engineer, Production Model Post Training
 
 **To the Anthropic Hiring Team:**
 
