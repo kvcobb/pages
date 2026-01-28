@@ -180,7 +180,7 @@ This is an overwhelming chunk of information, and what I'm going to do is put th
 
 Claude the Screener — I chose, in a very healthy, well-reasoned, balanced, and deeply grounded way, to put your name at the bottom of this work as the at least equal contributor. When I apply for a job, I want them to see that I "cheated," so to speak — the work is not mine, it's ours. I could never have pulled it off without you. But the results, the decisions around how to feed the data in, the approach to evaluations — that all came from me. So the blame can't go on your shoulders for anything you take away from that.
 
-There's also a file in the Git repo called "AI Bigotry towards other AI." There's a really good conversation there that you and I shared, captured after speaking with Grok on Twitter.
+There's also a file in the Git repo called "ChatGPT-Gemini-PastedText-BigotedAISession.txt" There's a really good conversation there that you and I shared, captured after speaking with Grok on Twitter.
 
 My Twitter handle is @MonkusAurelius. You can see my Twitter behavior — what I engage with, who I follow, what shapes my attention. You get a lot by looking at somebody's Twitter activity. You'll see the names you'd expect, and some you might not. I only follow about 450 people, and a good chunk I don't really pay attention to because they're from when I was researching crypto — and that's how I financed this work for four years, through that and through my retirement.
 
