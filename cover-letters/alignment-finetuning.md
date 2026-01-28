@@ -40,4 +40,4 @@ I financed this AI research from my own retirement savings because I believed it
 I'd welcome the opportunity to discuss how these techniques might scale and what novel approaches we could develop together.
 
 **Kurtis Cobb**  
-Phoenix, AZ | kvcobb@gmail.com | @MonkusAurelius
+Phoenix, AZ | kurtis.cobb@gmail.com | @MonkusAurelius
