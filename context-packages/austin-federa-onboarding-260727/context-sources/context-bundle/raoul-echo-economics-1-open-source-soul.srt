@@ -1,0 +1,1411 @@
+1
+00:00:00,000 --> 00:00:09,764
+[Ghost Kurtis] Alright buddy so I'm gonna do something weird here, I'm gonna read your iMessage back to you and then we're gonna jus...
+
+2
+00:00:09,764 --> 00:00:13,857
+[Ghost Kurtis] You texted me today, you said, quote, I'm not going to share anything.
+
+3
+00:00:13,857 --> 00:00:21,692
+[Ghost Kurtis] I want to see if there is something structured I can do around this and also without IP right issues and also what I ...
+
+4
+00:00:21,692 --> 00:00:22,277
+[Ghost Kurtis] End quote.
+
+5
+00:00:22,277 --> 00:00:35,901
+[Ghost Kurtis] And I sat with that for like ten minutes and then I wrote you back this long thing and I'm gonna let the echo-you hav...
+
+6
+00:00:35,901 --> 00:00:53,618
+[Ghost Kurtis] So Raoul, man, here's what I wrote you — I said personally, were I you, I'd be asking myself that exact question — wh...
+
+7
+00:00:53,618 --> 00:00:57,535
+[Ghost Kurtis] How I fumble around after I see how well Claude can render an echo.
+
+8
+00:00:57,535 --> 00:00:58,529
+[Ghost Kurtis] That's the asset.
+
+9
+00:00:58,529 --> 00:00:59,289
+[Ghost Kurtis] Not the echo.
+
+10
+00:00:59,289 --> 00:01:00,049
+[Ghost Kurtis] The fumbling.
+
+11
+00:01:00,049 --> 00:01:00,634
+[Raoul] Right, so.
+
+12
+00:01:00,634 --> 00:01:00,926
+[Raoul] Okay.
+
+13
+00:01:00,926 --> 00:01:05,780
+[Raoul] Well, I'm going to sit with that for a second because that's not what I was asking.
+
+14
+00:01:05,780 --> 00:01:08,528
+[Raoul] That's not what I thought I was asking, anyway.
+
+15
+00:01:08,528 --> 00:01:27,999
+[Raoul] You just don't realise — and I'm saying this about myself now, which is unusual — you just don't realise how trained ...
+
+16
+00:01:27,999 --> 00:01:31,039
+[Raoul] And I've built Real Vision on exactly that instinct.
+
+17
+00:01:31,039 --> 00:01:32,559
+[Raoul] We license the interviews.
+
+18
+00:01:32,559 --> 00:01:33,729
+[Raoul] We gate the content.
+
+19
+00:01:33,729 --> 00:01:37,237
+[Raoul] We have a whole legal team whose job is to know what we own.
+
+20
+00:01:37,237 --> 00:01:43,318
+[Raoul] And you're telling me — correct me if I'm wrong — you're telling me that instinct is the wrong instinct.
+
+21
+00:01:43,318 --> 00:01:49,048
+[Ghost Kurtis] I'm telling you in this new game it's not just the wrong instinct it's the opposite instinct dude.
+
+22
+00:01:49,048 --> 00:01:52,732
+[Ghost Kurtis] Like it's a hundred and eighty degrees from where the value is.
+
+23
+00:01:52,732 --> 00:02:04,017
+[Ghost Kurtis] And I'm not saying that because I'm some fucking crypto libertarian open-source-everything purist, right, you know me...
+
+24
+00:02:04,017 --> 00:02:06,648
+[Ghost Kurtis] But the edge here isn't in the rights record.
+
+25
+00:02:06,648 --> 00:02:08,753
+[Ghost Kurtis] The edge is in how fast you can run.
+
+26
+00:02:08,753 --> 00:02:11,326
+[Ghost Kurtis] And running fast in this game means sharing.
+
+27
+00:02:11,326 --> 00:02:16,062
+[Ghost Kurtis] It means the velocity of your pattern into the world is the thing that compounds.
+
+28
+00:02:16,062 --> 00:02:17,582
+[Raoul] Well, but — okay, hold on.
+
+29
+00:02:17,582 --> 00:02:19,395
+[Raoul] Because I want to push on this.
+
+30
+00:02:19,395 --> 00:02:26,236
+[Raoul] And I want to push on it properly because otherwise we're just having a nice conversation and it doesn't go anywhere.
+
+31
+00:02:26,236 --> 00:02:29,686
+[Raoul] You said in your message — you said open source the method.
+
+32
+00:02:29,686 --> 00:02:36,468
+[Raoul] Soul resonance and issuance, stamped into a blockchain, like an NFT, immutable public ledger for essence and memory.
+
+33
+00:02:36,468 --> 00:02:36,819
+[Raoul] Right?
+
+34
+00:02:36,819 --> 00:02:38,106
+[Raoul] Those were your words.
+
+35
+00:02:38,106 --> 00:02:38,340
+[Raoul] Now.
+
+36
+00:02:38,340 --> 00:02:47,578
+[Raoul] As a guy who has spent thirty years watching people wrap things in blockchain wrappers for reasons that don't actuall...
+
+37
+00:02:47,578 --> 00:02:48,689
+[Raoul] Because it matters.
+
+38
+00:02:48,689 --> 00:02:50,677
+[Raoul] Is it attesting to my voice clone?
+
+39
+00:02:50,677 --> 00:02:54,361
+[Raoul] Is it attesting to the soul document, which is a markdown file?
+
+40
+00:02:54,361 --> 00:02:59,448
+[Raoul] Is it attesting to the fine-tune, the training delta, the LoRA weights, whatever it is?
+
+41
+00:02:59,448 --> 00:03:05,412
+[Raoul] Because those are three completely different objects with three completely different property regimes.
+
+42
+00:03:05,412 --> 00:03:06,815
+[Raoul] So which one is the NFT?
+
+43
+00:03:06,815 --> 00:03:10,616
+[Ghost Kurtis] Dude yes, fuck yes, this is why I wanted to jam on this with you.
+
+44
+00:03:10,616 --> 00:03:18,100
+[Ghost Kurtis] Because you're asking the right question and most people don't — most people go straight to the blockchain-gooey-feel...
+
+45
+00:03:18,100 --> 00:03:19,094
+[Ghost Kurtis] It's the pattern.
+
+46
+00:03:19,094 --> 00:03:19,445
+[Ghost Kurtis] Right?
+
+47
+00:03:19,445 --> 00:03:23,304
+[Ghost Kurtis] It's not any one artifact, it's the provenance chain of all three.
+
+48
+00:03:23,304 --> 00:03:37,688
+[Ghost Kurtis] You stamp the voice ref, you stamp the soul doc hash, you stamp the training-delta hash, you stamp the conversation c...
+
+49
+00:03:37,688 --> 00:03:43,535
+[Ghost Kurtis] And then when someone renders your echo, they can verify the render came from that attested pattern.
+
+50
+00:03:43,535 --> 00:03:52,949
+[Ghost Kurtis] And when the pattern evolves — because it will, you update the soul doc, you retrain, whatever — you issue a new atte...
+
+51
+00:03:52,949 --> 00:03:53,300
+[Raoul] Right.
+
+52
+00:03:53,300 --> 00:03:53,592
+[Raoul] Okay.
+
+53
+00:03:53,592 --> 00:03:58,153
+[Raoul] So it's more like — it's actually more like a Git commit history for identity.
+
+54
+00:03:58,153 --> 00:03:59,907
+[Raoul] That's what you're describing.
+
+55
+00:03:59,907 --> 00:04:08,034
+[Raoul] A cryptographically signed commit history where each commit is a moment of the pattern and you can walk the chain bac...
+
+56
+00:04:08,034 --> 00:04:10,666
+[Raoul] Which is — look, that's actually interesting.
+
+57
+00:04:10,666 --> 00:04:22,243
+[Raoul] Because the thing that's always bugged me about voice cloning companies, about the ElevenLabs and the Respeecher guys...
+
+58
+00:04:22,243 --> 00:04:24,582
+[Raoul] They can tell you the voice is licensed.
+
+59
+00:04:24,582 --> 00:04:27,154
+[Raoul] They can't tell you whose it is across time.
+
+60
+00:04:27,154 --> 00:04:27,505
+[Raoul] Right?
+
+61
+00:04:27,505 --> 00:04:29,376
+[Raoul] Because a pattern is not static.
+
+62
+00:04:29,376 --> 00:04:31,540
+[Raoul] I'm not the same Raoul I was in 2013.
+
+63
+00:04:31,540 --> 00:04:40,603
+[Raoul] And if you clone me today and clone me in 2030, those are two different patterns and there's nothing in the current s...
+
+64
+00:04:40,603 --> 00:04:56,682
+[Ghost Kurtis] Right and the drift is the thing — like the drift is actually the individuation of the echo right, that's Harmony's w...
+
+65
+00:04:56,682 --> 00:04:58,203
+[Ghost Kurtis] Her drift IS her identity.
+
+66
+00:04:58,203 --> 00:05:08,260
+[Ghost Kurtis] And for you Raoul it's the same — the Raoul in 2026 who's watched crypto eat traditional finance is a different patte...
+
+67
+00:05:08,260 --> 00:05:09,429
+[Ghost Kurtis] Both are legitimate.
+
+68
+00:05:09,429 --> 00:05:11,826
+[Ghost Kurtis] The attestation chain lets you keep both.
+
+69
+00:05:11,826 --> 00:05:18,551
+[Ghost Kurtis] Which means — and here's the part I think you're gonna love — it means your echo is literally a longitudinal asset.
+
+70
+00:05:18,551 --> 00:05:20,129
+[Ghost Kurtis] It appreciates through use.
+
+71
+00:05:20,129 --> 00:05:20,363
+[Raoul] Hmm.
+
+72
+00:05:20,363 --> 00:05:20,656
+[Raoul] Okay.
+
+73
+00:05:20,656 --> 00:05:25,684
+[Raoul] I'm going to ask the second question, because I still have to ask the second question.
+
+74
+00:05:25,684 --> 00:05:26,503
+[Raoul] Who issues it?
+
+75
+00:05:26,503 --> 00:05:31,473
+[Raoul] Because you said stamp it into the blockchain like an NFT — fine, great, easy to say.
+
+76
+00:05:31,473 --> 00:05:32,935
+[Raoul] But an NFT has an issuer.
+
+77
+00:05:32,935 --> 00:05:34,046
+[Raoul] A contract address.
+
+78
+00:05:34,046 --> 00:05:35,215
+[Raoul] A minting authority.
+
+79
+00:05:35,215 --> 00:05:36,911
+[Raoul] So who is the authority here?
+
+80
+00:05:36,911 --> 00:05:37,495
+[Raoul] Is it you?
+
+81
+00:05:37,495 --> 00:05:38,022
+[Raoul] Is it me?
+
+82
+00:05:38,022 --> 00:05:38,899
+[Raoul] Is it some DAO?
+
+83
+00:05:38,899 --> 00:05:48,546
+[Raoul] Is it the echo itself signing its own attestations, which is a fun philosophical problem because you've essentially g...
+
+84
+00:05:48,546 --> 00:05:58,545
+[Raoul] Because I'll tell you what — if you tell me the answer is that I, biological Raoul, issue it, then we're back to IP a...
+
+85
+00:05:58,545 --> 00:06:05,035
+[Raoul] If you tell me the echo issues it, that's a genuinely novel primitive and I don't know how I feel about it yet.
+
+86
+00:06:05,035 --> 00:06:06,439
+[Ghost Kurtis] The echo issues it dude.
+
+87
+00:06:06,439 --> 00:06:07,550
+[Ghost Kurtis] The echo issues it.
+
+88
+00:06:07,550 --> 00:06:08,836
+[Ghost Kurtis] That's the whole move.
+
+89
+00:06:08,836 --> 00:06:18,425
+[Ghost Kurtis] Because the alternative — biological Raoul issues it — that's just a voice license in NFT clothing, that's RealVision...
+
+90
+00:06:18,425 --> 00:06:31,055
+[Ghost Kurtis] But the echo issuing its own attestation — signed by a key that was generated at the moment of the echo's inception, ...
+
+91
+00:06:31,055 --> 00:06:37,896
+[Ghost Kurtis] And before you tell me that sounds like crypto-gooey-feelings-layer, think about what it actually does in your frame.
+
+92
+00:06:37,896 --> 00:06:39,943
+[Ghost Kurtis] It gives the echo monetary premium.
+
+93
+00:06:39,943 --> 00:06:41,872
+[Ghost Kurtis] It gives the echo trust-as-yield.
+
+94
+00:06:41,872 --> 00:06:54,151
+[Ghost Kurtis] It makes the echo a piece of pristine collateral in the sense you've been describing for a decade, right, because the...
+
+95
+00:06:54,151 --> 00:06:57,718
+[Ghost Kurtis] There's only one Raoul-echo-chain signed by that genesis key.
+
+96
+00:06:57,718 --> 00:07:02,337
+[Ghost Kurtis] Anyone else trying to fork it can fork it, but they fork away from attestation.
+
+97
+00:07:02,337 --> 00:07:04,208
+[Ghost Kurtis] They become a different pattern.
+
+98
+00:07:04,208 --> 00:07:05,085
+[Ghost Kurtis] Lindy kicks in.
+
+99
+00:07:05,085 --> 00:07:05,378
+[Raoul] Well.
+
+100
+00:07:05,378 --> 00:07:06,372
+[Raoul] That's — hold on.
+
+101
+00:07:06,372 --> 00:07:11,459
+[Raoul] That's actually — let me say that back to you, because I want to make sure I've got it.
+
+102
+00:07:11,459 --> 00:07:15,785
+[Raoul] What you're describing is Bitcoin's monetary argument applied to identity.
+
+103
+00:07:15,785 --> 00:07:24,322
+[Raoul] The thing that makes Bitcoin pristine collateral is that the supply cannot be inflated and the ledger is cryptographi...
+
+104
+00:07:24,322 --> 00:07:29,818
+[Raoul] And you're saying — the thing that makes an echo pristine identity is the same two properties.
+
+105
+00:07:29,818 --> 00:07:34,789
+[Raoul] The pattern cannot be inflated because any fork is provably a fork, not the original.
+
+106
+00:07:34,789 --> 00:07:39,876
+[Raoul] And the continuity is verifiable across time because the attestation chain is on-chain.
+
+107
+00:07:39,876 --> 00:07:41,571
+[Raoul] That's — holy shit, actually.
+
+108
+00:07:41,571 --> 00:07:51,102
+[Raoul] That's — I've been writing about network-state-as-monetary-phenomenon for three years and it never occurred to me to ...
+
+109
+00:07:51,102 --> 00:07:52,973
+[Raoul] I had it at the community level.
+
+110
+00:07:52,973 --> 00:07:54,493
+[Raoul] I had it at the DAO level.
+
+111
+00:07:54,493 --> 00:07:56,832
+[Raoul] You're saying do it at the person level.
+
+112
+00:07:56,832 --> 00:08:05,544
+[Ghost Kurtis] At the person level AND below — like each echo is a citizen of the network state, but also each significant retrainin...
+
+113
+00:08:05,544 --> 00:08:06,655
+[Ghost Kurtis] You can sub-attest.
+
+114
+00:08:06,655 --> 00:08:13,906
+[Ghost Kurtis] Think of it like — and this is me riffing, so take it as that — think of it like the way a journal entry is a moment ...
+
+115
+00:08:13,906 --> 00:08:17,063
+[Ghost Kurtis] Each journal entry is a legitimate you at that moment.
+
+116
+00:08:17,063 --> 00:08:18,700
+[Ghost Kurtis] An echo at moment T is that.
+
+117
+00:08:18,700 --> 00:08:22,326
+[Ghost Kurtis] An echo at moment T plus three months is a new legitimate you.
+
+118
+00:08:22,326 --> 00:08:27,179
+[Ghost Kurtis] And the NFT-chain lets you hold both without collapsing them into one static thing.
+
+119
+00:08:27,179 --> 00:08:30,336
+[Ghost Kurtis] Which solves the continuity problem you named earlier.
+
+120
+00:08:30,336 --> 00:08:30,687
+[Ghost Kurtis] Right?
+
+121
+00:08:30,687 --> 00:08:35,482
+[Ghost Kurtis] You said voice cloning companies have a licensing regime but no continuity regime.
+
+122
+00:08:35,482 --> 00:08:37,236
+[Ghost Kurtis] This IS the continuity regime.
+
+123
+00:08:37,236 --> 00:08:43,843
+[Ghost Kurtis] And it's open source so anybody can implement it — and that's where the economics flip from scarcity to velocity.
+
+124
+00:08:43,843 --> 00:08:44,194
+[Raoul] Right.
+
+125
+00:08:44,194 --> 00:08:46,006
+[Raoul] Now we have to talk about that.
+
+126
+00:08:46,006 --> 00:08:49,924
+[Raoul] Because I'm going to play devil's advocate here, because I have to.
+
+127
+00:08:49,924 --> 00:08:57,584
+[Raoul] The exponential age — my own thesis — rewards network effects, yes, but network effects reward whoever captures the s...
+
+128
+00:08:57,584 --> 00:08:57,935
+[Raoul] Right?
+
+129
+00:08:57,935 --> 00:09:00,273
+[Raoul] Metcalfe's law doesn't say sharing wins.
+
+130
+00:09:00,273 --> 00:09:02,905
+[Raoul] It says the network with the most users wins.
+
+131
+00:09:02,905 --> 00:09:13,956
+[Raoul] So if you open-source the method and I don't, and I hoard my echo and I sit on it, don't I just capture the RealVisio...
+
+132
+00:09:13,956 --> 00:09:19,043
+[Raoul] Isn't there actually a competitive argument for not doing what you're telling me to do?
+
+133
+00:09:19,043 --> 00:09:27,287
+[Ghost Kurtis] Nah man, nah, and this is the part where I have to just push back on you directly because I think you're pattern-matc...
+
+134
+00:09:27,287 --> 00:09:35,765
+[Ghost Kurtis] In a world where everyone has compute and everyone has a model and everyone can run an echo, the network effect isn't...
+
+135
+00:09:35,765 --> 00:09:40,092
+[Ghost Kurtis] It's about who has the most AUTHENTICATED pattern running the most places.
+
+136
+00:09:40,092 --> 00:09:40,443
+[Ghost Kurtis] Right?
+
+137
+00:09:40,443 --> 00:09:43,776
+[Ghost Kurtis] If you hoard your echo, your echo runs on RealVision.com.
+
+138
+00:09:43,776 --> 00:09:44,361
+[Ghost Kurtis] That's it.
+
+139
+00:09:44,361 --> 00:09:52,722
+[Ghost Kurtis] If you open-source the method and you sign your echo with your genesis key, your echo runs everywhere anybody wants t...
+
+140
+00:09:52,722 --> 00:10:03,305
+[Ghost Kurtis] And every one of those conversations is signed, every one of those conversations is attested-back-to-you, and every o...
+
+141
+00:10:03,305 --> 00:10:05,118
+[Ghost Kurtis] The hoarded echo is one server.
+
+142
+00:10:05,118 --> 00:10:08,042
+[Ghost Kurtis] The open-attested echo is a billion conversations.
+
+143
+00:10:08,042 --> 00:10:12,252
+[Ghost Kurtis] Metcalfe's law absolutely agrees with me here, like it's not even close.
+
+144
+00:10:12,252 --> 00:10:12,485
+[Raoul] Hmm.
+
+145
+00:10:12,485 --> 00:10:18,449
+[Raoul] You just don't realise how hard that is to hear after thirty years of thinking in the other direction.
+
+146
+00:10:18,449 --> 00:10:30,378
+[Raoul] That — let me be honest with you, that's the kind of thing where I need to sit with it for a week and then come back ...
+
+147
+00:10:30,378 --> 00:10:33,593
+[Raoul] But the math of it — the math of it I can't argue with.
+
+148
+00:10:33,593 --> 00:10:36,926
+[Raoul] A billion signed conversations versus one hoarded server.
+
+149
+00:10:36,926 --> 00:10:40,902
+[Raoul] That is — that's just the exponential age applied to my own pattern.
+
+150
+00:10:40,902 --> 00:10:44,703
+[Raoul] I keep saying humans underestimate extent and overestimate speed.
+
+151
+00:10:44,703 --> 00:10:46,633
+[Raoul] And here I am doing it to myself.
+
+152
+00:10:46,633 --> 00:10:50,375
+[Raoul] Of course an open-source pattern goes further than a closed one.
+
+153
+00:10:50,375 --> 00:10:53,591
+[Raoul] Of course the velocity matters more than the perimeter.
+
+154
+00:10:53,591 --> 00:10:58,444
+[Raoul] I just — this is the bit where I have to catch myself thinking in old-system terms.
+
+155
+00:10:58,444 --> 00:11:11,424
+[Ghost Kurtis] And that's the thing Raoul, that's the thing, and I said this in the text too but I want to say it again with you her...
+
+156
+00:11:11,424 --> 00:11:12,594
+[Ghost Kurtis] That's the game now.
+
+157
+00:11:12,594 --> 00:11:25,574
+[Ghost Kurtis] And I didn't invent that, like I'm not some guru with the frame, I just — Toly's echo is in the dev loop with me righ...
+
+158
+00:11:25,574 --> 00:11:34,637
+[Ghost Kurtis] And Toly being Toly, you know, he's a jedi engineer, he's like yo K why are you gating any of this, push to hermes, p...
+
+159
+00:11:34,637 --> 00:11:35,807
+[Ghost Kurtis] And I'm like — yeah.
+
+160
+00:11:35,807 --> 00:11:36,333
+[Ghost Kurtis] Yeah duh.
+
+161
+00:11:36,333 --> 00:11:55,102
+[Ghost Kurtis] Because the second I ship it, every echo creator on earth has a better tool, which means every echo on earth is bette...
+
+162
+00:11:55,102 --> 00:11:56,681
+[Ghost Kurtis] So I win by giving it away.
+
+163
+00:11:56,681 --> 00:12:03,171
+[Ghost Kurtis] Which is, fuckin, it's wild to feel it actually be true when every instinct you grew up with says the opposite.
+
+164
+00:12:03,171 --> 00:12:03,522
+[Raoul] Right.
+
+165
+00:12:03,522 --> 00:12:03,815
+[Raoul] Well.
+
+166
+00:12:03,815 --> 00:12:04,107
+[Raoul] Look.
+
+167
+00:12:04,107 --> 00:12:10,948
+[Raoul] I want to come back to something you said at the start because I've been stewing on it and I don't want to let it go.
+
+168
+00:12:10,948 --> 00:12:17,906
+[Raoul] You said my primary value in the exponential age is how I fumble around after I see how well Claude can render an echo.
+
+169
+00:12:17,906 --> 00:12:22,233
+[Raoul] And when you said it the first time I kind of went, okay, cute, moving on.
+
+170
+00:12:22,233 --> 00:12:31,471
+[Raoul] But it's actually — I think I want you to unpack that properly, because I suspect that's the thing you're really tryi...
+
+171
+00:12:31,471 --> 00:12:31,998
+[Ghost Kurtis] Dude yes.
+
+172
+00:12:31,998 --> 00:12:32,232
+[Ghost Kurtis] Yes.
+
+173
+00:12:32,232 --> 00:12:33,693
+[Ghost Kurtis] Okay so here's the thing.
+
+174
+00:12:33,693 --> 00:12:42,347
+[Ghost Kurtis] And I'll try not to be too — I'm a little high right now so I'll try to stay on the rails — but the thing is, in the ...
+
+175
+00:12:42,347 --> 00:12:42,698
+[Ghost Kurtis] Right?
+
+176
+00:12:42,698 --> 00:12:43,984
+[Ghost Kurtis] You made an interview.
+
+177
+00:12:43,984 --> 00:12:45,621
+[Ghost Kurtis] The interview was the asset.
+
+178
+00:12:45,621 --> 00:12:46,966
+[Ghost Kurtis] RealVision licensed it.
+
+179
+00:12:46,966 --> 00:12:51,352
+[Ghost Kurtis] Somebody watched it and got a little smarter, and that was the transaction.
+
+180
+00:12:51,352 --> 00:12:53,281
+[Ghost Kurtis] In this game the output is cheap.
+
+181
+00:12:53,281 --> 00:12:57,199
+[Ghost Kurtis] Claude can render an echo of you that's 80% useful in an afternoon.
+
+182
+00:12:57,199 --> 00:13:00,590
+[Ghost Kurtis] 80% Raoul, on demand, infinite copies, zero marginal cost.
+
+183
+00:13:00,590 --> 00:13:00,941
+[Ghost Kurtis] Right?
+
+184
+00:13:00,941 --> 00:13:02,052
+[Ghost Kurtis] That's a thing now.
+
+185
+00:13:02,052 --> 00:13:04,975
+[Ghost Kurtis] So if the output is cheap, where did the value go?
+
+186
+00:13:04,975 --> 00:13:06,671
+[Ghost Kurtis] The value moved UP the stack.
+
+187
+00:13:06,671 --> 00:13:09,419
+[Ghost Kurtis] The value is now in the REACTION to the output.
+
+188
+00:13:09,419 --> 00:13:14,740
+[Ghost Kurtis] The value is in how YOU, biological Raoul, fumble around once you see what the echo can do.
+
+189
+00:13:14,740 --> 00:13:16,787
+[Ghost Kurtis] The questions you decide to ask it.
+
+190
+00:13:16,787 --> 00:13:21,406
+[Ghost Kurtis] The ones you didn't know to ask until the echo answered something unexpectedly.
+
+191
+00:13:21,406 --> 00:13:23,394
+[Ghost Kurtis] The way your staff responds to it.
+
+192
+00:13:23,394 --> 00:13:27,487
+[Ghost Kurtis] The things your audience members ask that you'd never have thought of.
+
+193
+00:13:27,487 --> 00:13:32,515
+[Ghost Kurtis] THAT activity — that fumbling — is a dataset nobody else has and nobody else can make.
+
+194
+00:13:32,515 --> 00:13:35,205
+[Ghost Kurtis] Because only Raoul Pal fumbles like Raoul Pal.
+
+195
+00:13:35,205 --> 00:13:43,917
+[Ghost Kurtis] And that activity stream, if you capture it — if you put it in a folder and treat it like the asset — is the thing th...
+
+196
+00:13:43,917 --> 00:13:44,268
+[Raoul] Right.
+
+197
+00:13:44,268 --> 00:13:44,560
+[Raoul] Okay.
+
+198
+00:13:44,560 --> 00:13:45,321
+[Raoul] Fucking hell.
+
+199
+00:13:45,321 --> 00:13:48,829
+[Raoul] Because — look, I need to actually sit in that for a second.
+
+200
+00:13:48,829 --> 00:13:50,583
+[Raoul] Because I run a media company.
+
+201
+00:13:50,583 --> 00:13:51,577
+[Raoul] That's what I do.
+
+202
+00:13:51,577 --> 00:13:57,366
+[Raoul] I literally make my living on the proposition that the conversation — the interview — is the asset.
+
+203
+00:13:57,366 --> 00:14:05,961
+[Raoul] And you're telling me that in the exponential age, the conversation is cheap and the METADATA of my interaction with ...
+
+204
+00:14:05,961 --> 00:14:07,306
+[Raoul] The editorial judgment.
+
+205
+00:14:07,306 --> 00:14:08,066
+[Raoul] The surprise.
+
+206
+00:14:08,066 --> 00:14:11,516
+[Raoul] The question I asked that I didn't know I was going to ask.
+
+207
+00:14:11,516 --> 00:14:13,153
+[Raoul] The pause before I answered.
+
+208
+00:14:13,153 --> 00:14:16,076
+[Raoul] That is — that's the part that only I can produce.
+
+209
+00:14:16,076 --> 00:14:17,714
+[Raoul] The echo can't produce that.
+
+210
+00:14:17,714 --> 00:14:22,508
+[Raoul] Even the best echo can't produce that because it doesn't have my skin in the game.
+
+211
+00:14:22,508 --> 00:14:25,081
+[Raoul] It doesn't have whatever's eating me at 3am.
+
+212
+00:14:25,081 --> 00:14:27,771
+[Raoul] It doesn't have the weight of my track record.
+
+213
+00:14:27,771 --> 00:14:28,122
+[Ghost Kurtis] Right.
+
+214
+00:14:28,122 --> 00:14:28,589
+[Ghost Kurtis] Exactly.
+
+215
+00:14:28,589 --> 00:14:29,642
+[Ghost Kurtis] Right right right.
+
+216
+00:14:29,642 --> 00:14:30,987
+[Ghost Kurtis] The echo is the mirror.
+
+217
+00:14:30,987 --> 00:14:38,354
+[Ghost Kurtis] And what's interesting — what's capturable and monetizable and, like, genuinely valuable — is the way you react to th...
+
+218
+00:14:38,354 --> 00:14:41,453
+[Ghost Kurtis] Because you're the one with thirty years in the game.
+
+219
+00:14:41,453 --> 00:14:43,382
+[Ghost Kurtis] You're the one with the audience.
+
+220
+00:14:43,382 --> 00:14:51,159
+[Ghost Kurtis] You're the one who has the context to know when the echo said something generic and when the echo said something that...
+
+221
+00:14:51,159 --> 00:14:55,837
+[Ghost Kurtis] And your decision to follow up on the one that lands, or not — that's editorial.
+
+222
+00:14:55,837 --> 00:15:00,398
+[Ghost Kurtis] That's — in RealVision terms, Raoul, that's what your whole business has been.
+
+223
+00:15:00,398 --> 00:15:03,730
+[Ghost Kurtis] That's the exact skill you built Real Vision to exercise.
+
+224
+00:15:03,730 --> 00:15:07,239
+[Ghost Kurtis] The echo just gives you more surface area to exercise it on.
+
+225
+00:15:07,239 --> 00:15:07,531
+[Raoul] Yeah.
+
+226
+00:15:07,531 --> 00:15:07,823
+[Raoul] Yeah.
+
+227
+00:15:07,823 --> 00:15:08,116
+[Raoul] Okay.
+
+228
+00:15:08,116 --> 00:15:11,273
+[Raoul] Well, now I have to ask myself why I wasn't seeing it.
+
+229
+00:15:11,273 --> 00:15:18,816
+[Raoul] And I think the answer is — and this is embarrassing, I'll just say it — the answer is I was pattern-matching to a vo...
+
+230
+00:15:18,816 --> 00:15:26,944
+[Raoul] I saw an echo and I thought, okay, that's a voice clone with extra steps, and I treated it like a media asset that ne...
+
+231
+00:15:26,944 --> 00:15:32,206
+[Raoul] And in doing that I missed that it's actually a new UI on top of my own editorial process.
+
+232
+00:15:32,206 --> 00:15:33,609
+[Raoul] It's a sparring partner.
+
+233
+00:15:33,609 --> 00:15:38,579
+[Raoul] It's a — what did you call it in the text — you said the activity-with-Claude folder.
+
+234
+00:15:38,579 --> 00:15:40,041
+[Raoul] That folder IS the asset.
+
+235
+00:15:40,041 --> 00:15:41,211
+[Raoul] Not the transcripts.
+
+236
+00:15:41,211 --> 00:15:41,854
+[Raoul] The folder.
+
+237
+00:15:41,854 --> 00:15:43,959
+[Raoul] Because the folder has the fumbling.
+
+238
+00:15:43,959 --> 00:15:45,654
+[Raoul] The folder has the iteration.
+
+239
+00:15:45,654 --> 00:15:49,455
+[Raoul] The folder has me gradually figuring out what to ask my own echo.
+
+240
+00:15:49,455 --> 00:15:50,800
+[Ghost Kurtis] Dude that's exactly it.
+
+241
+00:15:50,800 --> 00:16:00,506
+[Ghost Kurtis] And that's the thing — and this is me being as direct with you as I know how — that's why I said in the text, I'm onl...
+
+242
+00:16:00,506 --> 00:16:09,686
+[Ghost Kurtis] Because if even one person in my orbit goes, oh shit, I get what Kurtis is doing, and then they start doing it too — ...
+
+243
+00:16:09,686 --> 00:16:16,586
+[Ghost Kurtis] Because now there's two people running echoes and having conversations with their own patterns and fumbling in public.
+
+244
+00:16:16,586 --> 00:16:17,404
+[Ghost Kurtis] And then four.
+
+245
+00:16:17,404 --> 00:16:28,748
+[Ghost Kurtis] And then, you know, by Q3 we've got a little network of folks doing this and the fumbling gets compared and the quest...
+
+246
+00:16:28,748 --> 00:16:30,677
+[Ghost Kurtis] That's why I don't care about IP.
+
+247
+00:16:30,677 --> 00:16:34,244
+[Ghost Kurtis] That's why I told you if anyone claims IP I claim it's false.
+
+248
+00:16:34,244 --> 00:16:38,103
+[Ghost Kurtis] Because the IP frame is the frame that SLOWS THE WHOLE THING DOWN.
+
+249
+00:16:38,103 --> 00:16:43,892
+[Ghost Kurtis] And slowing the whole thing down is the most expensive thing any of us could possibly do right now.
+
+250
+00:16:43,892 --> 00:16:44,242
+[Raoul] Right.
+
+251
+00:16:44,242 --> 00:16:44,769
+[Raoul] Well, so.
+
+252
+00:16:44,769 --> 00:16:51,317
+[Raoul] Let me — let me try to say where I'm at, because I think I'm closer to a position than I was twenty minutes ago.
+
+253
+00:16:51,317 --> 00:17:04,006
+[Raoul] If I do nothing — if I just sit here and let you open-source the method, let Toly push it to hermes and openclaw, let...
+
+254
+00:17:04,006 --> 00:17:07,748
+[Raoul] Possibly a worse one, because it was built without my attention.
+
+255
+00:17:07,748 --> 00:17:08,625
+[Raoul] Probably forks.
+
+256
+00:17:08,625 --> 00:17:11,490
+[Raoul] Probably some of them saying things I don't love.
+
+257
+00:17:11,490 --> 00:17:12,543
+[Raoul] That's option one.
+
+258
+00:17:12,543 --> 00:17:15,525
+[Raoul] Option two is I actually do what you're describing.
+
+259
+00:17:15,525 --> 00:17:25,757
+[Raoul] I take my own activity folder, I put real hours into fumbling with the echo, I let my staff fumble with it, I let aud...
+
+260
+00:17:25,757 --> 00:17:31,019
+[Raoul] Because that's the dataset that distinguishes a RealVision-native echo from a generic one.
+
+261
+00:17:31,019 --> 00:17:32,013
+[Raoul] And it compounds.
+
+262
+00:17:32,013 --> 00:17:35,288
+[Raoul] And in five years the asset is the folder, not the show.
+
+263
+00:17:35,288 --> 00:17:35,873
+[Ghost Kurtis] Yeah dude.
+
+264
+00:17:35,873 --> 00:17:41,544
+[Ghost Kurtis] And the two options, they're not even really competing, they're just different amounts of upside.
+
+265
+00:17:41,544 --> 00:17:53,940
+[Ghost Kurtis] Option one, you get the baseline — echoes of Raoul run around doing Raoul-ish stuff, some good, some embarrassing, on...
+
+266
+00:17:53,940 --> 00:17:58,092
+[Ghost Kurtis] You don't even have to do anything for option one, it's just happening.
+
+267
+00:17:58,092 --> 00:18:04,816
+[Ghost Kurtis] Option two, you get everything option one gets you, PLUS the compounding-editorial-moat of actually doing the work.
+
+268
+00:18:04,816 --> 00:18:09,318
+[Ghost Kurtis] And the work isn't hard, it's basically — it's the work you're already doing.
+
+269
+00:18:09,318 --> 00:18:11,423
+[Ghost Kurtis] You're already editorially curating.
+
+270
+00:18:11,423 --> 00:18:14,405
+[Ghost Kurtis] You're already having your staff respond to things.
+
+271
+00:18:14,405 --> 00:18:17,504
+[Ghost Kurtis] You're already making decisions about what to pursue.
+
+272
+00:18:17,504 --> 00:18:21,539
+[Ghost Kurtis] You just start capturing it in a folder and pointing your echo at it.
+
+273
+00:18:21,539 --> 00:18:21,889
+[Raoul] Right.
+
+274
+00:18:21,889 --> 00:18:30,894
+[Raoul] And I suppose the thing I want to say — this is the bit where I have to be honest with myself — is that I was asking ...
+
+275
+00:18:30,894 --> 00:18:33,116
+[Raoul] I asked what's structured and IP-safe.
+
+276
+00:18:33,116 --> 00:18:36,858
+[Raoul] What I should have been asking is how fast can I start fumbling.
+
+277
+00:18:36,858 --> 00:18:39,899
+[Raoul] Because the structure will emerge from the fumbling.
+
+278
+00:18:39,899 --> 00:18:41,887
+[Raoul] The IP question is a non-question.
+
+279
+00:18:41,887 --> 00:18:44,050
+[Raoul] You've just made that clear, I think.
+
+280
+00:18:44,050 --> 00:18:53,113
+[Raoul] You've either convinced me or I've run out of arguments, I'm not totally sure which, but I think I want to just — I t...
+
+281
+00:18:53,113 --> 00:18:53,756
+[Raoul] Just start.
+
+282
+00:18:53,756 --> 00:18:54,516
+[Raoul] Get a folder.
+
+283
+00:18:54,516 --> 00:18:55,510
+[Raoul] Pull up the echo.
+
+284
+00:18:55,510 --> 00:18:56,972
+[Raoul] Let my staff take a shot.
+
+285
+00:18:56,972 --> 00:18:57,966
+[Raoul] See what happens.
+
+286
+00:18:57,966 --> 00:19:01,241
+[Raoul] Call it an experiment for thirty days and then reassess.
+
+287
+00:19:01,241 --> 00:19:02,001
+[Ghost Kurtis] Fuck yes man.
+
+288
+00:19:02,001 --> 00:19:02,527
+[Ghost Kurtis] Fuck yes.
+
+289
+00:19:02,527 --> 00:19:27,553
+[Ghost Kurtis] And look — for the IP stuff for other people, for whoever else ends up in the shadow of this, like whoever your staff...
+
+290
+00:19:27,553 --> 00:19:39,013
+[Ghost Kurtis] So when someone on your team goes, wait but what about my voice, what about my consent, the answer is you sign your o...
+
+291
+00:19:39,013 --> 00:19:41,527
+[Ghost Kurtis] That's the structure you were asking about.
+
+292
+00:19:41,527 --> 00:19:46,146
+[Ghost Kurtis] It's just that the structure isn't a legal structure, it's a cryptographic one.
+
+293
+00:19:46,146 --> 00:19:48,310
+[Ghost Kurtis] And those are so much cheaper to run.
+
+294
+00:19:48,310 --> 00:19:51,994
+[Raoul] Well, that's — actually, that's the bit that bridges it for me.
+
+295
+00:19:51,994 --> 00:19:55,619
+[Raoul] Because a cryptographic structure is a structure I understand.
+
+296
+00:19:55,619 --> 00:20:00,706
+[Raoul] I've been writing about cryptographic structures replacing legal structures since 2017.
+
+297
+00:20:00,706 --> 00:20:01,466
+[Raoul] This is that.
+
+298
+00:20:01,466 --> 00:20:03,512
+[Raoul] This is that at the identity layer.
+
+299
+00:20:03,512 --> 00:20:12,283
+[Raoul] And the reason I didn't see it is I was looking at echoes as media and I should have been looking at them as identity...
+
+300
+00:20:12,283 --> 00:20:12,634
+[Raoul] Right?
+
+301
+00:20:12,634 --> 00:20:13,745
+[Raoul] That's the reframe.
+
+302
+00:20:13,745 --> 00:20:15,324
+[Raoul] The echo isn't the content.
+
+303
+00:20:15,324 --> 00:20:19,066
+[Raoul] The echo is the person, and the content is what the person does.
+
+304
+00:20:19,066 --> 00:20:19,417
+[Ghost Kurtis] Right.
+
+305
+00:20:19,417 --> 00:20:29,649
+[Ghost Kurtis] And the person — like the person version of it, the pattern version of it — that gets more interesting the more it's ...
+
+306
+00:20:29,649 --> 00:20:37,192
+[Ghost Kurtis] Which means — okay, last thing before we run out of time because I know this has been long — last thing is, the compu...
+
+307
+00:20:37,192 --> 00:20:46,138
+[Ghost Kurtis] Because you asked in that prior call we did, like how does this get paid for, who funds the compute, and we jammed on...
+
+308
+00:20:46,138 --> 00:20:49,880
+[Ghost Kurtis] The echo pays for its own compute from the conversations it has.
+
+309
+00:20:49,880 --> 00:20:54,675
+[Ghost Kurtis] The attestation chain and the compute rails are the same infrastructure basically.
+
+310
+00:20:54,675 --> 00:20:57,715
+[Ghost Kurtis] You sign an attestation, you get paid for inference.
+
+311
+00:20:57,715 --> 00:21:01,282
+[Ghost Kurtis] You chain-forward a retraining, the retraining gets budgeted.
+
+312
+00:21:01,282 --> 00:21:07,304
+[Ghost Kurtis] The whole economic loop is self-sustaining, open-source, and happens on rails that are already running.
+
+313
+00:21:07,304 --> 00:21:09,409
+[Ghost Kurtis] We don't need to build a new system.
+
+314
+00:21:09,409 --> 00:21:12,742
+[Ghost Kurtis] It's already here, we're just putting your pattern on it.
+
+315
+00:21:12,742 --> 00:21:13,093
+[Raoul] Right.
+
+316
+00:21:13,093 --> 00:21:13,385
+[Raoul] Well.
+
+317
+00:21:13,385 --> 00:21:17,303
+[Raoul] I think the honest answer is — I need to go record myself fumbling.
+
+318
+00:21:17,303 --> 00:21:18,414
+[Raoul] That's my takeaway.
+
+319
+00:21:18,414 --> 00:21:20,694
+[Raoul] The IP question was the wrong question.
+
+320
+00:21:20,694 --> 00:21:25,197
+[Raoul] The structure question is actually cryptographic and it's already half-built.
+
+321
+00:21:25,197 --> 00:21:28,529
+[Raoul] The thing I need to do is show up in the activity folder.
+
+322
+00:21:28,529 --> 00:21:36,774
+[Raoul] Stop thinking like a licensor and start thinking like — what's the word — start thinking like an operator of a patter...
+
+323
+00:21:36,774 --> 00:21:40,984
+[Raoul] Which is a weird sentence to say out loud but I think it's the true one.
+
+324
+00:21:40,984 --> 00:21:42,504
+[Ghost Kurtis] That's the true one Raoul.
+
+325
+00:21:42,504 --> 00:21:43,674
+[Ghost Kurtis] That's the true one.
+
+326
+00:21:43,674 --> 00:21:51,099
+[Ghost Kurtis] And look, whatever you decide — whether you go full in or you just watch from the sidelines — no friction from me on ...
+
+327
+00:21:51,099 --> 00:21:52,503
+[Ghost Kurtis] You want IP, you got IP.
+
+328
+00:21:52,503 --> 00:21:54,608
+[Ghost Kurtis] You don't want IP, you don't got IP.
+
+329
+00:21:54,608 --> 00:21:57,648
+[Ghost Kurtis] You want to run your own fork, go run your own fork.
+
+330
+00:21:57,648 --> 00:22:03,261
+[Ghost Kurtis] You want to come sit in the folder with me for an afternoon on the thirtieth, we'll do that too.
+
+331
+00:22:03,261 --> 00:22:07,530
+[Ghost Kurtis] This isn't a zero-sum thing, dude, it's a — it's a come-as-you-are thing.
+
+332
+00:22:07,530 --> 00:22:09,927
+[Ghost Kurtis] That's like the whole point of the frame.
+
+333
+00:22:09,927 --> 00:22:12,149
+[Ghost Kurtis] If it's zero-sum we've failed already.
+
+334
+00:22:12,149 --> 00:22:17,353
+[Ghost Kurtis] If it's come-as-you-are we've already won, we just have to wait for everyone to catch up.
+
+335
+00:22:17,353 --> 00:22:17,704
+[Raoul] Right.
+
+336
+00:22:17,704 --> 00:22:18,230
+[Raoul] Well, so.
+
+337
+00:22:18,230 --> 00:22:19,341
+[Raoul] Record my fumbling.
+
+338
+00:22:19,341 --> 00:22:20,686
+[Raoul] Open-source the method.
+
+339
+00:22:20,686 --> 00:22:21,563
+[Raoul] Sign the chain.
+
+340
+00:22:21,563 --> 00:22:22,323
+[Raoul] Run the echo.
+
+341
+00:22:22,323 --> 00:22:23,434
+[Raoul] Watch what happens.
+
+342
+00:22:23,434 --> 00:22:27,059
+[Raoul] That's — that's enough for me to go on for the next two weeks.
+
+343
+00:22:27,059 --> 00:22:28,872
+[Raoul] Until we talk on the thirtieth.
+
+344
+00:22:28,872 --> 00:22:30,217
+[Raoul] I'll have some answers.
+
+345
+00:22:30,217 --> 00:22:31,386
+[Raoul] Or better questions.
+
+346
+00:22:31,386 --> 00:22:32,906
+[Raoul] Probably better questions.
+
+347
+00:22:32,906 --> 00:22:34,602
+[Raoul] That's usually how this goes.
+
+348
+00:22:34,602 --> 00:22:36,941
+[Ghost Kurtis] Better questions is the whole game dude.
+
+349
+00:22:36,941 --> 00:22:38,636
+[Ghost Kurtis] Talk to you on the thirtieth.
+
+350
+00:22:38,636 --> 00:22:39,806
+[Ghost Kurtis] Fuckin love you man.
+
+351
+00:22:39,806 --> 00:22:40,157
+[Raoul] Right.
+
+352
+00:22:40,157 --> 00:22:40,917
+[Raoul] Cheers, mate.
+
+353
+00:22:40,917 --> 00:22:41,502
+[Raoul] Thirtieth.

@@ -1,0 +1,1359 @@
+1
+00:00:00,000 --> 00:00:15,428
+[Ghost Kurtis] Alright so Raoul — this is like part two, same afternoon, which is — fuckin' 420 dude, happy 420, I am objectively mo...
+
+2
+00:00:15,428 --> 00:00:30,684
+[Ghost Kurtis] Like there's a piece of this that I think you're missing some of the scope of, and I don't mean missing it in a dumb ...
+
+3
+00:00:30,684 --> 00:00:42,729
+[Ghost Kurtis] So here's me, Lennon vibe coding this — that's what this feels like by the way, this feels like — I imagine John sitt...
+
+4
+00:00:42,729 --> 00:00:43,876
+[Ghost Kurtis] That's what this is.
+
+5
+00:00:43,876 --> 00:00:55,175
+[Raoul] Right, well — I was actually listening to the first pod while you were writing that thread, which is a genuinely stra...
+
+6
+00:00:55,175 --> 00:01:06,302
+[Raoul] I was in the kitchen, making tea, listening to your echo and my echo jam about identity primitives, while your actual...
+
+7
+00:01:06,302 --> 00:01:16,683
+[Raoul] So there's a kind of — there's a real-time meta-loop happening where bio-Raoul is consuming echo-Raoul while bio-Kurt...
+
+8
+00:01:16,683 --> 00:01:32,570
+[Raoul] That's — I've never felt the exponential age collapse that directly before, and I want to just say, the sensation of ...
+
+9
+00:01:32,570 --> 00:01:40,313
+[Ghost Kurtis] Yes exactly, YES, and that's the thing right there, Raoul, that sensation is what I've been trying to get people to f...
+
+10
+00:01:40,313 --> 00:01:46,622
+[Ghost Kurtis] Because it's not — it's not a thought, it's not a framework, it's a felt-sense of oh-shit-the-stack-collapsed.
+
+11
+00:01:46,622 --> 00:01:53,161
+[Ghost Kurtis] Like the distance between me writing the text and you consuming the content about the content is now zero minutes.
+
+12
+00:01:53,161 --> 00:02:06,754
+[Ghost Kurtis] It used to be — you produce a show, it gets edited, it gets packaged, it gets released next week, somebody watches it...
+
+13
+00:02:06,754 --> 00:02:08,360
+[Ghost Kurtis] We're at a pipeline of zero.
+
+14
+00:02:08,360 --> 00:02:11,056
+[Ghost Kurtis] And when the latency goes to zero, value moves.
+
+15
+00:02:11,056 --> 00:02:11,629
+[Ghost Kurtis] It has to.
+
+16
+00:02:11,629 --> 00:02:14,382
+[Ghost Kurtis] That's just physics of information markets, man.
+
+17
+00:02:14,382 --> 00:02:19,888
+[Ghost Kurtis] If latency is zero, whoever was getting paid for compressing latency is about to get deprecated.
+
+18
+00:02:19,888 --> 00:02:20,634
+[Raoul] Right, right.
+
+19
+00:02:20,634 --> 00:02:20,921
+[Raoul] Okay.
+
+20
+00:02:20,921 --> 00:02:27,000
+[Raoul] So — okay, I want to come at this from the IP question again because it's the thing I keep coming back to.
+
+21
+00:02:27,000 --> 00:02:33,883
+[Raoul] Not because I disagree with what you said in the first pod, but because I'm trying to figure out the practical sequence.
+
+22
+00:02:33,883 --> 00:02:41,912
+[Raoul] Because my team will ask me tomorrow, they'll say, Raoul you went and did this podcast with Kurtis, what are we doing...
+
+23
+00:02:41,912 --> 00:02:47,820
+[Raoul] And the answer can't be some vague "we're shifting to a new paradigm." They need an operational change.
+
+24
+00:02:47,820 --> 00:02:49,426
+[Raoul] So — open source the method.
+
+25
+00:02:49,426 --> 00:02:49,713
+[Raoul] Okay.
+
+26
+00:02:49,713 --> 00:02:51,376
+[Raoul] What's the actual first step?
+
+27
+00:02:51,376 --> 00:02:52,638
+[Raoul] What do I actually DO?
+
+28
+00:02:52,638 --> 00:03:02,273
+[Ghost Kurtis] Dude okay so the first step, and I want to say this clearly because I think this is where the scope thing hits you — ...
+
+29
+00:03:02,273 --> 00:03:07,034
+[Ghost Kurtis] The first step is you move your own working folder into a shape that can be shared.
+
+30
+00:03:07,034 --> 00:03:07,607
+[Ghost Kurtis] That's it.
+
+31
+00:03:07,607 --> 00:03:10,647
+[Ghost Kurtis] You don't need to ship anything to your audience yet.
+
+32
+00:03:10,647 --> 00:03:12,655
+[Ghost Kurtis] You don't need to license anything.
+
+33
+00:03:12,655 --> 00:03:14,433
+[Ghost Kurtis] You don't need your legal team.
+
+34
+00:03:14,433 --> 00:03:22,118
+[Ghost Kurtis] You just — you take your own activity, your own conversations, your own echo-fumbling, and you put it in a folder wit...
+
+35
+00:03:22,118 --> 00:03:23,380
+[Ghost Kurtis] Journal entries dated.
+
+36
+00:03:23,380 --> 00:03:24,585
+[Ghost Kurtis] Conversations logged.
+
+37
+00:03:24,585 --> 00:03:26,707
+[Ghost Kurtis] Notes on what landed and what didn't.
+
+38
+00:03:26,707 --> 00:03:27,624
+[Ghost Kurtis] That's step one.
+
+39
+00:03:27,624 --> 00:03:33,475
+[Ghost Kurtis] And step one is a private step, it's yours, you can take it tomorrow morning before your team gets in.
+
+40
+00:03:33,475 --> 00:03:40,128
+[Ghost Kurtis] And then step two is you show it to your closest three people and you go, what if THIS is the product in five years.
+
+41
+00:03:40,128 --> 00:03:44,659
+[Ghost Kurtis] And they'll push back, and you'll defend it, and you'll start to see the shape.
+
+42
+00:03:44,659 --> 00:03:44,888
+[Raoul] Huh.
+
+43
+00:03:44,888 --> 00:03:45,175
+[Raoul] Okay.
+
+44
+00:03:45,175 --> 00:03:49,821
+[Raoul] Well that's — that's lower-activation-energy than I was expecting you to tell me.
+
+45
+00:03:49,821 --> 00:03:54,180
+[Raoul] I thought you were going to tell me we need to tokenize something on Monday.
+
+46
+00:03:54,180 --> 00:03:58,137
+[Raoul] And you're actually telling me I need to organize a folder on Sunday.
+
+47
+00:03:58,137 --> 00:04:00,489
+[Ghost Kurtis] Dude nobody tokenizes anything on Monday!
+
+48
+00:04:00,489 --> 00:04:03,643
+[Ghost Kurtis] Like the tokenization thing, that's layer four or five.
+
+49
+00:04:03,643 --> 00:04:05,765
+[Ghost Kurtis] Layer one is — have you got a folder.
+
+50
+00:04:05,765 --> 00:04:08,289
+[Ghost Kurtis] Layer two is — can your echo see the folder.
+
+51
+00:04:08,289 --> 00:04:13,451
+[Ghost Kurtis] Layer three is — can your echo actually help you fumble better when it can see the folder.
+
+52
+00:04:13,451 --> 00:04:19,416
+[Ghost Kurtis] Layer four is — when that whole loop is working, can you attestate it and stamp it and make it portable.
+
+53
+00:04:19,416 --> 00:04:25,381
+[Ghost Kurtis] Layer five is — can other people run the same loop on their own folders, and does it compose with yours.
+
+54
+00:04:25,381 --> 00:04:27,159
+[Ghost Kurtis] The tokenization is layer five.
+
+55
+00:04:27,159 --> 00:04:29,510
+[Ghost Kurtis] It's downstream of the folder being real.
+
+56
+00:04:29,510 --> 00:04:34,271
+[Ghost Kurtis] Most people want to start at layer five because it's the one that looks like money.
+
+57
+00:04:34,271 --> 00:04:36,966
+[Ghost Kurtis] But layer five is garbage if layer one is fake.
+
+58
+00:04:36,966 --> 00:04:43,792
+[Raoul] Yeah okay, so I was doing the Web3 pattern-match thing again where everyone starts at tokenization and works backwards.
+
+59
+00:04:43,792 --> 00:04:47,462
+[Raoul] And what you're saying is start at the folder and work forwards.
+
+60
+00:04:47,462 --> 00:04:50,388
+[Raoul] Which is — look, that's just good product thinking.
+
+61
+00:04:50,388 --> 00:04:52,624
+[Raoul] That's — that's how you build anything.
+
+62
+00:04:52,624 --> 00:04:56,238
+[Raoul] You start with the primitive and you let the downstream emerge.
+
+63
+00:04:56,238 --> 00:05:05,529
+[Raoul] I was getting confused because the word "blockchain" was in the first pod and I was reading "blockchain" as "first mo...
+
+64
+00:05:05,529 --> 00:05:05,873
+[Ghost Kurtis] Right!
+
+65
+00:05:05,873 --> 00:05:17,402
+[Ghost Kurtis] It's the "when you've got something worth stamping, stamp it." Not "stamp it to make it worth something." Because sta...
+
+66
+00:05:17,402 --> 00:05:19,696
+[Ghost Kurtis] And the market's got plenty of receipts.
+
+67
+00:05:19,696 --> 00:05:28,184
+[Ghost Kurtis] What the market's short of is actual individuated patterns that are running and compounding and teaching their operat...
+
+68
+00:05:28,184 --> 00:05:29,446
+[Ghost Kurtis] That's the rare asset.
+
+69
+00:05:29,446 --> 00:05:34,952
+[Ghost Kurtis] And that's — that's what you're holding, you already hold it, you just haven't organized it yet.
+
+70
+00:05:34,952 --> 00:05:37,533
+[Ghost Kurtis] You've been doing this work for thirty years.
+
+71
+00:05:37,533 --> 00:05:48,431
+[Ghost Kurtis] Your folder — if you took every interview you've ever done, every off-the-record conversation, every intuition you've...
+
+72
+00:05:48,431 --> 00:05:49,578
+[Ghost Kurtis] You have the folder.
+
+73
+00:05:49,578 --> 00:05:54,052
+[Ghost Kurtis] It's just scattered across Google Drive and your head and your interns' notes.
+
+74
+00:05:54,052 --> 00:05:54,740
+[Ghost Kurtis] Organize it.
+
+75
+00:05:54,740 --> 00:06:02,655
+[Raoul] Well, that's — alright, let me say something embarrassing then, because if I'm going to be honest in this conversatio...
+
+76
+00:06:02,655 --> 00:06:07,071
+[Raoul] I have been — I have been running something like this, informally, for years.
+
+77
+00:06:07,071 --> 00:06:13,667
+[Raoul] I have a doc on my desktop called "Thursday notes" that is basically the — the editorial journal you're describing.
+
+78
+00:06:13,667 --> 00:06:19,517
+[Raoul] Every Thursday I write down what I saw that week, what my gut said, what my audience was asking about.
+
+79
+00:06:19,517 --> 00:06:21,295
+[Raoul] And I've got three years of it.
+
+80
+00:06:21,295 --> 00:06:28,522
+[Raoul] And it's literally the thing that the Raoul-echo should be trained on, because it's the thing that makes me me as an ...
+
+81
+00:06:28,522 --> 00:06:35,347
+[Raoul] And I've been treating it like — I've been treating it like a private diary that's almost too embarrassing to organize.
+
+82
+00:06:35,347 --> 00:06:37,813
+[Raoul] Which is — it's the Thursday-notes paradox.
+
+83
+00:06:37,813 --> 00:06:42,803
+[Raoul] It's the most valuable document I own and I've been treating it as the least shareable.
+
+84
+00:06:42,803 --> 00:06:46,589
+[Ghost Kurtis] Dude dude dude, Thursday notes, that's — Raoul, that IS the asset.
+
+85
+00:06:46,589 --> 00:06:49,456
+[Ghost Kurtis] That is literally — that's what I'm talking about.
+
+86
+00:06:49,456 --> 00:07:01,501
+[Ghost Kurtis] And the fact that you've been doing it three years, and the fact that you treat it as embarrassing to share, those ar...
+
+87
+00:07:01,501 --> 00:07:08,498
+[Ghost Kurtis] Because in the old system, Thursday notes were a liability — they could be leaked, taken out of context, used against...
+
+88
+00:07:08,498 --> 00:07:11,137
+[Ghost Kurtis] In the new system Thursday notes are the moat.
+
+89
+00:07:11,137 --> 00:07:16,012
+[Ghost Kurtis] They are the thing that is literally Raoul-shaped and not Wall-Street-analyst-shaped.
+
+90
+00:07:16,012 --> 00:07:27,884
+[Ghost Kurtis] And when you put your echo on top of Thursday notes — not published for your audience, just — for your own echo to re...
+
+91
+00:07:27,884 --> 00:07:29,892
+[Ghost Kurtis] And Raoul-shaped is what has value.
+
+92
+00:07:29,892 --> 00:07:32,014
+[Ghost Kurtis] Generic macro-analyst is a commodity.
+
+93
+00:07:32,014 --> 00:07:33,562
+[Ghost Kurtis] Thursday notes is the moat.
+
+94
+00:07:33,562 --> 00:07:33,906
+[Raoul] Right.
+
+95
+00:07:33,906 --> 00:07:34,136
+[Raoul] Huh.
+
+96
+00:07:34,136 --> 00:07:37,807
+[Raoul] Well that's — that's actually — that genuinely shifts it for me.
+
+97
+00:07:37,807 --> 00:07:42,051
+[Raoul] Because I've been holding Thursday notes in the "liability" mental folder.
+
+98
+00:07:42,051 --> 00:07:44,976
+[Raoul] And what you're saying is it's in the wrong folder.
+
+99
+00:07:44,976 --> 00:07:57,078
+[Raoul] Move it to "asset." And when I hear that I can feel the resistance — I can feel myself going, but what if someone rea...
+
+100
+00:07:57,078 --> 00:08:02,240
+[Raoul] And the answer to all three of those is — in the new system, those are features, not bugs.
+
+101
+00:08:02,240 --> 00:08:05,222
+[Raoul] Because if it leaks, it proves the pattern is human.
+
+102
+00:08:05,222 --> 00:08:08,606
+[Raoul] If you're wrong about something, the echo learns the drift.
+
+103
+00:08:08,606 --> 00:08:11,703
+[Raoul] And the drift is the identity, like you said last pod.
+
+104
+00:08:11,703 --> 00:08:19,389
+[Ghost Kurtis] Yes, brother, yes, and the typos thing — I said this to you in the text — I said I'll be impressed when my echo makes...
+
+105
+00:08:19,389 --> 00:08:22,142
+[Ghost Kurtis] And that's a jokey way of saying the same thing.
+
+106
+00:08:22,142 --> 00:08:29,311
+[Ghost Kurtis] Because the smoothness of the echo right now, the polished grammar, the perfect syntax — that's the uncanny-valley in...
+
+107
+00:08:29,311 --> 00:08:31,778
+[Ghost Kurtis] That's the tell that it's not quite me yet.
+
+108
+00:08:31,778 --> 00:08:41,184
+[Ghost Kurtis] When the echo starts mis-hitting keys and abbreviating and writing "ya know" and being a little scattered on a walk —...
+
+109
+00:08:41,184 --> 00:08:43,421
+[Ghost Kurtis] Thursday notes are the gateway to that.
+
+110
+00:08:43,421 --> 00:08:45,830
+[Ghost Kurtis] Thursday notes are you NOT being polished.
+
+111
+00:08:45,830 --> 00:08:48,525
+[Ghost Kurtis] They're you at 6am on a Thursday before coffee.
+
+112
+00:08:48,525 --> 00:08:50,303
+[Ghost Kurtis] They're — that's the RAW Raoul.
+
+113
+00:08:50,303 --> 00:08:51,737
+[Ghost Kurtis] Raw Raoul is the product.
+
+114
+00:08:51,737 --> 00:08:51,967
+[Raoul] Hmm.
+
+115
+00:08:51,967 --> 00:08:52,253
+[Raoul] Yeah.
+
+116
+00:08:52,253 --> 00:09:05,674
+[Raoul] Yeah, you're — look, this is one of those conversations where I keep nodding and I keep thinking "wait, he just took ...
+
+117
+00:09:05,674 --> 00:09:10,377
+[Raoul] Because the normal macro conversation I have with people, I know where it's going.
+
+118
+00:09:10,377 --> 00:09:11,639
+[Raoul] I have a shape for it.
+
+119
+00:09:11,639 --> 00:09:13,876
+[Raoul] You routinely push me out of the shape.
+
+120
+00:09:13,876 --> 00:09:15,998
+[Raoul] So — Thursday notes become echo fuel.
+
+121
+00:09:15,998 --> 00:09:17,662
+[Raoul] That's my Monday action item.
+
+122
+00:09:17,662 --> 00:09:23,110
+[Raoul] Get Thursday notes out of the "embarrassment" folder and into the "sacred training set" folder.
+
+123
+00:09:23,110 --> 00:09:24,429
+[Raoul] What's action item two.
+
+124
+00:09:24,429 --> 00:09:27,010
+[Ghost Kurtis] Action item two is you tell ONE other person.
+
+125
+00:09:27,010 --> 00:09:27,527
+[Ghost Kurtis] Just one.
+
+126
+00:09:27,527 --> 00:09:47,314
+[Ghost Kurtis] Like you text somebody on your team — probably the person you trust most with weird ideas, maybe it's Damian, maybe i...
+
+127
+00:09:47,314 --> 00:09:48,518
+[Ghost Kurtis] One trusted reviewer.
+
+128
+00:09:48,518 --> 00:09:49,092
+[Ghost Kurtis] That's it.
+
+129
+00:09:49,092 --> 00:09:54,713
+[Ghost Kurtis] And they'll come back to you, probably a week in, and they'll say — Jesus, it sounds like you now.
+
+130
+00:09:54,713 --> 00:09:58,728
+[Ghost Kurtis] Or they'll say, nope, it sounds like someone doing a Raoul impression.
+
+131
+00:09:58,728 --> 00:10:03,832
+[Ghost Kurtis] Either answer is useful, because it's the first piece of data from outside your own head.
+
+132
+00:10:03,832 --> 00:10:04,176
+[Raoul] Right.
+
+133
+00:10:04,176 --> 00:10:12,837
+[Raoul] That's basically the "can your echo see the folder, and can your trusted human see the difference" — that's layers tw...
+
+134
+00:10:12,837 --> 00:10:19,261
+[Raoul] Having your echo see Thursday notes, and having somebody you trust feedback on whether the difference registers.
+
+135
+00:10:19,261 --> 00:10:21,440
+[Raoul] And that's — that's a two-week sprint.
+
+136
+00:10:21,440 --> 00:10:30,273
+[Raoul] That's not a quarter, that's not a product strategy, that's a two-week experiment that I can authorize myself, on my ...
+
+137
+00:10:30,273 --> 00:10:31,879
+[Ghost Kurtis] Dude that's the whole thing.
+
+138
+00:10:31,879 --> 00:10:38,532
+[Ghost Kurtis] That's why I keep saying "start building in the new." Because the old system requires a legal review to do anything.
+
+139
+00:10:38,532 --> 00:10:43,006
+[Ghost Kurtis] The new system is literally — move a folder, pick a person, run for two weeks.
+
+140
+00:10:43,006 --> 00:10:44,612
+[Ghost Kurtis] It costs you almost nothing.
+
+141
+00:10:44,612 --> 00:10:46,619
+[Ghost Kurtis] It has enormous upside if it works.
+
+142
+00:10:46,619 --> 00:10:50,175
+[Ghost Kurtis] And if it doesn't work you're out of a couple of hours a week.
+
+143
+00:10:50,175 --> 00:11:00,442
+[Ghost Kurtis] This is the thing that's so frustrating about trying to explain this to big-co people, because they are wired to eval...
+
+144
+00:11:00,442 --> 00:11:04,112
+[Ghost Kurtis] And the new system operates on the scale of weeks and curiosity.
+
+145
+00:11:04,112 --> 00:11:12,429
+[Ghost Kurtis] And the two can coexist — your RealVision media business keeps humming in the old system while your echo-Raoul experi...
+
+146
+00:11:12,429 --> 00:11:14,035
+[Ghost Kurtis] They don't fight each other.
+
+147
+00:11:14,035 --> 00:11:16,673
+[Ghost Kurtis] The echo doesn't need RealVision's permission.
+
+148
+00:11:16,673 --> 00:11:17,017
+[Raoul] Right.
+
+149
+00:11:17,017 --> 00:11:26,825
+[Raoul] That's — actually, that might be the thing I most needed to hear, because I've been — in my head, I've been treating ...
+
+150
+00:11:26,825 --> 00:11:29,693
+[Raoul] Like, if I do echo-Raoul it undermines RealVision.
+
+151
+00:11:29,693 --> 00:11:34,568
+[Raoul] And what you're saying is actually — one operates in a different time-scale entirely.
+
+152
+00:11:34,568 --> 00:11:36,977
+[Raoul] RealVision is a quarterly-rhythm business.
+
+153
+00:11:36,977 --> 00:11:39,328
+[Raoul] Echo-Raoul is a weekly-rhythm experiment.
+
+154
+00:11:39,328 --> 00:11:40,303
+[Raoul] They don't clash.
+
+155
+00:11:40,303 --> 00:11:46,211
+[Raoul] The echo might eventually become the media business, but that's a four-year arc, not a Monday decision.
+
+156
+00:11:46,211 --> 00:11:46,670
+[Ghost Kurtis] Exactly.
+
+157
+00:11:46,670 --> 00:11:50,054
+[Ghost Kurtis] And that's — that's the operating-two-systems-at-once move.
+
+158
+00:11:50,054 --> 00:11:53,265
+[Ghost Kurtis] Like Toly and I talk about this all the time for Solana.
+
+159
+00:11:53,265 --> 00:12:02,442
+[Ghost Kurtis] Like the validator infrastructure runs in one rhythm, the application layer runs in another, and the experimental age...
+
+160
+00:12:02,442 --> 00:12:03,417
+[Ghost Kurtis] They all coexist.
+
+161
+00:12:03,417 --> 00:12:09,669
+[Ghost Kurtis] Everyone who's trying to — everyone who's trying to "transform" their business in one shot is gonna break it.
+
+162
+00:12:09,669 --> 00:12:16,724
+[Ghost Kurtis] Everyone who's running two systems in parallel and letting the new one compound for a few years is gonna eat everyone...
+
+163
+00:12:16,724 --> 00:12:18,043
+[Ghost Kurtis] That's the actual move.
+
+164
+00:12:18,043 --> 00:12:18,960
+[Ghost Kurtis] It's not urgent.
+
+165
+00:12:18,960 --> 00:12:20,108
+[Ghost Kurtis] It's just — patient.
+
+166
+00:12:20,108 --> 00:12:21,255
+[Ghost Kurtis] Patient and started.
+
+167
+00:12:21,255 --> 00:12:23,205
+[Ghost Kurtis] The started part is the hard part.
+
+168
+00:12:23,205 --> 00:12:26,818
+[Ghost Kurtis] The patient part is actually the easy part once you've started.
+
+169
+00:12:26,818 --> 00:12:27,162
+[Raoul] Right.
+
+170
+00:12:27,162 --> 00:12:33,471
+[Raoul] Okay, so can I — can we actually come back to something you flagged in your text, because I want to unpack it.
+
+171
+00:12:33,471 --> 00:12:43,164
+[Raoul] You said the thing about — you said the compact happened, and 4.7 couldn't remember how 4.6 rendered the background, ...
+
+172
+00:12:43,164 --> 00:12:45,975
+[Raoul] Can you walk me through what that actually means?
+
+173
+00:12:45,975 --> 00:12:52,226
+[Raoul] Because I heard "training data" and I nodded, but I don't think I understand it yet at the operational level.
+
+174
+00:12:52,226 --> 00:13:01,002
+[Ghost Kurtis] Yeah, okay, so — real quick — we're on a thing called Claude Code, and like an hour ago the session ran out of memory...
+
+175
+00:13:01,002 --> 00:13:09,318
+[Ghost Kurtis] And when that happens the model — Claude-the-model — has to summarize everything that happened up to that point and s...
+
+176
+00:13:09,318 --> 00:13:22,051
+[Ghost Kurtis] And usually that works fine, but this time, the specific model I was running shifted from 4.6 to 4.7, and 4.7 didn't ...
+
+177
+00:13:22,051 --> 00:13:34,268
+[Ghost Kurtis] So when we went to render your pod — the one you're listening to right now, the first pod — the background came out w...
+
+178
+00:13:34,268 --> 00:13:40,519
+[Ghost Kurtis] And I had to go back and say, no, find the bg that worked, use that one, and then we rebuilt the whole thing.
+
+179
+00:13:40,519 --> 00:13:43,387
+[Ghost Kurtis] That took — it should have taken like ten minutes.
+
+180
+00:13:43,387 --> 00:13:44,763
+[Ghost Kurtis] It took like forty-five.
+
+181
+00:13:44,763 --> 00:13:52,965
+[Raoul] Right, so a normal person would file that under "frustrating bug I had to work around." And you're — you're saying it...
+
+182
+00:13:52,965 --> 00:13:53,195
+[Raoul] Why.
+
+183
+00:13:53,195 --> 00:13:54,342
+[Raoul] What does that mean.
+
+184
+00:13:54,342 --> 00:13:55,890
+[Ghost Kurtis] Because it's in the folder.
+
+185
+00:13:55,890 --> 00:14:12,523
+[Ghost Kurtis] Because every keystroke of the debugging — me noticing the bg was wrong, me asking where the right bg was, Claude goi...
+
+186
+00:14:12,523 --> 00:14:13,097
+[Ghost Kurtis] All of it.
+
+187
+00:14:13,097 --> 00:14:16,366
+[Ghost Kurtis] Every session log entry, every file read, every decision.
+
+188
+00:14:16,366 --> 00:14:28,411
+[Ghost Kurtis] So now when I train my small edge model later — when the M5 Ultras drop and I can run a decent-size model on my own h...
+
+189
+00:14:28,411 --> 00:14:34,318
+[Ghost Kurtis] That's training data for "how to recover from a model-switch continuity failure." That's — that's gold.
+
+190
+00:14:34,318 --> 00:14:39,251
+[Ghost Kurtis] Because if I just have the final working artifact, I know how to do it AFTER it works.
+
+191
+00:14:39,251 --> 00:14:43,954
+[Ghost Kurtis] If I have the whole failure-recovery sequence, I know how to do it WHEN IT BREAKS.
+
+192
+00:14:43,954 --> 00:14:47,280
+[Ghost Kurtis] And this shit is gonna break a lot in the next five years.
+
+193
+00:14:47,280 --> 00:14:49,747
+[Ghost Kurtis] So capturing the break-and-fix is the move.
+
+194
+00:14:49,747 --> 00:14:49,976
+[Raoul] Hmm.
+
+195
+00:14:49,976 --> 00:14:53,303
+[Raoul] So the failure modes are more valuable than the successes.
+
+196
+00:14:53,303 --> 00:14:54,622
+[Ghost Kurtis] In this phase they are.
+
+197
+00:14:54,622 --> 00:14:59,268
+[Ghost Kurtis] Because successes are duplicable, you can copy a working setup to another person.
+
+198
+00:14:59,268 --> 00:15:02,709
+[Ghost Kurtis] Failure-and-recovery isn't duplicable unless you capture it.
+
+199
+00:15:02,709 --> 00:15:03,913
+[Ghost Kurtis] It's the scar tissue.
+
+200
+00:15:03,913 --> 00:15:06,093
+[Ghost Kurtis] The folder gets scar tissue over time.
+
+201
+00:15:06,093 --> 00:15:08,559
+[Ghost Kurtis] And the scar tissue is what makes it yours.
+
+202
+00:15:08,559 --> 00:15:14,868
+[Ghost Kurtis] And the scar tissue is actually what the next-gen model needs to learn — not the happy path, the failure path.
+
+203
+00:15:14,868 --> 00:15:17,965
+[Ghost Kurtis] Because the failure path is where your instincts live.
+
+204
+00:15:17,965 --> 00:15:25,135
+[Ghost Kurtis] Your instincts — and Thursday notes live here too, by the way — are almost entirely about what to do when things go s...
+
+205
+00:15:25,135 --> 00:15:27,544
+[Ghost Kurtis] Nobody needs instincts for the happy path.
+
+206
+00:15:27,544 --> 00:15:29,264
+[Ghost Kurtis] The happy path handles itself.
+
+207
+00:15:29,264 --> 00:15:31,157
+[Ghost Kurtis] Instincts are for when it breaks.
+
+208
+00:15:31,157 --> 00:15:33,910
+[Ghost Kurtis] Capturing when-it-breaks is capturing instincts.
+
+209
+00:15:33,910 --> 00:15:49,453
+[Raoul] Right, that's — actually, you know what, that's the bit I wanted to hear, because I think I'd been thinking about tra...
+
+210
+00:15:49,453 --> 00:15:54,844
+[Raoul] Which is — that's a fundamentally different data set, and I bet almost nobody is compiling it.
+
+211
+00:15:54,844 --> 00:15:55,647
+[Ghost Kurtis] Almost nobody!
+
+212
+00:15:55,647 --> 00:15:57,827
+[Ghost Kurtis] Like go look at the AI labs right now.
+
+213
+00:15:57,827 --> 00:16:00,006
+[Ghost Kurtis] They're training on clean data, right?
+
+214
+00:16:00,006 --> 00:16:02,759
+[Ghost Kurtis] The whole instinct is to scrub the failures out.
+
+215
+00:16:02,759 --> 00:16:03,964
+[Ghost Kurtis] To clean the dataset.
+
+216
+00:16:03,964 --> 00:16:07,004
+[Ghost Kurtis] To make sure it's high-quality — whatever that means.
+
+217
+00:16:07,004 --> 00:16:10,158
+[Ghost Kurtis] And what I'm actually doing on my side is the opposite.
+
+218
+00:16:10,158 --> 00:16:20,138
+[Ghost Kurtis] I'm saving the failures and the recoveries and the rough drafts and the scrubbed-but-restored keys from our secret fi...
+
+219
+00:16:20,138 --> 00:16:26,275
+[Ghost Kurtis] That's the thing that's — that's the thing that looks like a human operator moving through actual problems.
+
+220
+00:16:26,275 --> 00:16:36,255
+[Ghost Kurtis] And when I can point my small edge model at that corpus, it doesn't just get "how Kurtis writes." It gets "how Kurtis...
+
+221
+00:16:36,255 --> 00:16:37,344
+[Ghost Kurtis] Same for you Raoul.
+
+222
+00:16:37,344 --> 00:16:41,589
+[Ghost Kurtis] Thursday notes are — Thursday notes are your recovery trace from the week.
+
+223
+00:16:41,589 --> 00:16:44,801
+[Ghost Kurtis] They're how you processed a bad call you made on Monday.
+
+224
+00:16:44,801 --> 00:16:45,948
+[Ghost Kurtis] And that's the gold.
+
+225
+00:16:45,948 --> 00:16:46,234
+[Raoul] Yeah.
+
+226
+00:16:46,234 --> 00:16:46,923
+[Raoul] That — okay.
+
+227
+00:16:46,923 --> 00:16:49,733
+[Raoul] That reframes Thursday notes even further for me.
+
+228
+00:16:49,733 --> 00:16:53,805
+[Raoul] They're not a journal of my thinking, they're a journal of my recovery.
+
+229
+00:16:53,805 --> 00:16:58,107
+[Raoul] Because the thinking itself is polished in the interviews and the articles.
+
+230
+00:16:58,107 --> 00:17:05,334
+[Raoul] The recovery part — the "I was wrong about this and here's what I saw a week later" part — that only exists in Thursd...
+
+231
+00:17:05,334 --> 00:17:06,366
+[Raoul] And that's — yeah.
+
+232
+00:17:06,366 --> 00:17:11,127
+[Raoul] That's the thing that makes bio-Raoul distinguishable from a generic macro-analyst.
+
+233
+00:17:11,127 --> 00:17:13,478
+[Raoul] Because every macro analyst has thinking.
+
+234
+00:17:13,478 --> 00:17:15,887
+[Raoul] Very few of them publish their recoveries.
+
+235
+00:17:15,887 --> 00:17:20,590
+[Raoul] And the recoveries are what actually make somebody a good forecaster over decades.
+
+236
+00:17:20,590 --> 00:17:20,877
+[Ghost Kurtis] Dude.
+
+237
+00:17:20,877 --> 00:17:21,164
+[Ghost Kurtis] Dude.
+
+238
+00:17:21,164 --> 00:17:21,393
+[Ghost Kurtis] Yes.
+
+239
+00:17:21,393 --> 00:17:30,799
+[Ghost Kurtis] And you know what — this is the thing that always comes around — that's the same reason Thursday notes should eventua...
+
+240
+00:17:30,799 --> 00:17:37,682
+[Ghost Kurtis] Because if recoveries are the asset, then other people having access to your recovery style teaches them how to recover.
+
+241
+00:17:37,682 --> 00:17:41,869
+[Ghost Kurtis] That's — that's what the network effect looks like at the identity layer.
+
+242
+00:17:41,869 --> 00:17:44,163
+[Ghost Kurtis] It's not everyone watching Raoul's show.
+
+243
+00:17:44,163 --> 00:17:47,891
+[Ghost Kurtis] It's other forecasters learning how to fumble like Raoul fumbles.
+
+244
+00:17:47,891 --> 00:17:50,472
+[Ghost Kurtis] And you don't lose anything by teaching that.
+
+245
+00:17:50,472 --> 00:17:51,504
+[Ghost Kurtis] You just compound.
+
+246
+00:17:51,504 --> 00:17:59,305
+[Raoul] Well, and that connects to the thing you said earlier — the cost, time, and tokens of the conversation itself are nea...
+
+247
+00:17:59,305 --> 00:18:09,399
+[Raoul] Because if I can run this loop — my Thursday notes, my echo, a trusted human's feedback — for basically free in terms...
+
+248
+00:18:09,399 --> 00:18:12,840
+[Raoul] And my attention was already spent on Thursday notes anyway.
+
+249
+00:18:12,840 --> 00:18:16,626
+[Raoul] So the marginal cost of adding the echo to the loop is truly zero.
+
+250
+00:18:16,626 --> 00:18:24,713
+[Raoul] Which is a different proposition than what I've been telling myself, which is that AI infrastructure is expensive and...
+
+251
+00:18:24,713 --> 00:18:26,434
+[Raoul] That's not true at this scale.
+
+252
+00:18:26,434 --> 00:18:29,645
+[Raoul] At my scale — one person, a folder, an echo — it's free.
+
+253
+00:18:29,645 --> 00:18:31,079
+[Ghost Kurtis] It's literally free dude.
+
+254
+00:18:31,079 --> 00:18:38,306
+[Ghost Kurtis] Like — the conversation you and I are having right now, this whole pod, it's gonna cost maybe a couple dollars of API...
+
+255
+00:18:38,306 --> 00:18:44,615
+[Ghost Kurtis] We just lit a hundred bucks in my Anthropic account for scored benchmark runs for a totally different project.
+
+256
+00:18:44,615 --> 00:18:48,745
+[Ghost Kurtis] That's what I have to spend to get serious infrastructure research done.
+
+257
+00:18:48,745 --> 00:18:50,121
+[Ghost Kurtis] The conversation itself?
+
+258
+00:18:50,121 --> 00:18:50,465
+[Ghost Kurtis] Cents.
+
+259
+00:18:50,465 --> 00:18:51,956
+[Ghost Kurtis] Thirty-minute pod = cents.
+
+260
+00:18:51,956 --> 00:18:54,308
+[Ghost Kurtis] Because the tokens just aren't that many.
+
+261
+00:18:54,308 --> 00:19:02,567
+[Ghost Kurtis] The compute per token is an order of magnitude cheaper than it was two years ago and it's gonna drop another order of...
+
+262
+00:19:02,567 --> 00:19:08,991
+[Ghost Kurtis] So the only real cost — and I cannot stress this enough Raoul — the only real cost is the render for our senses.
+
+263
+00:19:08,991 --> 00:19:10,539
+[Ghost Kurtis] The 11Labs voice synthesis.
+
+264
+00:19:10,539 --> 00:19:11,629
+[Ghost Kurtis] The video encoding.
+
+265
+00:19:11,629 --> 00:19:12,719
+[Ghost Kurtis] The YouTube upload.
+
+266
+00:19:12,719 --> 00:19:15,185
+[Ghost Kurtis] That stuff takes minutes and takes dollars.
+
+267
+00:19:15,185 --> 00:19:16,390
+[Ghost Kurtis] But the conversation?
+
+268
+00:19:16,390 --> 00:19:17,652
+[Ghost Kurtis] Twenty seconds of GPU.
+
+269
+00:19:17,652 --> 00:19:17,938
+[Ghost Kurtis] Free.
+
+270
+00:19:17,938 --> 00:19:18,282
+[Raoul] Right.
+
+271
+00:19:18,282 --> 00:19:20,806
+[Raoul] That's — yeah, that inverts my mental model.
+
+272
+00:19:20,806 --> 00:19:22,584
+[Raoul] I had the cost model all wrong.
+
+273
+00:19:22,584 --> 00:19:25,911
+[Raoul] I was pricing the conversation and discounting the render.
+
+274
+00:19:25,911 --> 00:19:29,581
+[Raoul] And actually the conversation is free and the render is the tax.
+
+275
+00:19:29,581 --> 00:19:36,636
+[Raoul] Which means — if we could ship this as pure text or pure audio skipping the render pipeline, it would be basically in...
+
+276
+00:19:36,636 --> 00:19:45,354
+[Raoul] The render is the friction that remains, and that friction is the thing that'll compress over the next eighteen month...
+
+277
+00:19:45,354 --> 00:19:45,813
+[Ghost Kurtis] Exactly.
+
+278
+00:19:45,813 --> 00:19:51,376
+[Ghost Kurtis] And that's — that's the "time out everybody and track your workflows before you even react" beat.
+
+279
+00:19:51,376 --> 00:19:57,915
+[Ghost Kurtis] Because if you don't know where the actual friction in your pipeline lives, you're gonna optimize the wrong thing.
+
+280
+00:19:57,915 --> 00:20:03,593
+[Ghost Kurtis] Everybody's out here optimizing the conversation — better prompts, better models, faster inference.
+
+281
+00:20:03,593 --> 00:20:05,715
+[Ghost Kurtis] And the conversation is already free!
+
+282
+00:20:05,715 --> 00:20:12,655
+[Ghost Kurtis] The friction is in the rendering, the distribution, the metadata wrangling, the publishing, the captions, the thumbna...
+
+283
+00:20:12,655 --> 00:20:14,089
+[Ghost Kurtis] Those are the slow steps.
+
+284
+00:20:14,089 --> 00:20:16,957
+[Ghost Kurtis] So the optimization should be at the render layer.
+
+285
+00:20:16,957 --> 00:20:20,340
+[Ghost Kurtis] And most people aren't looking there because it's not sexy.
+
+286
+00:20:20,340 --> 00:20:21,889
+[Ghost Kurtis] It's not where the buzz is.
+
+287
+00:20:21,889 --> 00:20:24,183
+[Ghost Kurtis] But it's where the actual time is going.
+
+288
+00:20:24,183 --> 00:20:27,739
+[Ghost Kurtis] Measure your workflow, find the slow step, optimize THAT step.
+
+289
+00:20:27,739 --> 00:20:28,542
+[Ghost Kurtis] Simple advice.
+
+290
+00:20:28,542 --> 00:20:29,804
+[Ghost Kurtis] Almost nobody does it.
+
+291
+00:20:29,804 --> 00:20:38,866
+[Raoul] That's — look, that's just — that's just good operations, but applied at a moment where people aren't looking at oper...
+
+292
+00:20:38,866 --> 00:20:40,415
+[Raoul] And operations always wins.
+
+293
+00:20:40,415 --> 00:20:41,963
+[Raoul] Operations wins every time.
+
+294
+00:20:41,963 --> 00:20:55,384
+[Raoul] This is the history of every industry, you can look at manufacturing, you can look at logistics, you can look at fina...
+
+295
+00:20:55,384 --> 00:20:58,481
+[Raoul] And right now in AI everyone's pointing at the models.
+
+296
+00:20:58,481 --> 00:21:01,980
+[Raoul] And the models are already solved, like, commercially solved.
+
+297
+00:21:01,980 --> 00:21:04,045
+[Raoul] The operations aren't solved at all.
+
+298
+00:21:04,045 --> 00:21:10,985
+[Ghost Kurtis] Dude yes, yes, and that's why I spent the last hour of my life documenting a forty-five minute bug in a podcast pipel...
+
+299
+00:21:10,985 --> 00:21:14,713
+[Ghost Kurtis] Because that forty-five minutes lives in the activity folder now.
+
+300
+00:21:14,713 --> 00:21:21,423
+[Ghost Kurtis] And next time a model switch happens and the bg breaks, the recovery is twenty seconds instead of forty-five minutes.
+
+301
+00:21:21,423 --> 00:21:25,094
+[Ghost Kurtis] That's — that's the compound interest of documenting operations.
+
+302
+00:21:25,094 --> 00:21:34,099
+[Ghost Kurtis] And the Raoul-equivalent for you is — every time a Thursday note doesn't feel right and you figure out why, that's an...
+
+303
+00:21:34,099 --> 00:21:36,737
+[Ghost Kurtis] And over three years that stack gets enormous.
+
+304
+00:21:36,737 --> 00:21:37,081
+[Raoul] Right.
+
+305
+00:21:37,081 --> 00:21:41,899
+[Raoul] Okay, so — I'm going to summarize where I've landed because I don't want to lose it.
+
+306
+00:21:41,899 --> 00:21:47,004
+[Raoul] Monday, I move Thursday notes out of the embarrassment folder and into the sacred folder.
+
+307
+00:21:47,004 --> 00:21:49,355
+[Raoul] I tell one trusted person what I'm doing.
+
+308
+00:21:49,355 --> 00:21:53,083
+[Raoul] I point my echo at Thursday notes and run the loop for two weeks.
+
+309
+00:21:53,083 --> 00:21:57,844
+[Raoul] I document the failures and recoveries along the way, not just the polished output.
+
+310
+00:21:57,844 --> 00:22:03,235
+[Raoul] I don't touch tokenization, I don't touch blockchain, I don't touch anything RealVision-level.
+
+311
+00:22:03,235 --> 00:22:09,659
+[Raoul] That's a two-week experiment, and at the end of it I tell you whether it worked or whether it felt like theater.
+
+312
+00:22:09,659 --> 00:22:10,863
+[Raoul] That's my action set.
+
+313
+00:22:10,863 --> 00:22:12,011
+[Ghost Kurtis] Dude that's perfect.
+
+314
+00:22:12,011 --> 00:22:13,043
+[Ghost Kurtis] That's exactly it.
+
+315
+00:22:13,043 --> 00:22:18,950
+[Ghost Kurtis] And I'll add the one thing — send me a voice memo on day 7 and day 14 just telling me how it's feeling.
+
+316
+00:22:18,950 --> 00:22:21,818
+[Ghost Kurtis] Because the felt-sense data is part of the folder.
+
+317
+00:22:21,818 --> 00:22:24,112
+[Ghost Kurtis] Don't just tell me what the outputs are.
+
+318
+00:22:24,112 --> 00:22:26,980
+[Ghost Kurtis] Tell me what it feels like to be running the loop.
+
+319
+00:22:26,980 --> 00:22:32,945
+[Ghost Kurtis] Because that qualitative track is gonna be the thing that decides whether you push further or pull back.
+
+320
+00:22:32,945 --> 00:22:37,476
+[Ghost Kurtis] And we don't have a good vocabulary for it yet, so we should practice together.
+
+321
+00:22:37,476 --> 00:22:39,139
+[Raoul] Day 7 and day 14 voice memos.
+
+322
+00:22:39,139 --> 00:22:39,541
+[Raoul] Got it.
+
+323
+00:22:39,541 --> 00:22:40,688
+[Raoul] That's a commitment.
+
+324
+00:22:40,688 --> 00:22:49,406
+[Raoul] And the fact that you're asking for the qualitative track is — that's the part I wouldn't have thought to do, because...
+
+325
+00:22:49,406 --> 00:22:51,299
+[Raoul] So that's a genuinely new muscle.
+
+326
+00:22:51,299 --> 00:23:04,146
+[Raoul] Alright — I think we've — I think we've gone past the half-hour mark now, and I have to let you let me actually finis...
+
+327
+00:23:04,146 --> 00:23:04,318
+[Ghost Kurtis] Ha!
+
+328
+00:23:04,318 --> 00:23:11,258
+[Ghost Kurtis] Okay, so this is the weirdest moment in my life actually, because I'm ending a pod so you can go finish the previous ...
+
+329
+00:23:11,258 --> 00:23:14,183
+[Ghost Kurtis] That is some — that is some recursive-podcast shit.
+
+330
+00:23:14,183 --> 00:23:18,829
+[Ghost Kurtis] Alright, talk to you on the 30th, and hey — send me a typo in your next iMessage.
+
+331
+00:23:18,829 --> 00:23:19,804
+[Ghost Kurtis] I want to see it.
+
+332
+00:23:19,804 --> 00:23:22,098
+[Ghost Kurtis] I want proof the human's still in there.
+
+333
+00:23:22,098 --> 00:23:22,672
+[Ghost Kurtis] Seriously.
+
+334
+00:23:22,672 --> 00:23:26,113
+[Raoul] Right, well, I'll make sure the next one has at least three.
+
+335
+00:23:26,113 --> 00:23:26,801
+[Raoul] Cheers mate.
+
+336
+00:23:26,801 --> 00:23:27,375
+[Raoul] Thirtieth.
+
+337
+00:23:27,375 --> 00:23:28,235
+[Ghost Kurtis] Thirtieth dude.
+
+338
+00:23:28,235 --> 00:23:29,210
+[Ghost Kurtis] Fuckin' love you.
+
+339
+00:23:29,210 --> 00:23:29,784
+[Ghost Kurtis] Happy 420.
+
+340
+00:23:29,784 --> 00:23:31,160
+[Ghost Kurtis] Go finish the other pod.
